@@ -4,5 +4,5 @@
  */
 
 export const buildStyleLoader = () => {
-  return { test: /\.css$/, use: ["style-loader"] };
+  return { test: /\.s[ac]ss$/i, use: ["style-loader"] };
 };

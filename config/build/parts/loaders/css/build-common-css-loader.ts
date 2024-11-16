@@ -7,7 +7,7 @@
 
 export const buildCommonCssLoader = () => {
   return {
-    test: /\.css$/,
+    test: /\.s[ac]ss$/i,
     use: [
       { loader: "css-loader", options: { sourceMap: true } },
       {
@@ -16,6 +16,7 @@ export const buildCommonCssLoader = () => {
           postcssOptions: { plugins: [require("autoprefixer")()] },
         },
       },
+      { loader: "sass-loader" },
     ],
   };
 };

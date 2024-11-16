@@ -7,7 +7,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export const buildMiniCssExtractLoader = () => {
   return {
-    test: /\.css$/,
+    test: /\.s[ac]ss$/i,
     use: [MiniCssExtractPlugin.loader],
   };
 };
