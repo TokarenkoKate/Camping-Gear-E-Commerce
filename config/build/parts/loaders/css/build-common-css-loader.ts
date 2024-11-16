@@ -9,7 +9,16 @@ export const buildCommonCssLoader = () => {
   return {
     test: /\.s[ac]ss$/i,
     use: [
-      { loader: "css-loader", options: { sourceMap: true } },
+      {
+        loader: "css-loader",
+        options: {
+          modules: {
+            auto: /\.m\.scss$/,
+            localIdentName: "[local]--[hash:base64:5]",
+            namedExport: false,
+          },
+        },
+      },
       {
         loader: "postcss-loader",
         options: {
