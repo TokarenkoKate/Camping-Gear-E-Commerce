@@ -17,7 +17,7 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
     case "production":
       return mergeWithRules(mergeRulesConfig)(
         commonConfig(options),
-        productionConfig(options),
+        productionConfig(),
         { mode }
       );
     case "development":

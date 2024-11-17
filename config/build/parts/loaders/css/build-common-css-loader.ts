@@ -22,7 +22,7 @@ export const buildCommonCssLoader = () => {
       {
         loader: "postcss-loader",
         options: {
-          postcssOptions: { plugins: [require("autoprefixer")()] },
+          postcssOptions: { plugins: ["autoprefixer"] },
         },
       },
       { loader: "sass-loader" },
