@@ -11,7 +11,10 @@ export const buildWebpackPluginServe = (paths: BuildPaths) => {
     static: paths.build,
     liveReload: true,
     waitForBuild: true,
-    historyFallback: true,
-    open: true
+    historyFallback: {
+      htmlAcceptHeaders: ["text/html", "*/*"],
+      rewrites: [],
+    },
+    open: true,
   });
 };

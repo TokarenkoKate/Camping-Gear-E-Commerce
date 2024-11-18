@@ -19,6 +19,9 @@ export const developmentConfig = (options: BuildOptions): Configuration => {
   return {
     entry: ["webpack-plugin-serve/client"],
     watch: true,
+    watchOptions: {
+      ignored: ["dist/**/*", "docs/**/*", "node_modules/**/*", "public/**/*"],
+    },
     devtool,
     module: {
       rules: [styleLoader],
