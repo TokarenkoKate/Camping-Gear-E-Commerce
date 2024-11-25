@@ -1,0 +1,38 @@
+/* text size */
+:root {
+  --fs-sm: 12px;
+  --fs-base: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 28px;
+  --fs-xxl: 70px;
+}
+
+.text-xxl {
+  font-size: var(--fs-xxl);
+}
+
+h1,
+.text-xxl {
+  font-size: var(--fs-xl);
+}
+
+h2,
+.text-xl {
+  font-size: var(--fs-lg);
+}
+
+h3,
+.text-lg {
+  font-size: var(--fs-md);
+}
+
+h4,
+.text-md {
+  font-size: var(--fs-base);
+}
+
+.text-sm,
+small {
+  font-size: var(--fs-sm);
+}
