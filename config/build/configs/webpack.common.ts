@@ -8,6 +8,7 @@ import { buildForkTsCheckerPlugin } from "../parts/plugins/build-fork-ts-checker
 import { buildHtmlWebpackPlugin } from "../parts/plugins/build-html-webpack-plugin";
 import { buildResolvers } from "../parts/resolvers/build-resolvers";
 import { buildEnvPlugin } from "../parts/plugins/build-env-plugin";
+import { buildSvgLoader } from "../parts/loaders/build-svg-loader";
 
 export const commonConfig = (options: BuildOptions): Configuration => {
   const { paths } = options;
@@ -17,6 +18,7 @@ export const commonConfig = (options: BuildOptions): Configuration => {
   const tsxCodeBabelLoader = buildBabelLoader({ isTsx: true });
   const commonCSSLoader = buildCommonCssLoader();
   const imageLoader = buildImageLoader();
+  const svgLoader = buildSvgLoader();
   const fontLoader = buildFontLoader();
 
   /** resolvers */
@@ -44,6 +46,7 @@ export const commonConfig = (options: BuildOptions): Configuration => {
         tsxCodeBabelLoader,
         commonCSSLoader,
         imageLoader,
+        svgLoader,
         fontLoader,
       ],
     },
