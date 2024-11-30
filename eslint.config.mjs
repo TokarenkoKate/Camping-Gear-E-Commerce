@@ -2,6 +2,8 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
+import prettierConfig from "eslint-config-prettier";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -16,6 +18,8 @@ export default [
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  prettierConfig, // Turns off all ESLint rules that have the potential to interfere with Prettier rules.
+  eslintPluginPrettierRecommended,
   {
     ...pluginReact.configs.flat.recommended,
     settings: {

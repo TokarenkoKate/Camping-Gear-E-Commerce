@@ -7,6 +7,6 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export const buildMiniCssExtractPlugin = () => {
   return new MiniCssExtractPlugin({
-    filename: "[name].[contenthash].css"
+    filename: "[name].[contenthash].css",
   });
 };

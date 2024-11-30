@@ -30,7 +30,7 @@ export const commonConfig = (options: BuildOptions): Configuration => {
   return {
     entry: [paths.entry],
     output: {
-      filename: "[name].[contenthash].js",  
+      filename: "[name].[contenthash].js",
       chunkFilename: "[name].[contenthash].js",
       assetModuleFilename: "[name].[contenthash][ext][query]",
       path: paths.build,

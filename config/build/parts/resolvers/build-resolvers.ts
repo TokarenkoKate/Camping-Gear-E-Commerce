@@ -6,7 +6,7 @@ export const buildResolvers = (paths: BuildPaths) => {
     modules: [paths.src, "node_modules"],
     mainFiles: ["index"],
     alias: {
-      '@': paths.src
-    }
+      "@": paths.src,
+    },
   };
 };

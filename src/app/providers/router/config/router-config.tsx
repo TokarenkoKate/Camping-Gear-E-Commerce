@@ -1,7 +1,7 @@
 import { MainPage } from "@/pages/main";
 import { AppRoutes, AppRoutesPaths } from "@/shared/const/router";
-import { NotFoundPage } from '@/pages/not-found-page';
-import { AppRouteType } from '@/shared/types/router';
+import { NotFoundPage } from "@/pages/not-found-page";
+import { AppRouteType } from "@/shared/types/router";
 
 export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.HOME]: {
