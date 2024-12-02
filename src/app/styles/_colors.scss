@@ -1,0 +1,27 @@
+/**
+* list of colors in semantic approach,
+*/
+:root {
+  /* main colors */
+  --color-primary: #fff; /* Main color that occupies around 60% of page, e.g., background (neutral-100) */
+  --color-secondary: #f9f9f9; /* Complementary color that occupies around 30% of page, e.g., inputs, drawer, cards background (neutral-200) */
+  --color-secondary-dark: #f0f0f0; /* Darker secondary, e.g., footer background (neutral-300) */
+  --color-accent: #1a1a1a; /* Accent color, occupies around 10% of page, e.g. buttons (neutral-700) */
+  --color-accent-dark: #000; /* Darker accent color (neutral-800) */
+
+  /* feedback */
+  --color-error: #ff1e00; /* Error color e.g., for input error messages (error-600) */
+
+  /* typography */
+  --color-text-primary: #1a1a1a; /* Main text color (neutral-700) */
+  --color-text-primary-inverted: #fff; /* Inverted text color (for dark backgrounds) (neutral-100) */
+  --color-text-secondary: #999; /* Text color for secondary information (neutral-500) */
+  --color-link: #337ab7; /* Text color for links (information-600) */
+
+  /* controls */
+  --color-disabled: #d0d0d0; /* Disabled color for buttons, inputs: (neutral-400) */
+  --color-disabled-inverted: #90908f; /* Disabled inverted color (neutral-600) */
+
+  /* border */
+  --color-border: #d0d0d0; /** Border color (neutral-400) */
+}
