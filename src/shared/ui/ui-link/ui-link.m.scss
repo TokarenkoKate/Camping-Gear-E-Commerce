@@ -1,0 +1,43 @@
+.ui-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2-5);
+  color: var(--color-text-primary);
+  transition: all 0.2s;
+  cursor: pointer;
+
+  .arrow {
+    opacity: 0;
+  }
+
+  &:hover {
+    color: var(--color-text-secondary);
+    transform: translate(var(--space-2-5));
+
+    .arrow {
+      color: var(--color-text-secondary);
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    color: var(--color-accent-dark);
+
+    .arrow {
+      color: var(--color-accent-dark);
+    }
+  }
+
+  &:focus-visible {
+    outline-color: transparent;
+
+    /* TODO: update focus styles */
+    box-shadow:
+      0 0 0 4px white,
+      0 0 0 8px var(--color-link);
+
+    .arrow {
+      opacity: 1;
+    }
+  }
+}

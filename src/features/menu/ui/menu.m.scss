@@ -1,0 +1,8 @@
+.menu {
+  display: flex;
+  gap: var(--space-8);
+
+  &-item {
+    text-transform: uppercase;
+  }
+}

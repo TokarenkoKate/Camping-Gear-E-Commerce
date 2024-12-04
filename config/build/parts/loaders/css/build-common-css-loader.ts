@@ -14,6 +14,7 @@ export const buildCommonCssLoader = () => {
         options: {
           modules: {
             auto: /\.m\.scss$/,
+            exportLocalsConvention: "camel-case",
             localIdentName: "[local]--[hash:base64:5]",
             namedExport: false,
           },
