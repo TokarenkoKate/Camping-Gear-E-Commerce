@@ -17,7 +17,9 @@ export const UiLink = memo(function UiLink(props: UiLinkProps) {
   return (
     <Link
       to={to}
-      className={classNames(cls.uiLink, className, { withArrow })}
+      className={classNames(cls.uiLink, className, {
+        [cls.withArrow]: withArrow,
+      })}
       {...otherProps}
     >
       {withArrow && (

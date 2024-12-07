@@ -32,3 +32,4 @@ node_modules
 *.sw?
 # Mac OS generated file
 .DS_Store
+*storybook.log

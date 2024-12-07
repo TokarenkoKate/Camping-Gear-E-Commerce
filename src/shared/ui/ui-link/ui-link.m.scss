@@ -12,7 +12,10 @@
 
   &:hover {
     color: var(--color-text-secondary);
-    transform: translate(var(--space-2-5));
+
+    &.with-arrow {
+      transform: translate(var(--space-2-5));
+    }
 
     .arrow {
       color: var(--color-text-secondary);
