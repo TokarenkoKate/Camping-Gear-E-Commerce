@@ -1,0 +1,25 @@
+.ui-button {
+  color: var(--color-text-primary);
+  outline-color: transparent;
+  transition: color 0.2s;
+  cursor: pointer;
+
+  &.clear {
+    border: none;
+    background: none;
+  }
+
+  &:hover {
+    color: var(--color-text-secondary);
+  }
+
+  &:active {
+    color: var(--color-accent-dark);
+  }
+
+  &:focus-visible {
+    box-shadow:
+      0 0 0 4px white,
+      0 0 0 8px var(--color-link);
+  }
+}

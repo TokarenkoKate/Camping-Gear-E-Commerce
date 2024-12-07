@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { UiLink } from "./ui-link";
+import { UiButton, UiButtonVariant } from "./ui-button";
 
 const meta = {
-  title: "shared/UiLink",
-  component: UiLink,
+  title: "shared/UiButton",
+  component: UiButton,
   parameters: {
     layout: "centered",
   },
@@ -12,23 +12,15 @@ const meta = {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  args: {},
+  args: { onClick: fn() },
 } satisfies Meta<typeof fn>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const ClearButton: Story = {
   args: {
-    to: "#",
-    children: "default-link",
-  },
-};
-
-export const WithArrow: Story = {
-  args: {
-    to: "#",
-    withArrow: true,
-    children: "with-arrow-link",
+    variant: UiButtonVariant.CLEAR,
+    children: "CLICK",
   },
 };

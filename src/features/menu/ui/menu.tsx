@@ -4,16 +4,13 @@ import { UiLink } from "@/shared/ui/ui-link/ui-link";
 
 export const Menu = () => {
   return (
-    <ul className={cls.menu}>
+    <ul className={cls.menu} role="list">
       {menuItems.map((menuItem) => (
-        <UiLink
-          key={menuItem.path}
-          to={menuItem.path}
-          className={cls.menuItem}
-          withArrow
-        >
-          {menuItem.text}
-        </UiLink>
+        <li className={cls.menuItem} key={menuItem.path}>
+          <UiLink to={menuItem.path} className={cls.menuLink} withArrow>
+            {menuItem.text}
+          </UiLink>
+        </li>
       ))}
     </ul>
   );
