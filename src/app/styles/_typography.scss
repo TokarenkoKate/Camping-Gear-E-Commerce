@@ -35,6 +35,11 @@
       ((var(--f-2-min) / 16) * 1rem) + (var(--fs-900-max) - var(--fs-900-min)) *
       var(--fluid-bp)
   );
+
+  /** font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }
 
 @media screen and (width >= 1400px) {
