@@ -4,6 +4,7 @@ import Logo from "@/shared/assets/icons/logo-86-20.svg";
 import { Menu } from "@/features/menu";
 import { Search } from "@/features/search";
 import { Login } from "@/features/login";
+import { Cart } from "@/features/cart";
 
 export const Navbar = () => {
   return (
@@ -13,6 +14,7 @@ export const Navbar = () => {
       <div className={cls.navbarGroup}>
         <Search />
         <Login />
+        <Cart />
       </div>
     </nav>
   );
