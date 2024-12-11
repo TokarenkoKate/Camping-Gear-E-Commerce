@@ -1,0 +1,34 @@
+@use "sass:map";
+@import "../breakpoints";
+
+@mixin responsive($size) {
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint-min: map.get($breakpoints, $size);
+
+    @media (min-width: $breakpoint-min) {
+      @content;
+    }
+
+    /** use the custom value if the breakpoint is not part of the pre-defined list */
+  } @else {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+/** Usage example:
+  background-color: yellow; // Regular styles (For below 320px)
+
+  @include responsive("small") {
+    background-color: red; // Styles for 'small' breakpoint or above (568px)
+  }
+
+  @include responsive("medium") {
+    background-color: green; // Styles for 'medium' breakpoint or above (768px)
+  }
+
+  @include responsive("large") {
+    background-color: blue; // Styles for 'large' breakpoint or above (1024px)
+  }
+*/

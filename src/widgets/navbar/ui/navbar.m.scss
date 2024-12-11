@@ -3,14 +3,27 @@ $navbar-height: 50px;
 .navbar {
   width: 100%;
   height: $navbar-height;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 var(--space-5);
   border-bottom: 1px solid var(--color-border);
 
+  &-content {
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 var(--space-5);
+  }
+
+  :nth-child(2) {
+    justify-content: center;
+  }
+
+  :nth-child(3) {
+    justify-content: end;
+  }
+
   &-group {
-    display: flex;
     gap: var(--space-5);
   }
 }
