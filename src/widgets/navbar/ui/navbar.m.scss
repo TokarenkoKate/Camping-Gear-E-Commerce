@@ -1,3 +1,5 @@
+@import "/src/app/styles/mixins/responsive";
+
 $navbar-height: 50px;
 
 .navbar {
@@ -12,18 +14,47 @@ $navbar-height: 50px;
     display: grid;
     align-items: center;
     grid-template-columns: repeat(3, 1fr);
-    padding: 0 var(--space-5);
+    grid-template-areas: "menu logo actions";
+    padding: 0 var(--space-4);
+
+    @include responsive("medium") {
+      grid-template-areas: "logo menu actions";
+    }
+
+    @include responsive("large") {
+      padding: 0 var(--space-5);
+    }
   }
 
-  :nth-child(2) {
+  /** navbar components */
+  &-logo {
+    grid-area: logo;
+    justify-self: center;
+
+    @include responsive("medium") {
+      justify-self: start;
+    }
+  }
+
+  &-menu {
+    grid-area: menu;
     justify-content: center;
   }
 
-  :nth-child(3) {
-    justify-content: end;
-  }
+  &-actions {
+    grid-area: actions;
+    gap: var(--space-3);
 
-  &-group {
-    gap: var(--space-5);
+    @include responsive("large") {
+      gap: var(--space-5);
+    }
+
+    &-login {
+      display: none;
+
+      @include responsive("medium") {
+        display: flex;
+      }
+    }
   }
 }

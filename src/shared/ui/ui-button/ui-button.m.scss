@@ -1,6 +1,9 @@
+@import "/src/app/styles/mixins/responsive";
+
 /* stylelint-disable custom-property-pattern */
-// TODO: add proper pattern
+// TODO: add proper pattern for variables
 $button-size-s: 32px;
+$button-size-s-mobile: 20px;
 $button-size-m: 56px;
 
 .ui-button {
@@ -63,8 +66,13 @@ $button-size-m: 56px;
 
   /** sizes */
   &.size-s {
-    height: $button-size-s;
-    border-radius: $button-size-s;
+    height: $button-size-s-mobile;
+    border-radius: $button-size-s-mobile;
+
+    @include responsive("medium") {
+      height: $button-size-s;
+      border-radius: $button-size-s;
+    }
   }
 
   &.size-m {
@@ -108,8 +116,14 @@ $button-size-m: 56px;
   }
 
   &.round {
+    padding: 0;
+
     &.size-s {
-      width: $button-size-s;
+      width: $button-size-s-mobile;
+
+      @include responsive("medium") {
+        width: $button-size-s;
+      }
     }
 
     &.size-m {

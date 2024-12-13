@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import cls from "./ui-button.m.scss";
 import { ButtonHTMLAttributes, memo, ReactNode } from "react";
 import { ClassnamesMods } from "@/shared/types/classnames";
 import { UiIcon } from "../ui-icon/ui-icon";
+import cls from "./ui-button.m.scss";
 
 export enum UiButtonVariant {
   BACKGROUND = "background",
@@ -48,7 +48,7 @@ export const UiButton = memo(function UiButton(props: UiButtonProps) {
     <button
       type="button"
       disabled={disabled}
-      className={classNames(cls.uiButton, className, mods)}
+      className={classNames(cls.uiButton, mods, className)}
       {...restProps}
     >
       {IconSvg && <UiIcon Svg={IconSvg} className={cls.icon} />}

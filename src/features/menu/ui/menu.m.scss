@@ -1,9 +1,33 @@
-.menu {
-  display: flex;
-  gap: var(--space-8);
+@import "/src/app/styles/mixins/responsive";
 
-  &-item {
-    padding: 0 var(--space-2-5);
+.menu {
+  &-list {
+    display: none;
+
+    @include responsive("medium") {
+      display: flex;
+      gap: var(--space-4);
+    }
+
+    @include responsive("large") {
+      gap: var(--space-8);
+    }
+
+    &-item {
+      padding: 0 var(--space-1);
+
+      @include responsive("large") {
+        padding: 0 var(--space-2-5);
+      }
+    }
+  }
+
+  &-mobile {
+    display: block;
+
+    @include responsive("medium") {
+      display: none;
+    }
   }
 
   &-link {

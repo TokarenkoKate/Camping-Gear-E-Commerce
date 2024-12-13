@@ -6,7 +6,7 @@ import {
 
 export const Cart = () => {
   return (
-    <UiButton variant={UiButtonVariant.OUTLINED} size={UiButtonSize.S}>
+    <UiButton variant={UiButtonVariant.OUTLINED} size={UiButtonSize.S} round>
       2
     </UiButton>
   );

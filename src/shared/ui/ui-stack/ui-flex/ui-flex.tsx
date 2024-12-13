@@ -51,17 +51,14 @@ export const UiFlex = (props: UiFlexProps) => {
   } = props;
 
   const classes = [
-    className,
     justifyClasses[justify],
     alignClasses[align],
     directionClasses[direction],
+    className,
   ];
 
   return (
-    <UiBox
-      className={classNames(cls.uiFlex, className, classes)}
-      {...restProps}
-    >
+    <UiBox className={classNames(cls.uiFlex, classes)} {...restProps}>
       {children}
     </UiBox>
   );
