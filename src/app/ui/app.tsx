@@ -1,12 +1,15 @@
 import "../styles/index.scss";
 import { Outlet } from "react-router-dom";
 import { Navbar } from "@/widgets/navbar";
+import { UiBox } from "@/shared/ui/ui-box/ui-box";
 
 export const App = () => {
   return (
-    <div className="app">
+    <UiBox className="app">
       <Navbar />
-      <Outlet />
-    </div>
+      <UiBox className="app-content" as="main">
+        <Outlet />
+      </UiBox>
+    </UiBox>
   );
 };

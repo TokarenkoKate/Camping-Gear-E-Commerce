@@ -1,3 +1,5 @@
+@import "./breakpoints";
+
 /* text size */
 :root {
   --fs-100: 10px;
@@ -42,7 +44,7 @@
   --font-weight-bold: 700;
 }
 
-@media screen and (width >= 1400px) {
+@media screen and (width >= $app-content-width) {
   :root {
     --fluid-screen: calc(var(--fluid-max-width) * 1px);
   }

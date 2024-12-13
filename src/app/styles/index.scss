@@ -4,9 +4,11 @@
 @use "spacing";
 @use "colors";
 @use "box-shadow";
+@import "./breakpoints";
 
 html,
-body {
+body,
+#root {
   height: 100%;
   font-family: Montserrat, sans-serif;
 }
@@ -20,4 +22,18 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &-content {
+    width: 100%;
+    max-width: $app-content-width;
+    height: 100%;
+    margin: 0 auto;
+  }
 }
