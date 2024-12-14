@@ -1,7 +1,8 @@
+@import "./fluid";
 @import "./breakpoints";
 
-/* text size */
 :root {
+  /* text size */
   --fs-100: 10px;
   --fs-200: 12px;
   --fs-300: 13px;
@@ -9,19 +10,6 @@
   --fs-500: 20px;
   --fs-600: 24px;
   --fs-700: 36px;
-
-  /* 
-    Fluid typography for smooth scaling between the minimum and maximum value depending on the viewport width
-    @link https://utopia.fyi/type/calculator?c=375,50,1.333,1400,75,1.333,0,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
-  */
-
-  --fluid-min-width: 375;
-  --fluid-max-width: 1400;
-  --fluid-screen: 100vw;
-  --fluid-bp: calc(
-    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
-      (var(--fluid-max-width) - var(--fluid-min-width))
-  );
   --fs-800-min: 36;
   --fs-800-max: 50;
   --fs-800: calc(
@@ -34,6 +22,12 @@
     ((var(--fs-900-min) / 16) * 1rem) +
       (var(--fs-900-max) - var(--fs-900-min)) * var(--fluid-bp)
   );
+  --fs-1000-min: 24;
+  --fs-1000-max: 95;
+  --fs-1000: calc(
+    ((var(--fs-1000-min) / 16) * 1rem) +
+      (var(--fs-1000-max) - var(--fs-1000-min)) * var(--fluid-bp)
+  );
 
   /* line heights */
   --lh-100: 10px;
@@ -44,16 +38,10 @@
   --lh-600: 26px;
   --lh-700: 36px;
   --lh-800: 43px;
-  --lh-900: px;
+  --lh-900: 90px;
 
   /** font weights */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-}
-
-@media screen and (width >= $app-content-width) {
-  :root {
-    --fluid-screen: calc(var(--fluid-max-width) * 1px);
-  }
 }

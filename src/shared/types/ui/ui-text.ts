@@ -27,4 +27,5 @@ export type UiTextVariant =
   | "headingSm"
   | "headingMd"
   | "headingLg"
-  | "headingXl";
+  | "headingXl"
+  | "hero";

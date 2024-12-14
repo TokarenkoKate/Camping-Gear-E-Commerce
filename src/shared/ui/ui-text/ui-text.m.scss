@@ -1,3 +1,5 @@
+@import "/src/app/styles/mixins/responsive";
+
 .ui-text {
   font-weight: var(--font-weight-regular);
 }
@@ -74,6 +76,19 @@
 .heading-xl {
   font-size: var(--fs-900);
   line-height: var(--lh-900);
+}
+
+.hero {
+  font-size: var(--fs-1000);
+  font-weight: var(--font-weight-regular);
+
+  @include responsive("medium") {
+    font-weight: var(--font-weight-medium);
+  }
+
+  @include responsive("large") {
+    font-weight: var(--font-weight-bold);
+  }
 }
 
 /*

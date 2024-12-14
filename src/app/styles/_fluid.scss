@@ -1,0 +1,21 @@
+@import "./mixins/responsive";
+
+/* 
+  Fluid typography for smooth scaling between the minimum and maximum value depending on the viewport width
+  @link https://utopia.fyi/type/calculator?c=375,50,1.333,1400,75,1.333,0,0,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12
+*/
+:root {
+  --fluid-min-width: 375;
+  --fluid-max-width: 1400;
+  --fluid-screen: 100vw;
+  --fluid-bp: calc(
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
+  );
+}
+
+@media screen and (width >= $app-content-width) {
+  :root {
+    --fluid-screen: calc(var(--fluid-max-width) * 1px);
+  }
+}
