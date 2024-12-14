@@ -19,27 +19,35 @@
   --fluid-max-width: 1400;
   --fluid-screen: 100vw;
   --fluid-bp: calc(
-    /* stylelint-disable-next-line scss/operator-no-newline-after */
-      (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
+    (var(--fluid-screen) - var(--fluid-min-width) / 16 * 1rem) /
       (var(--fluid-max-width) - var(--fluid-min-width))
   );
   --fs-800-min: 36;
   --fs-800-max: 50;
   --fs-800: calc(
-    /* stylelint-disable-next-line scss/operator-no-newline-after */
-      ((var(--f-1-min) / 16) * 1rem) + (var(--fs-800-max) - var(--fs-800-min)) *
-      var(--fluid-bp)
+    ((var(--fs-800-min) / 16) * 1rem) +
+      (var(--fs-800-max) - var(--fs-800-min)) * var(--fluid-bp)
   );
   --fs-900-min: 50;
   --fs-900-max: 75;
   --fs-900: calc(
-    /* stylelint-disable-next-line scss/operator-no-newline-after */
-      ((var(--f-2-min) / 16) * 1rem) + (var(--fs-900-max) - var(--fs-900-min)) *
-      var(--fluid-bp)
+    ((var(--fs-900-min) / 16) * 1rem) +
+      (var(--fs-900-max) - var(--fs-900-min)) * var(--fluid-bp)
   );
 
+  /* line heights */
+  --lh-100: 10px;
+  --lh-200: 20px;
+  --lh-300: 23px;
+  --lh-400: 24px;
+  --lh-500: 24px;
+  --lh-600: 26px;
+  --lh-700: 36px;
+  --lh-800: 43px;
+  --lh-900: px;
+
   /** font weights */
-  --font-weight-normal: 400;
+  --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 }
@@ -48,42 +56,4 @@
   :root {
     --fluid-screen: calc(var(--fluid-max-width) * 1px);
   }
-}
-
-.text-4xl {
-  font-size: var(--fs-900);
-}
-
-.text-3xl {
-  font-size: var(--fs-800);
-}
-
-h1,
-.text-xxl {
-  font-size: var(--fs-700);
-}
-
-h2,
-.text-xl {
-  font-size: var(--fs-600);
-}
-
-h3,
-.text-lg {
-  font-size: var(--fs-500);
-}
-
-h4,
-.text-md {
-  font-size: var(--fs-400);
-}
-
-.text-sm,
-small {
-  font-size: var(--fs-200);
-}
-
-.text-xs,
-small {
-  font-size: var(--fs-100);
 }
