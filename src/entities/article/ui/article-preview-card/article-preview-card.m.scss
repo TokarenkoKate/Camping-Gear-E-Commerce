@@ -1,0 +1,39 @@
+@import "/src/app/styles/mixins/responsive";
+
+$content-max-w: 350px;
+$image-min-h: 280px;
+
+.article-preview {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--space-5);
+  padding: var(--space-5);
+
+  @include responsive("medium") {
+    flex-direction: row;
+  }
+
+  &-content {
+    max-width: 100%;
+    gap: var(--space-6);
+    flex-shrink: 0;
+
+    @include responsive("medium") {
+      max-width: $content-max-w;
+    }
+  }
+
+  &-title {
+    flex: 1;
+  }
+
+  &-link {
+    align-self: flex-end;
+  }
+
+  &-image {
+    min-width: 0;
+    min-height: $image-min-h;
+    object-fit: cover;
+  }
+}
