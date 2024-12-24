@@ -2,18 +2,8 @@ import classNames from "classnames";
 import { ButtonHTMLAttributes, memo, ReactNode } from "react";
 import { ClassnamesMods } from "@/shared/types/classnames";
 import { UiIcon } from "../ui-icon/ui-icon";
+import { UiButtonVariant, UiButtonSize } from "@/shared/types/ui/ui-button";
 import cls from "./ui-button.m.scss";
-
-export enum UiButtonVariant {
-  BACKGROUND = "background",
-  CLEAR = "clear",
-  OUTLINED = "outlined",
-}
-
-export enum UiButtonSize {
-  S = "size-s",
-  M = "size-m",
-}
 
 interface UiButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode | string;
@@ -28,9 +18,9 @@ interface UiButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const UiButton = memo(function UiButton(props: UiButtonProps) {
   const {
     children,
-    variant = UiButtonVariant.CLEAR,
+    variant = "clear",
     round,
-    size = UiButtonSize.M,
+    size = "medium",
     IconSvg,
     disabled,
     className,

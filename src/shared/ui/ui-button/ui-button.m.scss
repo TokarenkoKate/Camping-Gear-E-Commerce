@@ -65,7 +65,7 @@ $button-size-m: 56px;
   }
 
   /** sizes */
-  &.size-s {
+  &.small {
     height: $button-size-s-mobile;
     border-radius: $button-size-s-mobile;
 
@@ -75,7 +75,7 @@ $button-size-m: 56px;
     }
   }
 
-  &.size-m {
+  &.medium {
     height: $button-size-m;
     border-radius: $button-size-m;
   }
@@ -118,7 +118,7 @@ $button-size-m: 56px;
   &.round {
     padding: 0;
 
-    &.size-s {
+    &.small {
       width: $button-size-s-mobile;
 
       @include responsive("medium") {
@@ -126,7 +126,7 @@ $button-size-m: 56px;
       }
     }
 
-    &.size-m {
+    &.medium {
       width: $button-size-m;
     }
   }

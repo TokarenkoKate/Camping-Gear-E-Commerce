@@ -1,9 +1,5 @@
 import classNames from "classnames";
-import {
-  UiButton,
-  UiButtonSize,
-  UiButtonVariant,
-} from "@/shared/ui/ui-button/ui-button";
+import { UiButton } from "@/shared/ui/ui-button/ui-button";
 import cls from "./login.m.scss";
 
 interface LoginProps {
@@ -14,8 +10,8 @@ export const Login = ({ className }: LoginProps) => {
   return (
     <UiButton
       className={classNames(cls.login, className)}
-      variant={UiButtonVariant.CLEAR}
-      size={UiButtonSize.S}
+      variant="clear"
+      size="small"
     >
       Login
     </UiButton>

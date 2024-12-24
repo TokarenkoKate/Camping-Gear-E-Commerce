@@ -1,5 +1,5 @@
 import type { Meta } from "@storybook/react";
-import { UiButton, UiButtonSize, UiButtonVariant } from "./ui-button";
+import { UiButton } from "./ui-button";
 import ArrowExternalRight from "@/shared/assets/icons/arrow-external-right-20-20.svg";
 
 export default {
@@ -24,41 +24,28 @@ export const Background = {
       <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
         <p>Background</p>
         <div style={{ display: "flex", flexDirection: "row", gap: "12px" }}>
-          <UiButton variant={UiButtonVariant.BACKGROUND} size={UiButtonSize.S}>
+          <UiButton variant="background" size="small">
             Label
           </UiButton>
-          <UiButton
-            variant={UiButtonVariant.BACKGROUND}
-            size={UiButtonSize.S}
-            disabled
-          >
+          <UiButton variant="background" size="small" disabled>
             Label
           </UiButton>
-          <UiButton
-            variant={UiButtonVariant.BACKGROUND}
-            round
-            size={UiButtonSize.S}
-          >
+          <UiButton variant="background" round size="small">
+            10
+          </UiButton>
+          <UiButton variant="background" round size="small" disabled>
             10
           </UiButton>
           <UiButton
-            variant={UiButtonVariant.BACKGROUND}
+            variant="background"
             round
-            size={UiButtonSize.S}
-            disabled
-          >
-            10
-          </UiButton>
-          <UiButton
-            variant={UiButtonVariant.BACKGROUND}
-            round
-            size={UiButtonSize.S}
+            size="small"
             IconSvg={ArrowExternalRight}
           />
           <UiButton
-            variant={UiButtonVariant.BACKGROUND}
+            variant="background"
             round
-            size={UiButtonSize.S}
+            size="small"
             IconSvg={ArrowExternalRight}
             disabled
           />
@@ -74,41 +61,28 @@ export const Outlined = {
       <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
         <p>Outlined</p>
         <div style={{ display: "flex", flexDirection: "row", gap: "12px" }}>
-          <UiButton variant={UiButtonVariant.OUTLINED} size={UiButtonSize.S}>
+          <UiButton variant="outlined" size="small">
             Label
           </UiButton>
-          <UiButton
-            variant={UiButtonVariant.OUTLINED}
-            size={UiButtonSize.S}
-            disabled
-          >
+          <UiButton variant="outlined" size="small" disabled>
             Label
           </UiButton>
-          <UiButton
-            variant={UiButtonVariant.OUTLINED}
-            round
-            size={UiButtonSize.S}
-          >
+          <UiButton variant="outlined" round size="small">
+            10
+          </UiButton>
+          <UiButton variant="outlined" round size="small" disabled>
             10
           </UiButton>
           <UiButton
-            variant={UiButtonVariant.OUTLINED}
+            variant="outlined"
             round
-            size={UiButtonSize.S}
-            disabled
-          >
-            10
-          </UiButton>
-          <UiButton
-            variant={UiButtonVariant.OUTLINED}
-            round
-            size={UiButtonSize.S}
+            size="small"
             IconSvg={ArrowExternalRight}
           />
           <UiButton
-            variant={UiButtonVariant.OUTLINED}
+            variant="outlined"
             round
-            size={UiButtonSize.S}
+            size="small"
             IconSvg={ArrowExternalRight}
             disabled
           />
@@ -125,41 +99,28 @@ export const Clear = {
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           <p>Clear</p>
           <div style={{ display: "flex", flexDirection: "row", gap: "12px" }}>
-            <UiButton variant={UiButtonVariant.CLEAR} size={UiButtonSize.S}>
+            <UiButton variant="clear" size="small">
               Label
             </UiButton>
-            <UiButton
-              variant={UiButtonVariant.CLEAR}
-              size={UiButtonSize.S}
-              disabled
-            >
+            <UiButton variant="clear" size="small" disabled>
               Label
             </UiButton>
-            <UiButton
-              variant={UiButtonVariant.CLEAR}
-              round
-              size={UiButtonSize.S}
-            >
+            <UiButton variant="clear" round size="small">
+              10
+            </UiButton>
+            <UiButton variant="clear" round size="small" disabled>
               10
             </UiButton>
             <UiButton
-              variant={UiButtonVariant.CLEAR}
+              variant="clear"
               round
-              size={UiButtonSize.S}
-              disabled
-            >
-              10
-            </UiButton>
-            <UiButton
-              variant={UiButtonVariant.CLEAR}
-              round
-              size={UiButtonSize.S}
+              size="small"
               IconSvg={ArrowExternalRight}
             />
             <UiButton
-              variant={UiButtonVariant.CLEAR}
+              variant="clear"
               round
-              size={UiButtonSize.S}
+              size="small"
               IconSvg={ArrowExternalRight}
               disabled
             />

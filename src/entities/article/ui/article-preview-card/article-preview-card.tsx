@@ -25,7 +25,7 @@ export const ArticlePreviewCard = ({ article }: ArticlePreviewProps) => {
           {article.title}
         </UiText>
         <UiText>{article.description}</UiText>
-        <UiButton className={cls.articlePreviewLink}>
+        <UiButton variant="outlined" round className={cls.articlePreviewLink}>
           <UiIcon Svg={ArrowExternalRight} />
         </UiButton>
       </UiVStack>
