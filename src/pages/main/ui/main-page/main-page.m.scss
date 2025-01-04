@@ -58,4 +58,25 @@
       line-height: var(--lh-600);
     }
   }
+
+  &-articles {
+    &-grid {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: repeat(4, min-content);
+
+      &-item-long {
+        grid-row: auto;
+      }
+
+      @include responsive("large") {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        &-item-long {
+          grid-row: 1 / 4;
+        }
+      }
+    }
+  }
 }

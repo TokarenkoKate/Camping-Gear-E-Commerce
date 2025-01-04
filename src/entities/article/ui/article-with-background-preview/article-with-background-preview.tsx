@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import { ArticlePreview } from "../../model/types/article";
 import { UiImage } from "@/shared/ui/ui-image/ui-image";
@@ -8,13 +9,15 @@ import cls from "./article-with-background-preview.m.scss";
 
 interface ArticleWithBackgroundPreviewProps {
   article: ArticlePreview;
+  className?: string;
 }
 
 export const ArticleWithBackgroundPreview = ({
   article,
+  className,
 }: ArticleWithBackgroundPreviewProps) => {
   return (
-    <UiBox className={cls.articleWithBackgroundPreview}>
+    <UiBox className={classNames(cls.articleWithBackgroundPreview, className)}>
       <UiImage
         src={article.img}
         alt={article.title}

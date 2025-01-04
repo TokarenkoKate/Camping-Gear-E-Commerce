@@ -11,3 +11,5 @@ export interface ArticlePreview
     Partial<Pick<Article, "type">> {
   description: string;
 }
+
+export type ArticlePreviewCardType = "fullPage" | "halfPage";

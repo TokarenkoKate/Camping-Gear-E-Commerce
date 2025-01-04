@@ -4,9 +4,11 @@ $content-max-w: 420px;
 
 .article-with-background-preview {
   position: relative;
-  width: max-content;
 
   &-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   &-content {
