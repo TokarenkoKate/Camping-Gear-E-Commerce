@@ -1,6 +1,10 @@
 import type { Meta } from "@storybook/react";
 import { UiButton } from "./ui-button";
 import ArrowExternalRight from "@/shared/assets/icons/arrow-external-right-20-20.svg";
+import { StorybookExample } from "../storybook-example/storybook-example";
+import { UiHStack } from "../ui-stack/ui-hstack/ui-hstack";
+import { UiVStack } from "../ui-stack/ui-vstack/ui-vstack";
+import { UiButtonSize, UiButtonVariant } from "@/shared/types/ui/ui-button";
 
 export default {
   component: UiButton,
@@ -9,124 +13,129 @@ export default {
 export const All = {
   render() {
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-        <Background.render />
-        <Outlined.render />
-        <Clear.render />
-      </div>
+      <UiVStack style={{ gap: "16px" }}>
+        <BackgroundSmall.render />
+        <OutlinedSmall.render />
+        <OutlinedInvertedSmall.render />
+        <ClearSmall.render />
+        <BackgroundMedium.render />
+        <OutlinedMedium.render />
+        <OutlinedInvertedMedium.render />
+        <ClearMedium.render />
+      </UiVStack>
     );
   },
 };
 
-export const Background = {
+const renderButtonExamples = (variant: UiButtonVariant, size: UiButtonSize) => {
+  return (
+    <UiHStack style={{ gap: "14px" }}>
+      <UiButton variant={variant} size={size}>
+        Label
+      </UiButton>
+      <UiButton variant={variant} size={size} disabled>
+        Label
+      </UiButton>
+      <UiButton variant={variant} round size={size}>
+        10
+      </UiButton>
+      <UiButton variant={variant} round size={size} disabled>
+        10
+      </UiButton>
+      <UiButton
+        variant={variant}
+        round
+        size={size}
+        IconSvg={ArrowExternalRight}
+      />
+      <UiButton
+        variant={variant}
+        round
+        size={size}
+        IconSvg={ArrowExternalRight}
+        disabled
+      />
+    </UiHStack>
+  );
+};
+
+export const BackgroundSmall = {
   render() {
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-        <p>Background</p>
-        <div style={{ display: "flex", flexDirection: "row", gap: "12px" }}>
-          <UiButton variant="background" size="small">
-            Label
-          </UiButton>
-          <UiButton variant="background" size="small" disabled>
-            Label
-          </UiButton>
-          <UiButton variant="background" round size="small">
-            10
-          </UiButton>
-          <UiButton variant="background" round size="small" disabled>
-            10
-          </UiButton>
-          <UiButton
-            variant="background"
-            round
-            size="small"
-            IconSvg={ArrowExternalRight}
-          />
-          <UiButton
-            variant="background"
-            round
-            size="small"
-            IconSvg={ArrowExternalRight}
-            disabled
-          />
-        </div>
-      </div>
+      <StorybookExample title="variant: background, size: small">
+        {renderButtonExamples("background", "small")}
+      </StorybookExample>
+    );
+  },
+};
+export const BackgroundMedium = {
+  render() {
+    return (
+      <StorybookExample title="variant: background, size: medium">
+        {renderButtonExamples("background", "medium")}
+      </StorybookExample>
     );
   },
 };
 
-export const Outlined = {
+export const OutlinedSmall = {
   render() {
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-        <p>Outlined</p>
-        <div style={{ display: "flex", flexDirection: "row", gap: "12px" }}>
-          <UiButton variant="outlined" size="small">
-            Label
-          </UiButton>
-          <UiButton variant="outlined" size="small" disabled>
-            Label
-          </UiButton>
-          <UiButton variant="outlined" round size="small">
-            10
-          </UiButton>
-          <UiButton variant="outlined" round size="small" disabled>
-            10
-          </UiButton>
-          <UiButton
-            variant="outlined"
-            round
-            size="small"
-            IconSvg={ArrowExternalRight}
-          />
-          <UiButton
-            variant="outlined"
-            round
-            size="small"
-            IconSvg={ArrowExternalRight}
-            disabled
-          />
-        </div>
-      </div>
+      <StorybookExample title="variant: outlined; size: small">
+        {renderButtonExamples("outlined", "small")}
+      </StorybookExample>
+    );
+  },
+};
+export const OutlinedMedium = {
+  render() {
+    return (
+      <StorybookExample title="variant: outlined, size: medium">
+        {renderButtonExamples("outlined", "medium")}
+      </StorybookExample>
     );
   },
 };
 
-export const Clear = {
+export const OutlinedInvertedSmall = {
   render() {
     return (
-      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          <p>Clear</p>
-          <div style={{ display: "flex", flexDirection: "row", gap: "12px" }}>
-            <UiButton variant="clear" size="small">
-              Label
-            </UiButton>
-            <UiButton variant="clear" size="small" disabled>
-              Label
-            </UiButton>
-            <UiButton variant="clear" round size="small">
-              10
-            </UiButton>
-            <UiButton variant="clear" round size="small" disabled>
-              10
-            </UiButton>
-            <UiButton
-              variant="clear"
-              round
-              size="small"
-              IconSvg={ArrowExternalRight}
-            />
-            <UiButton
-              variant="clear"
-              round
-              size="small"
-              IconSvg={ArrowExternalRight}
-              disabled
-            />
-          </div>
-        </div>
-      </div>
+      <StorybookExample title="variant: outlinedInverted, size: small" inverted>
+        {renderButtonExamples("outlinedInverted", "small")}
+      </StorybookExample>
+    );
+  },
+};
+
+export const OutlinedInvertedMedium = {
+  render() {
+    return (
+      <StorybookExample
+        title="variant: outlinedInverted, size: medium"
+        inverted
+      >
+        {renderButtonExamples("outlinedInverted", "medium")}
+      </StorybookExample>
+    );
+  },
+};
+
+export const ClearSmall = {
+  render() {
+    return (
+      <StorybookExample title="variant: clear, size: small">
+        {renderButtonExamples("clear", "small")}
+      </StorybookExample>
+    );
+  },
+};
+
+export const ClearMedium = {
+  render() {
+    return (
+      <StorybookExample title="variant: clear, size: medium">
+        {renderButtonExamples("clear", "medium")}
+      </StorybookExample>
     );
   },
 };

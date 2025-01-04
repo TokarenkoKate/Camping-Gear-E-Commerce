@@ -5,6 +5,7 @@
 $button-size-s: 32px;
 $button-size-s-mobile: 20px;
 $button-size-m: 56px;
+$button-size-m-width: 175px;
 
 .ui-button {
   --ui-button-bg: transparent;
@@ -77,6 +78,7 @@ $button-size-m: 56px;
 
   &.medium {
     height: $button-size-m;
+    width: $button-size-m-width;
     border-radius: $button-size-m;
   }
 
@@ -100,6 +102,20 @@ $button-size-m: 56px;
     --ui-button-border-color: var(--color-accent);
     --ui-button-border-color_hover: var(--color-accent-light);
     --ui-button-border-color_active: var(--color-accent-dark);
+    --ui-button-border-color_disabled: var(--color-disabled);
+
+    border: 1px solid;
+    background: none;
+  }
+
+  &.outlined-inverted {
+    --ui-button-color: var(--color-text-primary-inverted);
+    --ui-button-color_hover: var(--color-accent-light);
+    --ui-button-color_active: var(--color-secondary-dark);
+    --ui-button-color_disabled: var(--color-disabled);
+    --ui-button-border-color: var(--color-primary);
+    --ui-button-border-color_hover: var(--color-accent-light);
+    --ui-button-border-color_active: var(--color-secondary-dark);
     --ui-button-border-color_disabled: var(--color-disabled);
 
     border: 1px solid;
