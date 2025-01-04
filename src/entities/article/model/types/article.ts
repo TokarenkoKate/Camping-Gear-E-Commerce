@@ -6,10 +6,15 @@ export interface Article {
   img: string;
 }
 
-export interface ArticlePreview
-  extends Pick<Article, "id" | "date" | "title" | "img">,
-    Partial<Pick<Article, "type">> {
+type ArticlePreviewRequired = Pick<Article, "id" | "title" | "img"> & {
   description: string;
-}
+};
+type ArticlePreviewOptional = Partial<Pick<Article, "type" | "date">>;
+
+export interface ArticlePreview
+  extends ArticlePreviewRequired,
+    ArticlePreviewOptional {}
 
 export type ArticlePreviewCardType = "fullPage" | "halfPage";
+
+export type ArticlePreviewWithBackgroundCardType = "vertical" | "horizontal";

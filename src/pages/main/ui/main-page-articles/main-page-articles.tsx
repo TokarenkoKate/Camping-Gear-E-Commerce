@@ -8,6 +8,7 @@ import {
   mockArticleHalfPage2,
   mockArticleHalfPage3,
   mockArticlePreviewWithBackground,
+  mockArticlePreviewWithBackgroundHorizontal,
 } from "@/mocks/articles/article";
 import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import cls from "../main-page/main-page.m.scss";
@@ -20,6 +21,7 @@ export const MainPageArticles = () => {
         <ArticleWithBackgroundPreview
           article={mockArticlePreviewWithBackground}
           className={cls.mainPageArticlesGridItemLong}
+          type="vertical"
         />
         <ArticlePreviewCard
           article={mockArticleHalfPage1}
@@ -34,6 +36,11 @@ export const MainPageArticles = () => {
           cardType="halfPage"
         />
       </UiBox>
+      <ArticleWithBackgroundPreview
+        article={mockArticlePreviewWithBackgroundHorizontal}
+        className={cls.mainPageArticlesGridItemLong}
+        type="horizontal"
+      />
     </UiBox>
   );
 };

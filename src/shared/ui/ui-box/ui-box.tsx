@@ -6,6 +6,7 @@ export interface UiBoxProps extends PropsWithChildren {
   as?: keyof JSX.IntrinsicElements;
   className?: string;
   max?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const UiBox = (props: UiBoxProps) => {

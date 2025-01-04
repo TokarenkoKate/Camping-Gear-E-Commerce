@@ -4,6 +4,7 @@ import articleId2 from "./article_id_2.png";
 import articleId3 from "./article_id_3.png";
 import articleId4 from "./article_id_4.png";
 import articleId5 from "./article_id_5.png";
+import articleId6 from "./article_id_6.png";
 
 export const mockArticle: ArticlePreview = {
   id: 1,
@@ -52,4 +53,12 @@ export const mockArticleHalfPage3: ArticlePreview = {
   img: articleId5,
   description:
     "Experience the splendor of autumn. As the leaves transform into a kaleidoscope of colors, a journey through nature's picturesque canvas. Discover the best seasonal tips, and the unparalleled beauty that awaits as we delve into the magic of hiking during this enchanting time of year.",
+};
+
+export const mockArticlePreviewWithBackgroundHorizontal: ArticlePreview = {
+  id: 2,
+  title: "food collaboration →this fall",
+  img: articleId6,
+  description:
+    "CEIN first food collaboration product will be released this fall. By collaborating with K&K, a canned food brand known for its canned goods and canned beef, CEIN collaboration products have been added to K&K's series, a lineup specializing in outdoor activities.",
 };
