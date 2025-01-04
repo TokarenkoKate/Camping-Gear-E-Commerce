@@ -1,0 +1,25 @@
+@import "/src/app/styles/colors";
+
+$content-max-w: 420px;
+
+.article-with-background-preview {
+  position: relative;
+  width: max-content;
+
+  &-image {
+  }
+
+  &-content {
+    position: absolute;
+    inset: 0;
+    max-width: $content-max-w;
+    margin: 0 auto;
+    gap: var(--space-5);
+  }
+
+  &-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-overlay);
+  }
+}

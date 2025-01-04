@@ -1,5 +1,5 @@
 export interface Article {
-  id: string;
+  id: number;
   title: string;
   date: string;
   type: string;
@@ -7,6 +7,7 @@ export interface Article {
 }
 
 export interface ArticlePreview
-  extends Pick<Article, "id" | "date" | "title" | "type" | "img"> {
+  extends Pick<Article, "id" | "date" | "title" | "img">,
+    Partial<Pick<Article, "type">> {
   description: string;
 }
