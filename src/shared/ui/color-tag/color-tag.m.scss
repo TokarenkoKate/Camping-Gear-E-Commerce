@@ -1,0 +1,39 @@
+@import "/src/app/styles/colors";
+
+$tag-size: 22px;
+
+.color-tag {
+  width: $tag-size;
+  height: $tag-size;
+  padding: 2px;
+  border-radius: 50%;
+  border: none;
+
+  &.selected {
+    border: 1px solid var(--color-accent-dark);
+  }
+
+  &-button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+    transition: 0.2s;
+    outline-color: transparent;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+
+    &:focus-visible {
+      box-shadow:
+        0 0 0 2px white,
+        0 0 0 4px var(--color-link);
+    }
+  }
+}
