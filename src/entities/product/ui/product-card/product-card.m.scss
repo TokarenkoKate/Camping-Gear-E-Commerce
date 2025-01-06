@@ -1,0 +1,30 @@
+$card-max-h: 507px;
+$img-max-h: 291px;
+
+.product-card {
+  width: fit-content;
+  height: 100%;
+  max-height: $card-max-h;
+  padding: var(--space-5);
+
+  .img {
+    width: 100%;
+    height: 100%;
+    max-height: $img-max-h;
+    margin-bottom: var(--space-2-5);
+    object-fit: contain;
+  }
+
+  .header {
+    margin-bottom: var(--space-2);
+  }
+
+  .category {
+    text-transform: uppercase;
+  }
+
+  .colors-list {
+    margin-top: auto;
+    gap: var(--space-5);
+  }
+}

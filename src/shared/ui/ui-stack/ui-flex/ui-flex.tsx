@@ -38,6 +38,7 @@ export interface UiFlexProps extends DivProps, PropsWithChildren {
   align?: UiFlexAlign;
   direction: UiFlexDirection;
   max?: boolean;
+  as?: keyof JSX.IntrinsicElements;
 }
 
 export const UiFlex = (props: UiFlexProps) => {
