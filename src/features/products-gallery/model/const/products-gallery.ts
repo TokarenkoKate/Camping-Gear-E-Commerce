@@ -1,0 +1,1 @@
+export const PRODUCTS_GALLERY_MIN_COLUMN_WIDTH = "350px";
