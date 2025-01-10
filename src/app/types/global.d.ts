@@ -1,3 +1,4 @@
+/** Allow CSS modules */
 declare module "*.scss" {
   interface IClassNames {
     [className: string]: string;
@@ -9,9 +10,17 @@ declare module "*.scss" {
 declare module "*.png";
 declare module "*.jpg";
 declare module "*.jpeg";
-declare module "*.svg" {
-  import React from "react";
 
-  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
+declare module "*.svg" {
+  import { VFC } from "react";
+
+  const SVG: VFC<React.SVGProps<SVGSVGElement>>;
   export default SVG;
+}
+
+/** Allow CSS variables as CSS Properties */
+declare module "csstype" {
+  interface Properties {
+    [index: `--${string}`]: string;
+  }
 }

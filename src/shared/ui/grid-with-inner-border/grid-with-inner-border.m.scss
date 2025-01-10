@@ -1,0 +1,48 @@
+.grid-with-inner-border {
+  --column-min-width: 350px;
+  --line-thickness: 1px;
+  --border-color: transparent;
+  --column-line-background: transparent;
+  --row-line-background: transparent;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--column-min-width), 1fr)
+  );
+
+  &.with-outer-border {
+    border: var(--line-thickness) solid var(--border-color);
+  }
+
+  & > div {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: 1;
+    }
+
+    /** row line at the bottom of each row */
+    &::after {
+      inline-size: 100%;
+      block-size: var(--line-thickness);
+      inset-inline-start: 0;
+      inset-block-start: 100%;
+      inset-block-start: calc(100% - var(--line-thickness));
+      background-color: var(--column-line-background);
+    }
+
+    /** column line at the left side of each item */
+    &::before {
+      inline-size: var(--line-thickness);
+      block-size: 100%;
+      inset-block-start: 0;
+      inset-inline-start: calc(100% - var(--line-thickness));
+      background-color: var(--row-line-background);
+    }
+  }
+}
