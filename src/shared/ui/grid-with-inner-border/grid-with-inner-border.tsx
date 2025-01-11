@@ -52,7 +52,7 @@ export const GridWithInnerBorder = (props: GridWithInnerBorderProps) => {
     <UiBox
       className={classNames(
         cls.gridWithInnerBorder,
-        withOuterBorder,
+        { [cls.withOuterBorder]: withOuterBorder },
         className
       )}
       style={baseStyleVariables}

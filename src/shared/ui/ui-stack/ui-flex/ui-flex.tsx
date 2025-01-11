@@ -6,7 +6,7 @@ import classNames from "classnames";
 // TODO: add gap variants
 
 export type UiFlexJustify = "start" | "end" | "center" | "between";
-export type UiFlexAlign = "start" | "end" | "center";
+export type UiFlexAlign = "start" | "end" | "center" | "normal";
 export type UiFlexDirection = "row" | "column";
 
 const justifyClasses: Record<UiFlexJustify, string> = {
@@ -20,6 +20,7 @@ const alignClasses: Record<UiFlexAlign, string> = {
   start: cls.alignStart,
   end: cls.alignEnd,
   center: cls.alignCenter,
+  normal: cls.alignNormal,
 };
 
 const directionClasses: Record<UiFlexDirection, string> = {

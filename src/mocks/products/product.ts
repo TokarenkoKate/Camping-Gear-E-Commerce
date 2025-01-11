@@ -135,3 +135,14 @@ export const mockProductId15: Product = {
   colors: ["#9F8776", "#E6C06E", "#3C5D48", "#69675A"],
   img: productImg1,
 };
+
+export const mockProductsGallery = [
+  mockProductId1,
+  mockProductId2,
+  mockProductId3,
+  mockProductId4,
+  mockProductId5,
+  mockProductId6,
+  mockProductId7,
+  mockProductId8,
+];

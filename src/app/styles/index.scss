@@ -31,9 +31,13 @@ html {
   flex-direction: column;
 
   &-content {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &-main {
     width: 100%;
     max-width: $app-content-width;
-    height: 100%;
     margin: 0 auto;
   }
 }

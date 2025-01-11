@@ -1,9 +1,9 @@
 import { memo, ReactNode } from "react";
 import { Link, LinkProps } from "react-router-dom";
 import classNames from "classnames";
-import cls from "./ui-link.m.scss";
 import { UiIcon } from "../ui-icon/ui-icon";
 import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
+import cls from "./ui-link.m.scss";
 
 interface UiLinkProps extends LinkProps {
   className?: string;

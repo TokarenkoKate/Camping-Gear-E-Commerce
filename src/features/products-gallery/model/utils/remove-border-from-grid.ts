@@ -29,7 +29,6 @@ export const removeBorderFromGrid = ({
 
   for (let i = 0; i < itemsLength; i++) {
     if (i >= lastRowStartIndex && i <= itemsLength) {
-      console.log(i);
       /**
        * Set last column's border color to transparent;
        */
