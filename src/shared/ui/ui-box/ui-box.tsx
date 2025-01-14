@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { forwardRef, PropsWithChildren } from "react";
 import cls from "./ui-box.m.scss";
 
-export type Element = "div" | "section" | "ul" | "li" | "footer";
+export type Element = "div" | "section" | "ul" | "li" | "footer" | "main";
 
 export interface UiBoxProps extends PropsWithChildren {
   as?: Element;

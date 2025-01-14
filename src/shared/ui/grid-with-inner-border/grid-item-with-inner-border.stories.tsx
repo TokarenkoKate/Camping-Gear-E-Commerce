@@ -30,7 +30,6 @@ const GridWithInnerBorder = {
             columnMinWidth="100px"
             borderColor="#337ab7"
             itemsLength={mockItems.length}
-            withOuterBorder
           >
             {mockItems.map((item) => (
               <UiHStack

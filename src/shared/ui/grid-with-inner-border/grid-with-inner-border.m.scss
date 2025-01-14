@@ -12,10 +12,6 @@
     minmax(var(--column-min-width), 1fr)
   );
 
-  &.with-outer-border {
-    border: var(--line-thickness) solid var(--border-color);
-  }
-
   & > div {
     position: relative;
 

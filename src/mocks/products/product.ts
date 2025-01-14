@@ -144,5 +144,4 @@ export const mockProductsGallery = [
   mockProductId5,
   mockProductId6,
   mockProductId7,
-  mockProductId8,
 ];

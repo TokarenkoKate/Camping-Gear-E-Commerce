@@ -14,7 +14,6 @@ interface GridWithInnerBorderProps extends PropsWithChildren {
   itemsLength: number;
   borderColor?: string;
   lineThickness?: string;
-  withOuterBorder?: boolean;
   className?: string;
 }
 
@@ -24,7 +23,6 @@ export const GridWithInnerBorder = (props: GridWithInnerBorderProps) => {
     borderColor = "#90908e",
     lineThickness = "1px",
     children,
-    withOuterBorder,
     itemsLength,
     className,
     ...restProps
@@ -50,11 +48,7 @@ export const GridWithInnerBorder = (props: GridWithInnerBorderProps) => {
 
   return (
     <UiBox
-      className={classNames(
-        cls.gridWithInnerBorder,
-        { [cls.withOuterBorder]: withOuterBorder },
-        className
-      )}
+      className={classNames(cls.gridWithInnerBorder, className)}
       style={baseStyleVariables}
       ref={ref}
       {...restProps}
