@@ -1,19 +1,10 @@
-import classNames from "classnames";
-import { ButtonHTMLAttributes, memo, ReactNode } from "react";
 import { ClassnamesMods } from "@/shared/types/classnames";
+import { UiButtonProps } from "@/shared/types/ui/ui-button";
+import classNames from "classnames";
+import { memo } from "react";
+import { Link } from "react-router-dom";
 import { UiIcon } from "../ui-icon/ui-icon";
-import { UiButtonVariant, UiButtonSize } from "@/shared/types/ui/ui-button";
 import cls from "./ui-button.m.scss";
-
-interface UiButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children?: ReactNode | string;
-  variant?: UiButtonVariant;
-  round?: boolean;
-  size?: UiButtonSize;
-  IconSvg?: React.VFC<React.SVGProps<SVGSVGElement>>;
-  disabled?: boolean;
-  className?: string;
-}
 
 export const UiButton = memo(function UiButton(props: UiButtonProps) {
   const {
@@ -24,6 +15,11 @@ export const UiButton = memo(function UiButton(props: UiButtonProps) {
     IconSvg,
     disabled,
     className,
+    asLink,
+    to,
+    href,
+    target = "_blank",
+    rel = "noopener noreferrer",
     ...restProps
   } = props;
 
@@ -34,6 +30,36 @@ export const UiButton = memo(function UiButton(props: UiButtonProps) {
     [cls.round]: round,
   };
 
+  const content = (
+    <>
+      {IconSvg && <UiIcon Svg={IconSvg} className={cls.icon} />}
+      {children}
+    </>
+  );
+
+  if (asLink) {
+    if (href) {
+      return (
+        <a
+          href={href}
+          target={target}
+          rel={rel}
+          className={classNames(cls.uiButton, mods, className)}
+        >
+          {content}
+        </a>
+      );
+    }
+
+    if (to) {
+      return (
+        <Link to={to} className={classNames(cls.uiButton, mods, className)}>
+          {content}
+        </Link>
+      );
+    }
+  }
+
   return (
     <button
       type="button"
@@ -41,8 +67,7 @@ export const UiButton = memo(function UiButton(props: UiButtonProps) {
       className={classNames(cls.uiButton, mods, className)}
       {...restProps}
     >
-      {IconSvg && <UiIcon Svg={IconSvg} className={cls.icon} />}
-      {children}
+      {content}
     </button>
   );
 });
