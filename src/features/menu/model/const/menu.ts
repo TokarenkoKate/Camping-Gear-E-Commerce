@@ -1,21 +1,27 @@
 import { AppRoutes, appRoutesPaths } from "@/shared/const/router";
-import { MenuItem } from "../types/menu";
+import { MenuItemType } from "../types/menu";
 
-export const menuItems: Array<MenuItem> = [
-  {
+export enum MenuItem {
+  shop = "shop",
+  events = "events",
+  collections = "collections",
+  journal = "journal",
+}
+
+export const menuItems: MenuItemType = {
+  [MenuItem.shop]: {
     text: "shop",
-    path: appRoutesPaths[AppRoutes.SHOP],
   },
-  {
+  [MenuItem.events]: {
     text: "events",
     path: appRoutesPaths[AppRoutes.EVENTS],
   },
-  {
+  [MenuItem.collections]: {
     text: "collections",
     path: appRoutesPaths[AppRoutes.COLLECTIONS],
   },
-  {
+  [MenuItem.journal]: {
     text: "journal",
     path: appRoutesPaths[AppRoutes.JOURNAL],
   },
-];
+};
