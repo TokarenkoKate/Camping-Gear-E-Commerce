@@ -16,7 +16,11 @@ export const Menu = ({ className }: MenuProps) => {
       <ul className={cls.menuList} role="list">
         {menuItems.map((menuItem) => (
           <li className={cls.menuListItem} key={menuItem.path}>
-            <UiLink to={menuItem.path} className={cls.menuLink} withArrow>
+            <UiLink
+              to={menuItem.path}
+              className={cls.menuLink}
+              variant="withArrow"
+            >
               {menuItem.text}
             </UiLink>
           </li>

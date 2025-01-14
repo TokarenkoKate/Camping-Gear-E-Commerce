@@ -28,7 +28,7 @@ export const Default: Story = {
 export const WithArrow: Story = {
   args: {
     to: "#",
-    withArrow: true,
+    variant: "withArrow",
     children: "with-arrow-link",
   },
 };

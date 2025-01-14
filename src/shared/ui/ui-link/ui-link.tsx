@@ -1,25 +1,61 @@
-import { memo, ReactNode } from "react";
-import { Link, LinkProps } from "react-router-dom";
+import { memo } from "react";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
-import { UiIcon } from "../ui-icon/ui-icon";
 import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
+import { ClassnamesMods } from "@/shared/types/classnames";
+import { UiLinkProps } from "@/shared/types/ui/ui-link";
+import { UiIcon } from "../ui-icon/ui-icon";
 import cls from "./ui-link.m.scss";
 
-interface UiLinkProps extends LinkProps {
-  className?: string;
-  children?: ReactNode;
-  withArrow?: boolean;
-}
-
 export const UiLink = memo(function UiLink(props: UiLinkProps) {
-  const { to, children, className, withArrow, ...otherProps } = props;
+  const {
+    to,
+    href,
+    target = "_blank",
+    rel = "noopener noreferrer",
+    children,
+    className,
+    variant = "default",
+    ...otherProps
+  } = props;
+
+  const withArrow = variant === "withArrow";
+  const mods: ClassnamesMods = {
+    [cls[variant]]: true,
+  };
+
+  const content = (
+    <>
+      {withArrow && (
+        <UiIcon
+          Svg={ArrowRight}
+          width="10px"
+          height="10px"
+          className={cls.arrow}
+        />
+      )}
+      {children}
+    </>
+  );
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className={classNames(cls.uiLink, className, mods)}
+        {...otherProps}
+      >
+        {content}
+      </a>
+    );
+  }
 
   return (
     <Link
       to={to}
-      className={classNames(cls.uiLink, className, {
-        [cls.withArrow]: withArrow,
-      })}
+      className={classNames(cls.uiLink, className, mods)}
       {...otherProps}
     >
       {withArrow && (
