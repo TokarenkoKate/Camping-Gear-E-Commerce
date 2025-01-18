@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { memo } from "react";
 import { Link } from "react-router-dom";
 import { UiIcon } from "../ui-icon/ui-icon";
+import { UiArrowIcon } from "../ui-arrow-icon/ui-arrow-icon";
 import cls from "./ui-button.m.scss";
 
 export const UiButton = memo(function UiButton(props: UiButtonProps) {
@@ -23,6 +24,8 @@ export const UiButton = memo(function UiButton(props: UiButtonProps) {
     ...restProps
   } = props;
 
+  const withArrow = variant === "plainWithArrow";
+
   const mods: ClassnamesMods = {
     [cls[variant]]: true,
     [cls[size]]: true,
@@ -32,6 +35,7 @@ export const UiButton = memo(function UiButton(props: UiButtonProps) {
 
   const content = (
     <>
+      {withArrow && <UiArrowIcon className={cls.arrow} />}
       {IconSvg && <UiIcon Svg={IconSvg} className={cls.icon} />}
       {children}
     </>

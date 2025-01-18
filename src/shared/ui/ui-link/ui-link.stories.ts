@@ -3,7 +3,7 @@ import { fn } from "@storybook/test";
 import { UiLink } from "./ui-link";
 
 const meta = {
-  title: "shared/UiLink",
+  title: "shared/ui/UiLink",
   component: UiLink,
   parameters: {
     layout: "centered",

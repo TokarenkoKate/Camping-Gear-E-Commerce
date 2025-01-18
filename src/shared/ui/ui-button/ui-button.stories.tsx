@@ -18,6 +18,8 @@ export const All = {
         <OutlinedSmall.render />
         <OutlinedInvertedSmall.render />
         <ClearSmall.render />
+        <PlainSmall.render />
+        <PlainWithArrowSmall.render />
         <BackgroundMedium.render />
         <OutlinedMedium.render />
         <OutlinedInvertedMedium.render />
@@ -135,6 +137,26 @@ export const ClearMedium = {
     return (
       <StorybookExample title="variant: clear, size: medium">
         {renderButtonExamples("clear", "medium")}
+      </StorybookExample>
+    );
+  },
+};
+
+export const PlainSmall = {
+  render() {
+    return (
+      <StorybookExample title="variant: plain, size: small">
+        {renderButtonExamples("plain", "small")}
+      </StorybookExample>
+    );
+  },
+};
+
+export const PlainWithArrowSmall = {
+  render() {
+    return (
+      <StorybookExample title="variant: plainWithArrow, size: small">
+        {renderButtonExamples("plainWithArrow", "small")}
       </StorybookExample>
     );
   },

@@ -3,6 +3,7 @@
 .menu {
   &-list {
     display: none;
+    align-items: center;
 
     @include responsive("medium") {
       display: flex;
@@ -10,6 +11,7 @@
     }
 
     @include responsive("large") {
+      display: flex;
       gap: var(--space-8);
     }
 

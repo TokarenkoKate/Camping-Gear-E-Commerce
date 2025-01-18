@@ -24,6 +24,7 @@ $button-size-m-width: 175px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   padding: var(--space-1) var(--space-3);
   color: var(--ui-button-color);
   background-color: var(--ui-button-bg);
@@ -43,6 +44,12 @@ $button-size-m-width: 175px;
     color: var(--ui-button-color_hover);
     background-color: var(--ui-button-bg_hover);
     border-color: var(--ui-button-border-color_hover);
+
+    &.plain-with-arrow {
+      .arrow {
+        opacity: 1;
+      }
+    }
   }
 
   &:active {
@@ -63,6 +70,12 @@ $button-size-m-width: 175px;
     box-shadow:
       0 0 0 4px white,
       0 0 0 8px var(--color-link);
+
+    &.plain-with-arrow {
+      .arrow {
+        opacity: 1;
+      }
+    }
   }
 
   /** sizes */
@@ -129,6 +142,19 @@ $button-size-m-width: 175px;
     --ui-button-color_hover: var(--color-accent);
     --ui-button-color_active: var(--color-accent);
     --ui-button-color_disabled: var(--color-disabled);
+  }
+
+  &.plain,
+  &.plain-with-arrow {
+    --ui-button-color: var(--color-accent);
+    --ui-button-color_hover: var(--color-accent-light);
+    --ui-button-color_active: var(--color-accent-dark);
+    --ui-button-color_disabled: var(--color-disabled);
+
+    &.small {
+      height: auto;
+      padding: 0;
+    }
   }
 
   &.round {

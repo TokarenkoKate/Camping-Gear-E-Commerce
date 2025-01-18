@@ -17,7 +17,12 @@ export const ShopNavigationButton = ({
 
   return (
     <>
-      <UiButton className={className} onClick={onOpen} size="small">
+      <UiButton
+        className={className}
+        onClick={onOpen}
+        size="small"
+        variant="plainWithArrow"
+      >
         {children}
       </UiButton>
       {isOpen && <ShopNavigation onClose={onClose} />}

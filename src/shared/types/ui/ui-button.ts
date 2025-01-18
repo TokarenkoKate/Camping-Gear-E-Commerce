@@ -5,7 +5,9 @@ export type UiButtonVariant =
   | "background"
   | "clear"
   | "outlined"
-  | "outlinedInverted";
+  | "outlinedInverted"
+  | "plain"
+  | "plainWithArrow";
 
 export type UiButtonSize = "small" | "medium";
 

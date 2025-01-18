@@ -22,9 +22,11 @@ export const MenuItemComponent = ({ menuItem, menuItemKey }: MenuItemProps) => {
 
   if (menuItemKey === MenuItem.shop) {
     return (
-      <ShopNavigationButton className={cls.menuListItem}>
-        {menuItem.text}
-      </ShopNavigationButton>
+      <li className={cls.menuListItem} key={menuItem.text}>
+        <ShopNavigationButton className={cls.menuLink}>
+          {menuItem.text}
+        </ShopNavigationButton>
+      </li>
     );
   }
 

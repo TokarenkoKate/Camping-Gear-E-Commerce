@@ -1,0 +1,12 @@
+$arrow-width: var(--space-2-5);
+$link-arrow-gap: var(--space-2-5);
+
+.ui-arrow-icon {
+  position: absolute;
+  top: 50%;
+  left: calc(($arrow-width + $link-arrow-gap) * -1);
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  color: inherit;
+}
