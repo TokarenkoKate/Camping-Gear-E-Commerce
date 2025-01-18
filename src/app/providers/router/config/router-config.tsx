@@ -1,7 +1,8 @@
-import { MainPage } from "@/pages/main";
-import { AppRoutes, appRoutesPaths } from "@/shared/const/router";
-import { NotFoundPage } from "@/pages/not-found-page";
 import { AppRouteType } from "@/shared/types/router";
+import { AppRoutes, appRoutesPaths } from "@/shared/const/router";
+import { MainPage } from "@/pages/main";
+import { ShopPage } from "@/pages/shop";
+import { NotFoundPage } from "@/pages/not-found-page";
 
 export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.HOME]: {
@@ -10,6 +11,10 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
   },
   [AppRoutes.SHOP]: {
     path: appRoutesPaths[AppRoutes.SHOP],
+    element: <ShopPage />,
+  },
+  [AppRoutes.CATEGORY]: {
+    path: appRoutesPaths[AppRoutes.CATEGORY],
     element: <div />,
   },
   [AppRoutes.EVENTS]: {

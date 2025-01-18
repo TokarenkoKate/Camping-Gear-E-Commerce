@@ -16,51 +16,63 @@ export const shopNavigationItems: Category[] = [
   {
     name: "Solo Tent",
     description: "(1~2)",
+    href: "solo-tent",
     Svg: SoloTent,
   },
   {
     name: "Group Tent",
     description: "(3~6)",
+    href: "group-tent",
     Svg: GroupTent,
   },
   {
     name: "Tarp",
+    href: "tarp",
     Svg: Tarp,
   },
   {
     name: "Accessories",
+    href: "accessories",
     Svg: Accessories,
   },
   {
     name: "Table",
+    href: "table",
     Svg: Table,
   },
   {
     name: "Chair",
+    href: "chair",
     Svg: Chair,
   },
   {
     name: "Fire",
+    href: "fire",
     Svg: Fire,
   },
   {
     name: "Sleeping",
+    href: "sleeping",
     Svg: Sleeping,
   },
   {
     name: "Cooler",
+    href: "cooler",
     Svg: Cooler,
   },
   {
     name: "Kitchen",
+    href: "kitchen",
     Svg: Kitchen,
   },
   {
     name: "Storage & Carry",
+    href: "storage",
     Svg: Carry,
   },
   {
     name: "Bag",
+    href: "bag",
     Svg: Bag,
   },
 ];

@@ -41,7 +41,13 @@ export const ShopNavigation = ({
           ref={contentRef}
         >
           {shopNavigationItems.map((category) => {
-            return <CategoryCard category={category} key={category.name} />;
+            return (
+              <CategoryCard
+                category={category}
+                key={category.name}
+                onRedirectClick={onClose}
+              />
+            );
           })}
         </GridWithInnerBorder>
       </UiBox>

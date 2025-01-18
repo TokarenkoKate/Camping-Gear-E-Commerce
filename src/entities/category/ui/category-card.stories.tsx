@@ -9,6 +9,11 @@ export default {
 
 export const CategoryCard = {
   render() {
-    return <CategoryCardComponent category={shopNavigationItems[0]} />;
+    return (
+      <CategoryCardComponent
+        category={shopNavigationItems[0]}
+        onRedirectClick={() => {}}
+      />
+    );
   },
 };

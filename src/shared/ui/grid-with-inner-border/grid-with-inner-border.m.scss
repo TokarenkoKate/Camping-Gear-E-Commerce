@@ -12,7 +12,7 @@
     minmax(var(--column-min-width), 1fr)
   );
 
-  & > div {
+  & > * {
     position: relative;
 
     &::before,
