@@ -6,7 +6,7 @@
 
   &-content {
     width: 100%;
-    max-width: $app-content-width;
+    max-width: var(--app-content-width);
     padding: var(--space-20) var(--space-5) var(--space-14);
     margin: 0 auto;
     display: grid;

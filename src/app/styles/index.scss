@@ -5,6 +5,7 @@
 @use "colors";
 @use "box-shadow";
 @use "z-indexes";
+@use "components";
 @import "./breakpoints";
 
 html,
@@ -38,7 +39,7 @@ html {
 
   &-main {
     width: 100%;
-    max-width: $app-content-width;
+    max-width: var(--app-content-width);
     margin: 0 auto;
   }
 }

@@ -14,7 +14,7 @@
   );
 }
 
-@media screen and (width >= $app-content-width) {
+@media screen and (width >= var(--app-content-width)) {
   :root {
     --fluid-screen: calc(var(--fluid-max-width) * 1px);
   }

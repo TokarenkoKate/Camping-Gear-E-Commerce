@@ -1,15 +1,13 @@
 @import "/src/app/styles/mixins/responsive";
 @import "/src/app/styles/breakpoints";
 
-$navbar-height: 50px;
-
 .navbar {
   width: 100%;
-  min-height: $navbar-height;
+  min-height: var(--app-navbar-height);
   border-bottom: 1px solid var(--color-border);
 
   &-content {
-    max-width: $app-content-width;
+    max-width: var(--app-content-width);
     height: 100%;
     margin: 0 auto;
     display: grid;
