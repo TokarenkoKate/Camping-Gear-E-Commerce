@@ -27,9 +27,11 @@ export const ProductsGallery = ({
     />
   ) : null;
 
+  const itemsLength = introCard ? products.length + 1 : products.length;
+
   return (
     <GridWithInnerBorder
-      itemsLength={products.length}
+      itemsLength={itemsLength}
       columnMinWidth={PRODUCTS_GALLERY_MIN_COLUMN_WIDTH}
       className={className}
     >

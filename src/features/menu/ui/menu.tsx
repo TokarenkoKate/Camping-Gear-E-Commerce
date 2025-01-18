@@ -4,7 +4,7 @@ import { UiIcon } from "@/shared/ui/ui-icon/ui-icon";
 import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import { MenuItem, menuItems } from "../model/const/menu";
 import { MenuItemComponent } from "./menu-item";
-import { getTypedObjectKeys } from "@/shared/lib/hooks/helpers/get-typed-object";
+import { getTypedObjectKeys } from "@/shared/lib/helpers/get-typed-object";
 import cls from "./menu.m.scss";
 
 interface MenuProps {

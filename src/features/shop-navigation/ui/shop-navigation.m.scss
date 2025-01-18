@@ -1,0 +1,28 @@
+@import "/src/app/styles/mixins/responsive";
+
+.shop-navigation {
+  --shop-navigation-fixed-inset: var(--app-navbar-height) 0 0 0;
+
+  position: fixed;
+  inset: var(--shop-navigation-fixed-inset);
+
+  &-content {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    grid-template-columns: auto;
+    border: 1px solid var(--color-border);
+    z-index: var(--z-indices-navigation);
+
+    @include responsive("medium") {
+      height: auto;
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &-overlay {
+    inset: var(--shop-navigation-fixed-inset);
+  }
+}

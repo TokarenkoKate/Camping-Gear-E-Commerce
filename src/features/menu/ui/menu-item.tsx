@@ -1,6 +1,7 @@
 import { UiLink } from "@/shared/ui/ui-link/ui-link";
 import { MenuItem } from "../model/const/menu";
 import { MenuItemType } from "../model/types/menu";
+import { ShopNavigationButton } from "@/features/shop-navigation";
 import cls from "./menu.m.scss";
 
 interface MenuItemProps {
@@ -20,7 +21,11 @@ export const MenuItemComponent = ({ menuItem, menuItemKey }: MenuItemProps) => {
   }
 
   if (menuItemKey === MenuItem.shop) {
-    return <div />;
+    return (
+      <ShopNavigationButton className={cls.menuListItem}>
+        {menuItem.text}
+      </ShopNavigationButton>
+    );
   }
 
   return null;

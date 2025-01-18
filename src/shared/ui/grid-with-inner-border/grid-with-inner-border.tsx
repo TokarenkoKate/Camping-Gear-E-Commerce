@@ -1,4 +1,11 @@
-import { CSSProperties, PropsWithChildren, useEffect, useRef } from "react";
+import {
+  CSSProperties,
+  forwardRef,
+  PropsWithChildren,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from "react";
 import classNames from "classnames";
 import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import cls from "./grid-with-inner-border.m.scss";
@@ -10,16 +17,20 @@ import { removeBorderFromGrid } from "@/features/products-gallery/model/utils/re
  */
 
 interface GridWithInnerBorderProps extends PropsWithChildren {
-  columnMinWidth: string;
   itemsLength: number;
+  columnMinWidth?: string;
   borderColor?: string;
   lineThickness?: string;
   className?: string;
 }
+export type GridRef = HTMLUListElement | undefined;
 
-export const GridWithInnerBorder = (props: GridWithInnerBorderProps) => {
+export const GridWithInnerBorder = forwardRef<
+  GridRef,
+  GridWithInnerBorderProps
+>(function GridWithInnerBorder(props, forwardRef) {
   const {
-    columnMinWidth,
+    columnMinWidth = "350px",
     borderColor = "#90908e",
     lineThickness = "1px",
     children,
@@ -28,7 +39,8 @@ export const GridWithInnerBorder = (props: GridWithInnerBorderProps) => {
     ...restProps
   } = props;
 
-  const ref = useRef<HTMLUListElement>();
+  const ref = useRef<GridRef>();
+  useImperativeHandle(forwardRef, () => ref.current);
 
   const baseStyleVariables: CSSProperties = {
     "--border-color": borderColor,
@@ -56,4 +68,4 @@ export const GridWithInnerBorder = (props: GridWithInnerBorderProps) => {
       {children}
     </UiBox>
   );
-};
+});
