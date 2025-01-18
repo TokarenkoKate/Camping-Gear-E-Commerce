@@ -1,0 +1,42 @@
+@import "/src/app/styles/mixins/responsive";
+
+.category-card {
+  --img-md-size: 80px;
+  --img-sm-size: 40px;
+  --fluid-200-250: clamp(200px, 139.2405px + 7.9114vw, 250px);
+
+  height: auto;
+  padding: var(--space-2-5) var(--space-5);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--space-8);
+  background-color: var(--color-primary);
+
+  @include responsive("medium") {
+    height: var(--fluid-200-250);
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+  }
+
+  &-texts {
+    align-items: flex-start;
+
+    @include responsive("medium") {
+      align-items: center;
+    }
+  }
+
+  &-img {
+    width: var(--img-sm-size);
+    height: var(--img-sm-size);
+
+    @include responsive("small") {
+      width: var(--img-md-size);
+      height: var(--img-md-size);
+    }
+  }
+}
