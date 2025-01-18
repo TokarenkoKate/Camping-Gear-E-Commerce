@@ -6,14 +6,32 @@ interface UseOutsideClickProps {
    */
   ref: RefObject<HTMLElement>;
   /**
+   * The reference to a DOM element, that should be excluded from outside click check
+   * such as a trigger button.
+   */
+  excludeRef?: RefObject<HTMLElement>;
+  /**
    * Function invoked when a click is triggered outside the referenced element.
    */
   handler?: (e: Event) => void;
 }
 
-export const useOutsideClick = ({ ref, handler }: UseOutsideClickProps) => {
+export const useOutsideClick = ({
+  ref,
+  excludeRef,
+  handler,
+}: UseOutsideClickProps) => {
   const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-    if (ref.current && !ref.current.contains(event.target as Node)) {
+    const isOutsideRefClick =
+      ref.current && !ref.current.contains(event.target as Node);
+
+    const isWithinExcludeClick =
+      excludeRef?.current && excludeRef?.current.contains(event.target as Node);
+
+    if (
+      (isOutsideRefClick && !excludeRef) ||
+      (isOutsideRefClick && excludeRef && !isWithinExcludeClick)
+    ) {
       handler?.(event);
     }
   };

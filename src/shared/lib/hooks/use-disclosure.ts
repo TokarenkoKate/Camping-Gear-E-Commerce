@@ -7,7 +7,7 @@ export const useDisclosure = () => {
 
   const onClose = useCallback(() => setIsOpen(false), []);
 
-  const toggleOpen = useCallback(() => setIsOpen(!isOpen), []);
+  const toggleOpen = useCallback(() => setIsOpen((prev) => !prev), []);
 
   return { isOpen, onOpen, onClose, toggleOpen };
 };
