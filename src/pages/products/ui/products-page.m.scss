@@ -1,0 +1,15 @@
+.products-page {
+  &-header {
+    gap: var(--space-3);
+    padding: var(--space-10) var(--space-5);
+
+    &-title,
+    &-subtitle {
+      text-transform: uppercase;
+    }
+
+    &-title-wrapper {
+      gap: var(--space-3);
+    }
+  }
+}

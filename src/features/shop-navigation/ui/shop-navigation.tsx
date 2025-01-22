@@ -4,7 +4,7 @@ import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import { UiOverlay } from "@/shared/ui/ui-overlay/ui-overlay";
 import { GridWithInnerBorder } from "@/shared/ui/grid-with-inner-border/grid-with-inner-border";
 import { CategoryCard } from "@/entities/category";
-import { shopNavigationItems } from "../model/const/shop-categories";
+import { categoryItems } from "../../../entities/category/model/const/shop-categories";
 import { useOutsideClick } from "@/shared/lib/hooks/use-outside-click";
 import { useDisableBodyScroll } from "@/shared/lib/hooks/use-disable-scroll";
 import cls from "./shop-navigation.m.scss";
@@ -35,12 +35,12 @@ export const ShopNavigation = ({
       <UiBox className={cls.shopNavigation}>
         <UiOverlay className={cls.shopNavigationOverlay} />
         <GridWithInnerBorder
-          itemsLength={shopNavigationItems.length}
+          itemsLength={categoryItems.length}
           className={cls.shopNavigationContent}
           borderColor="#d0d0d0"
           ref={contentRef}
         >
-          {shopNavigationItems.map((category) => {
+          {categoryItems.map((category) => {
             return (
               <CategoryCard
                 category={category}

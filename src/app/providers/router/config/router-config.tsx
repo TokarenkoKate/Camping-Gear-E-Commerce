@@ -2,6 +2,7 @@ import { AppRouteType } from "@/shared/types/router";
 import { AppRoutes, appRoutesPaths } from "@/shared/const/router";
 import { MainPage } from "@/pages/main";
 import { ShopPage } from "@/pages/shop";
+import { ProductsPage } from "@/pages/products";
 import { NotFoundPage } from "@/pages/not-found-page";
 
 export const routerConfig: Record<AppRoutes, AppRouteType> = {
@@ -13,9 +14,9 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
     path: appRoutesPaths[AppRoutes.SHOP],
     element: <ShopPage />,
   },
-  [AppRoutes.CATEGORY]: {
-    path: appRoutesPaths[AppRoutes.CATEGORY],
-    element: <div />,
+  [AppRoutes.PRODUCTS]: {
+    path: appRoutesPaths[AppRoutes.PRODUCTS],
+    element: <ProductsPage />,
   },
   [AppRoutes.EVENTS]: {
     path: appRoutesPaths[AppRoutes.EVENTS],

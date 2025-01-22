@@ -10,9 +10,9 @@ import Cooler from "@/shared/assets/icons/categories/cooler.svg";
 import Kitchen from "@/shared/assets/icons/categories/kitchen.svg";
 import Carry from "@/shared/assets/icons/categories/carry.svg";
 import Bag from "@/shared/assets/icons/categories/bag.svg";
-import { Category } from "@/entities/category";
+import { Category } from "../types/category";
 
-export const shopNavigationItems: Category[] = [
+export const categoryItems: Category[] = [
   {
     name: "Solo Tent",
     description: "(1~2)",
