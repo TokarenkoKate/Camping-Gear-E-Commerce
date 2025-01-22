@@ -37,7 +37,7 @@ export const commonConfig = (options: BuildOptions): Configuration => {
       assetModuleFilename: "[name].[contenthash][ext][query]",
       path: paths.build,
       clean: true,
-      publicPath: "",
+      publicPath: "/",
     },
     resolve: resolvers,
     module: {
