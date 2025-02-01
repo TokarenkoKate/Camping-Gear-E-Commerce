@@ -6,6 +6,7 @@ $button-size-s: 32px;
 $button-size-s-mobile: 20px;
 $button-size-m: 56px;
 $button-size-m-width: 175px;
+$button-size-m-width-mobile: 164px;
 
 .ui-button {
   --ui-button-bg: transparent;
@@ -24,6 +25,7 @@ $button-size-m-width: 175px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   position: relative;
   padding: var(--space-1) var(--space-3);
   color: var(--ui-button-color);
@@ -31,6 +33,7 @@ $button-size-m-width: 175px;
   border: none;
   outline-color: transparent;
   transition: all 0.2s;
+  text-align: start;
   user-select: none;
   cursor: pointer;
 
@@ -91,8 +94,12 @@ $button-size-m-width: 175px;
 
   &.medium {
     height: $button-size-m;
-    width: $button-size-m-width;
+    width: $button-size-m-width-mobile;
     border-radius: $button-size-m;
+
+    @include responsive("medium") {
+      width: $button-size-m-width;
+    }
   }
 
   /** variants */

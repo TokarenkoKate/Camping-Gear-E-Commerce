@@ -1,0 +1,58 @@
+@import "/src/app/styles/mixins/responsive";
+
+.products-filters {
+  width: 100%;
+  padding: var(--space-10) var(--space-3-5);
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  gap: var(--space-8);
+  background-color: var(--color-secondary);
+
+  @include responsive("small") {
+    padding: var(--space-10) var(--space-5);
+  }
+
+  @include responsive("large") {
+    flex-direction: row;
+  }
+
+  &-group {
+    display: grid;
+    grid-template-columns: auto;
+    gap: var(--space-10-5);
+    flex: 1;
+
+    @include responsive("medium") {
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-8);
+    }
+  }
+
+  &-buttons {
+    width: 100%;
+    justify-content: space-between;
+    align-self: flex-end;
+    gap: var(--space-4);
+
+    @include responsive("small") {
+      width: auto;
+      justify-content: start;
+    }
+  }
+
+  &-component {
+    gap: var(--space-6);
+
+    &-list {
+      width: 100%;
+      gap: var(--space-2);
+    }
+
+    &-grid > &-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 22px);
+      gap: var(--space-6);
+    }
+  }
+}
