@@ -5,7 +5,6 @@ import { UiText } from "@/shared/ui/ui-text/ui-text";
 import { UiIcon } from "@/shared/ui/ui-icon/ui-icon";
 import { Category } from "../model/types/category";
 import cls from "./category-card.m.scss";
-import { appRoutesPaths } from "@/shared/const/router";
 
 interface CategoryCardProps {
   category: Category;
@@ -17,7 +16,7 @@ export const CategoryCard = ({
   onRedirectClick,
 }: CategoryCardProps) => {
   const { name, description, href, Svg } = category;
-  const redirectPath: To = `${appRoutesPaths.shop}/${href}`;
+  const redirectPath: To = `/shop/${href}`;
 
   return (
     <Link
