@@ -25,7 +25,8 @@ export interface UiButtonProps
   variant?: UiButtonVariant;
   round?: boolean;
   size?: UiButtonSize;
-  IconSvg?: React.VFC<React.SVGProps<SVGSVGElement>>;
+  leftIconSvg?: React.VFC<React.SVGProps<SVGSVGElement>>;
+  rightIconSvg?: React.VFC<React.SVGProps<SVGSVGElement>>;
   disabled?: boolean;
   asLink?: boolean;
   max?: boolean;

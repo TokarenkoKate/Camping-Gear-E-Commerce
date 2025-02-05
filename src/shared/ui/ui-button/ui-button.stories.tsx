@@ -48,13 +48,13 @@ const renderButtonExamples = (variant: UiButtonVariant, size: UiButtonSize) => {
         variant={variant}
         round
         size={size}
-        IconSvg={ArrowExternalRight}
+        leftIconSvg={ArrowExternalRight}
       />
       <UiButton
         variant={variant}
         round
         size={size}
-        IconSvg={ArrowExternalRight}
+        leftIconSvg={ArrowExternalRight}
         disabled
       />
     </UiHStack>

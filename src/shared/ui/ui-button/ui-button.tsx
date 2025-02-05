@@ -16,7 +16,8 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
       variant = "clear",
       round,
       size = "medium",
-      IconSvg,
+      leftIconSvg,
+      rightIconSvg,
       disabled,
       className,
       asLink,
@@ -41,8 +42,9 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
     const content = (
       <>
         {withArrow && <UiArrowIcon className={cls.arrow} />}
-        {IconSvg && <UiIcon Svg={IconSvg} className={cls.icon} />}
+        {leftIconSvg && <UiIcon Svg={leftIconSvg} className={cls.icon} />}
         {children}
+        {rightIconSvg && <UiIcon Svg={rightIconSvg} className={cls.icon} />}
       </>
     );
 

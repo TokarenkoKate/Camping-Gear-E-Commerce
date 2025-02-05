@@ -16,7 +16,7 @@ export const MenuMobile = () => {
       <UiButton
         variant="plain"
         size="small"
-        IconSvg={!isOpen ? Menu : Close}
+        leftIconSvg={!isOpen ? Menu : Close}
         ref={triggerButtonRef}
         onClick={toggleOpen}
       />

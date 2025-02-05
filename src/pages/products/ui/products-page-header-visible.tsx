@@ -41,7 +41,7 @@ export const ProductsPageHeaderVisible = ({
         <UiButton
           variant="outlined"
           round
-          IconSvg={FiltersIcon}
+          leftIconSvg={FiltersIcon}
           size="small"
           onClick={toggleOpenExtendedFilters}
         />
