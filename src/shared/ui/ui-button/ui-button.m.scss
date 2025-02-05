@@ -21,10 +21,12 @@ $button-size-m-width-mobile: 164px;
   --ui-button-border-color_hover: none;
   --ui-button-border-color_active: none;
   --ui-button-border-color_disabled: none;
+  --ui-button-icon-size: 0;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: var(--space-1);
   flex-shrink: 0;
   position: relative;
   padding: var(--space-1) var(--space-3);
@@ -36,11 +38,6 @@ $button-size-m-width-mobile: 164px;
   text-align: start;
   user-select: none;
   cursor: pointer;
-
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
 
   /** pseudo-classes, states */
   &:hover {
@@ -83,6 +80,8 @@ $button-size-m-width-mobile: 164px;
 
   /** sizes */
   &.small {
+    --ui-button-icon-size: 14px;
+
     height: $button-size-s-mobile;
     border-radius: $button-size-s-mobile;
 
@@ -93,6 +92,8 @@ $button-size-m-width-mobile: 164px;
   }
 
   &.medium {
+    --ui-button-icon-size: 20px;
+
     height: $button-size-m;
     width: $button-size-m-width-mobile;
     border-radius: $button-size-m;
@@ -100,6 +101,11 @@ $button-size-m-width-mobile: 164px;
     @include responsive("medium") {
       width: $button-size-m-width;
     }
+  }
+
+  .icon {
+    width: var(--ui-button-icon-size);
+    height: var(--ui-button-icon-size);
   }
 
   /** variants */
