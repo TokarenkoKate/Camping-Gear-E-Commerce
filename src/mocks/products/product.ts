@@ -8,6 +8,7 @@ export const mockProductId1: Product = {
   price: "$74.99",
   colors: ["#C7AC89", "#E6C06E", "#3C5D48", "#553927"],
   img: productImg1,
+  reward: "1350 pt",
 };
 
 export const mockProductId2: Product = {

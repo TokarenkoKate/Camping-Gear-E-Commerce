@@ -5,4 +5,5 @@ export interface Product {
   price: string;
   colors: string[];
   img: string;
+  reward?: string;
 }
