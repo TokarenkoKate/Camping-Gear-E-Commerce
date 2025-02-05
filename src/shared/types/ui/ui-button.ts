@@ -28,5 +28,6 @@ export interface UiButtonProps
   IconSvg?: React.VFC<React.SVGProps<SVGSVGElement>>;
   disabled?: boolean;
   asLink?: boolean;
+  max?: boolean;
   className?: string;
 }

@@ -24,6 +24,7 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
       href,
       target = "_blank",
       rel = "noopener noreferrer",
+      max,
       ...restProps
     } = props;
 
@@ -34,6 +35,7 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
       [cls[size]]: true,
       [cls.disabled]: disabled,
       [cls.round]: round,
+      [cls.max]: max,
     };
 
     const content = (

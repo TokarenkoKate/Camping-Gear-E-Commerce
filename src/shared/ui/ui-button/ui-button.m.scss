@@ -179,4 +179,8 @@ $button-size-m-width-mobile: 164px;
       width: $button-size-m;
     }
   }
+
+  &.max {
+    width: 100%;
+  }
 }
