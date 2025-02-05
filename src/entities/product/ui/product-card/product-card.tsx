@@ -21,9 +21,9 @@ export const ProductCard = ({ product, className }: ProductCardProps) => {
   return (
     <Link to={redirectPath} className={classNames(cls.productCard, className)}>
       <UiVStack className={cls.productCardContent}>
-        <UiBox className={cls.imgWrapper}>
+        <UiHStack className={cls.imgWrapper} justify="center">
           <UiImage src={img} alt={name} className={cls.img} />
-        </UiBox>
+        </UiHStack>
         <UiHStack justify="between" className={cls.header} max>
           <UiText className={cls.category}>{category}</UiText>
           <UiText>{price}</UiText>
