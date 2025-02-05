@@ -42,6 +42,7 @@ $fixed-content-width: 480px;
     }
 
     .colors-list {
+      margin-bottom: var(--space-6);
       gap: var(--space-5);
     }
   }
