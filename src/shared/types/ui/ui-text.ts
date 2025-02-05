@@ -16,7 +16,7 @@ export type UiTextAlign = "start" | "center" | "end" | "justify";
 
 export type UiTextFontWeight = "regular" | "medium" | "bold";
 
-export type UiTextTone = "base" | "inverted";
+export type UiTextTone = "base" | "inverted" | "error";
 
 export type UiTextVariant =
   | "bodyXs"
