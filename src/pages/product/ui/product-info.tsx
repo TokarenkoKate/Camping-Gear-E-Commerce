@@ -5,6 +5,7 @@ import { UiText } from "@/shared/ui/ui-text/ui-text";
 import { Product } from "@/entities/product/model/types/product";
 import { ColorTag } from "@/shared/ui/color-tag/color-tag";
 import { AddToCartButton } from "@/features/cart";
+import { PaymentChips } from "@/features/payment-chips";
 import { ProductRelatedProducts } from "./product-related-products";
 import cls from "./product-page.m.scss";
 
@@ -51,6 +52,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
             </UiHStack>
           </UiVStack>
           <AddToCartButton />
+          <PaymentChips />
         </UiVStack>
         <ProductRelatedProducts />
       </UiBox>

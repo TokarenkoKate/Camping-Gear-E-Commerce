@@ -1,0 +1,15 @@
+$payment-chip-width: 35px;
+$payment-chip-height: 24px;
+
+.payment-chip {
+  width: $payment-chip-width;
+  height: $payment-chip-height;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--space-1);
+  cursor: pointer;
+
+  &-img {
+    width: 25px;
+    height: auto;
+  }
+}
