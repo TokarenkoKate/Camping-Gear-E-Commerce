@@ -2,7 +2,7 @@ import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
 import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
 import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { Product } from "@/entities/product/model/types/product";
+import { ProductDetails } from "@/entities/product/model/types/product";
 import { ColorTag } from "@/shared/ui/color-tag/color-tag";
 import { AddToCartButton } from "@/features/cart";
 import { PaymentChips } from "@/features/payment-chips";
@@ -10,16 +10,16 @@ import { ProductRelatedProducts } from "./product-related-products";
 import cls from "./product-page.m.scss";
 
 interface ProductInfoProps {
-  product: Product;
+  product: ProductDetails;
 }
 
 export const ProductInfo = ({ product }: ProductInfoProps) => {
-  const { name, category, price, colors, img, reward } = product;
+  const { name, category, price, colors, imageUrl, reward } = product;
 
   return (
     <UiBox className={cls.productInfo}>
       <UiHStack className={cls.imgWrapper} justify="center">
-        <img src={img} className={cls.img} />
+        <img src={imageUrl} className={cls.img} />
       </UiHStack>
       <UiBox>
         <UiVStack className={cls.content} max align="normal">
@@ -51,7 +51,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
               ))}
             </UiHStack>
           </UiVStack>
-          <AddToCartButton />
+          <AddToCartButton className={cls.addToCartButton} />
           <PaymentChips />
         </UiVStack>
         <ProductRelatedProducts />

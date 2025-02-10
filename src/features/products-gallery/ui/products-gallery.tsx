@@ -1,5 +1,4 @@
-import { ProductCard } from "@/entities/product";
-import { Product } from "@/entities/product/model/types/product";
+import { ProductCard, ProductSummary } from "@/entities/product";
 import { GridWithInnerBorder } from "@/shared/ui/grid-with-inner-border/grid-with-inner-border";
 import {
   ProductGalleryIntroCard,
@@ -9,7 +8,7 @@ import { PRODUCTS_GALLERY_MIN_COLUMN_WIDTH } from "../model/const/products-galle
 
 interface ProductsGalleryProps {
   introCardProps?: ProductGalleryIntroCardProps;
-  products: Product[];
+  products: ProductSummary[];
   className?: string;
 }
 
