@@ -32,4 +32,11 @@ export interface ProductDetails extends ProductBase {
   imageUrl: string;
   reward?: string;
   visuals: ProductVisuals;
+  specifications: {
+    imageUrl: string;
+    rows: Array<{
+      name: string;
+      value: string;
+    }>;
+  };
 }

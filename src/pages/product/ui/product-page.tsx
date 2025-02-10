@@ -2,6 +2,7 @@ import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import { ProductInfo } from "./product-info/product-info";
 import { mockProductDetails } from "@/mocks/products/product";
 import { ProductVisuals } from "./product-visuals/product-visuals";
+import { ProductSpecifications } from "./product-specifications/product-specifications";
 import cls from "./product-page.m.scss";
 
 export const ProductPage = () => {
@@ -9,6 +10,9 @@ export const ProductPage = () => {
     <UiBox className={cls.productPage}>
       <ProductInfo product={mockProductDetails} />
       <ProductVisuals visuals={mockProductDetails.visuals} />
+      <ProductSpecifications
+        specifications={mockProductDetails.specifications}
+      />
     </UiBox>
   );
 };

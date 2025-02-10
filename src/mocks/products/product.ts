@@ -16,6 +16,39 @@ export const mockProductDetails: ProductDetails = {
           during your outdoor adventures.`,
     imagesUrl: [productImg1, productImg1, productImg1],
   },
+  specifications: {
+    imageUrl: productImg1,
+    rows: [
+      {
+        name: "Color",
+        value: "Coyote Brown",
+      },
+      {
+        name: "Material",
+        value: "Nylon, Aluminum, fabric",
+      },
+      {
+        name: "Occupant Capacity",
+        value: "6",
+      },
+      {
+        name: "Product Dimensions",
+        value: '148.8"L x 148.8"W x 93.6"H',
+      },
+      {
+        name: "Seasons",
+        value: "4 Season",
+      },
+      {
+        name: "Design",
+        value: "Camping Tent",
+      },
+      {
+        name: "Water Pressure",
+        value: "5000mm",
+      },
+    ],
+  },
 };
 
 export const mockProductId1: ProductSummary = {
