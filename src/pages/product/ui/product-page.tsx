@@ -1,12 +1,14 @@
 import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { ProductInfo } from "./product-info/product-info";
+import { mockProductDetails } from "@/mocks/products/product";
+import { ProductVisuals } from "./product-visuals/product-visuals";
 import cls from "./product-page.m.scss";
-import { ProductInfo } from "./product-info";
-import { mockProductId1 } from "@/mocks/products/product";
 
 export const ProductPage = () => {
   return (
     <UiBox className={cls.productPage}>
-      <ProductInfo product={mockProductId1} />
+      <ProductInfo product={mockProductDetails} />
+      <ProductVisuals visuals={mockProductDetails.visuals} />
     </UiBox>
   );
 };

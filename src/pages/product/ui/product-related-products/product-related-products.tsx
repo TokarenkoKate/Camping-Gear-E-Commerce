@@ -5,7 +5,7 @@ import { UiText } from "@/shared/ui/ui-text/ui-text";
 import { UiButton } from "@/shared/ui/ui-button/ui-button";
 import { ProductsGallery } from "@/features/products-gallery";
 import { mockProductId1, mockProductId2 } from "@/mocks/products/product";
-import cls from "./product-page.m.scss";
+import cls from "../product-page.m.scss";
 
 export const ProductRelatedProducts = () => {
   return (

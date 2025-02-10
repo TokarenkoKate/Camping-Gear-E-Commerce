@@ -6,8 +6,8 @@ import { ProductDetails } from "@/entities/product/model/types/product";
 import { ColorTag } from "@/shared/ui/color-tag/color-tag";
 import { AddToCartButton } from "@/features/cart";
 import { PaymentChips } from "@/features/payment-chips";
-import { ProductRelatedProducts } from "./product-related-products";
-import cls from "./product-page.m.scss";
+import { ProductRelatedProducts } from "../product-related-products/product-related-products";
+import cls from "../product-page.m.scss";
 
 interface ProductInfoProps {
   product: ProductDetails;
