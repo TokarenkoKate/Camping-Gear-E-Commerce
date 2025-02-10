@@ -83,11 +83,13 @@
     "webpack-plugin-serve": "^1.6.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
     "classnames": "^2.5.1",
     "dotenv": "^16.4.5",
     "react": "^18.3.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.28.0"
   },
   "eslintConfig": {

@@ -14,7 +14,7 @@ interface ProductInfoProps {
 }
 
 export const ProductInfo = ({ product }: ProductInfoProps) => {
-  const { name, category, price, colors, imageUrl, reward } = product;
+  const { id, name, category, price, colors, imageUrl, reward } = product;
 
   return (
     <UiBox className={cls.productInfo}>
@@ -51,7 +51,7 @@ export const ProductInfo = ({ product }: ProductInfoProps) => {
               ))}
             </UiHStack>
           </UiVStack>
-          <AddToCartButton className={cls.addToCartButton} />
+          <AddToCartButton productId={id} className={cls.addToCartButton} />
           <PaymentChips />
         </UiVStack>
         <ProductRelatedProducts />
