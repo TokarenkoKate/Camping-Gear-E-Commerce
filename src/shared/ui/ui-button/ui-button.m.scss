@@ -68,7 +68,7 @@ $button-size-m-width-mobile: 164px;
 
   &:focus-visible {
     box-shadow:
-      0 0 0 4px white,
+      0 0 0 4px var(--color-primary),
       0 0 0 8px var(--color-link);
 
     &.plain-with-arrow {
