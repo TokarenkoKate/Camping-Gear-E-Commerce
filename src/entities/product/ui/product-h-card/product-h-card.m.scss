@@ -1,0 +1,25 @@
+$img-size: 72px;
+
+.product-h-card {
+  gap: var(--space-5-5);
+  padding: var(--space-4) var(--space-6);
+
+  .img-wrapper {
+    width: $img-size;
+    min-width: $img-size;
+    height: $img-size;
+    background-color: var(--color-secondary);
+  }
+
+  .img {
+    object-fit: contain;
+  }
+
+  .content {
+    gap: var(--space-3);
+
+    &-row {
+      gap: var(--space-3);
+    }
+  }
+}

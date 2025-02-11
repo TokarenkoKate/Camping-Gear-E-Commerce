@@ -17,12 +17,12 @@ export interface ProductSummary extends ProductBase {
 }
 
 /**
- * Data for product visual representation section
+ * Short product object for products in small cards,
+ * f.e. in a cart
  */
-export interface ProductVisuals {
-  title: string;
-  description: string;
-  imagesUrl: string[];
+export interface ProductCart extends Omit<ProductSummary, "colors"> {
+  reward?: string;
+  color: string;
 }
 
 /**
@@ -32,11 +32,25 @@ export interface ProductDetails extends ProductBase {
   imageUrl: string;
   reward?: string;
   visuals: ProductVisuals;
-  specifications: {
-    imageUrl: string;
-    rows: Array<{
-      name: string;
-      value: string;
-    }>;
-  };
+  specifications: ProductSpecifications;
+}
+
+/**
+ * Data for product visual representation section
+ */
+export interface ProductVisuals {
+  title: string;
+  description: string;
+  imagesUrl: string[];
+}
+
+/**
+ * Data for product visual representation section
+ */
+export interface ProductSpecifications {
+  imageUrl: string;
+  rows: Array<{
+    name: string;
+    value: string;
+  }>;
 }

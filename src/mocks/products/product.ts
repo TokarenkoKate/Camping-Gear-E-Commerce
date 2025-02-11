@@ -1,4 +1,8 @@
-import { ProductDetails, ProductSummary } from "@/entities/product";
+import {
+  ProductCart,
+  ProductDetails,
+  ProductSummary,
+} from "@/entities/product";
 import productImg1 from "./product_id_1.png";
 
 export const mockProductDetails: ProductDetails = {
@@ -195,3 +199,13 @@ export const mockProductsGallery = [
   mockProductId6,
   mockProductId7,
 ];
+
+export const mockProductCart: ProductCart = {
+  id: 14,
+  name: "Camping Coffee Mug",
+  category: "kitchen",
+  price: "$14.99",
+  color: "Coyote Brown",
+  thumbnailUrl: productImg1,
+  reward: "1350 point",
+};
