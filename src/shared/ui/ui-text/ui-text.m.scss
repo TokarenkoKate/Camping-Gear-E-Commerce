@@ -101,6 +101,10 @@
   @include responsive("large") {
     font-weight: var(--font-weight-bold);
   }
+
+  @include responsive("extra-large") {
+    font-size: calc(var(--fs-1000-max) * 1px);
+  }
 }
 
 /*

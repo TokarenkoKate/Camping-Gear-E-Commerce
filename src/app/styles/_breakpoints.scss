@@ -4,6 +4,7 @@
 $mobile-landscape: 568px;
 $tablet: 768px;
 $desktop: 1024px;
+$large-desktop: 1400px;
 
 /*
 * Map for breakpoints
@@ -12,4 +13,5 @@ $breakpoints: (
   "small": $mobile-landscape,
   "medium": $tablet,
   "large": $desktop,
+  "extra-large": $large-desktop,
 );
