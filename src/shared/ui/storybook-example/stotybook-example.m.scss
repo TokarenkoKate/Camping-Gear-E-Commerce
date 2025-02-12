@@ -22,4 +22,10 @@
       background-color: var(--color-accent);
     }
   }
+
+  &.transparent {
+    .storybook-example-content {
+      background-color: transparent;
+    }
+  }
 }
