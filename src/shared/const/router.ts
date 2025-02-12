@@ -6,6 +6,7 @@ export enum AppRoutes {
   COLLECTIONS = "collections",
   JOURNAL = "journal",
   NOT_FOUND = "not-found",
+  CART = "cart",
 }
 
 export const INDEX_ROUTE_PATH = "/";
@@ -17,5 +18,6 @@ export const appRoutesPaths: Record<AppRoutes, string> = {
   [AppRoutes.EVENTS]: "/events",
   [AppRoutes.COLLECTIONS]: "/collections",
   [AppRoutes.JOURNAL]: "/journal",
+  [AppRoutes.CART]: "/cart",
   [AppRoutes.NOT_FOUND]: "*",
 };

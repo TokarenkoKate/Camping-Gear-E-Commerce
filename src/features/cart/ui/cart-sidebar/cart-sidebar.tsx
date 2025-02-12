@@ -46,7 +46,7 @@ export const CartSidebar = ({ isOpen, onClose }: CartSidebarProps) => {
               ]}
             />
             <CartSidebarTotals />
-            <CartSidebarCheckout />
+            <CartSidebarCheckout onClose={onClose} />
           </UiVStack>
         );
       }}
