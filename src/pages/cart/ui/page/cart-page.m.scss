@@ -1,0 +1,11 @@
+@import "/src/app/styles/mixins/responsive";
+
+.cart-page {
+  &-header {
+    padding: var(--space-10) var(--space-5);
+
+    @include responsive("medium") {
+      padding: var(--space-10) var(--space-4);
+    }
+  }
+}
