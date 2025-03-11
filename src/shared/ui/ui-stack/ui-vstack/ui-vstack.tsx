@@ -1,8 +1,10 @@
-import { FC, PropsWithChildren } from "react";
 import { UiFlex, UiFlexProps } from "@/shared/ui/ui-stack/ui-flex/ui-flex";
+import { forwardRef } from "react";
 
-type HStackProps = Omit<UiFlexProps, "direction">;
+type VStackProps = Omit<UiFlexProps, "direction">;
 
-export const UiVStack: FC<PropsWithChildren<HStackProps>> = (props) => (
-  <UiFlex {...props} direction="column" />
+export const UiVStack = forwardRef<HTMLElement, VStackProps>(
+  function UiHStack(props, ref) {
+    return <UiFlex {...props} direction="column" ref={ref} />;
+  }
 );

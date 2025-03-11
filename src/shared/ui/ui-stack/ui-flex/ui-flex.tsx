@@ -1,4 +1,9 @@
-import { DetailedHTMLProps, HTMLAttributes, PropsWithChildren } from "react";
+import {
+  DetailedHTMLProps,
+  forwardRef,
+  HTMLAttributes,
+  PropsWithChildren,
+} from "react";
 import { UiBox } from "@/shared/ui/ui-box/ui-box";
 import cls from "./ui-flex.m.scss";
 import classNames from "classnames";
@@ -42,26 +47,32 @@ export interface UiFlexProps extends DivProps, PropsWithChildren {
   as?: keyof JSX.IntrinsicElements;
 }
 
-export const UiFlex = (props: UiFlexProps) => {
-  const {
-    children,
-    justify = "start",
-    align = "start",
-    direction = "row",
-    className,
-    ...restProps
-  } = props;
+export const UiFlex = forwardRef<HTMLElement, UiFlexProps>(
+  function UiFlex(props, ref) {
+    const {
+      children,
+      justify = "start",
+      align = "start",
+      direction = "row",
+      className,
+      ...restProps
+    } = props;
 
-  const classes = [
-    justifyClasses[justify],
-    alignClasses[align],
-    directionClasses[direction],
-    className,
-  ];
+    const classes = [
+      justifyClasses[justify],
+      alignClasses[align],
+      directionClasses[direction],
+      className,
+    ];
 
-  return (
-    <UiBox className={classNames(cls.uiFlex, classes)} {...restProps}>
-      {children}
-    </UiBox>
-  );
-};
+    return (
+      <UiBox
+        className={classNames(cls.uiFlex, classes)}
+        {...restProps}
+        ref={ref}
+      >
+        {children}
+      </UiBox>
+    );
+  }
+);
