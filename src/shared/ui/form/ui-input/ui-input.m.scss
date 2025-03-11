@@ -4,6 +4,7 @@
   border: 1px solid transparent;
   background-color: var(--color-secondary);
   color: var(--color-text-primary);
+  height: var(--form-field-m-height);
 
   input::placeholder {
     font-weight: lighter;

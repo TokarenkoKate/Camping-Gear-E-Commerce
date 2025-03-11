@@ -1,0 +1,72 @@
+$border-size: 1px;
+
+.ui-select {
+  position: relative;
+
+  &-group {
+    padding: var(--space-4);
+    flex-grow: 1;
+    border: $border-size solid transparent;
+    background-color: var(--color-secondary);
+    color: var(--color-text-primary);
+    height: var(--form-field-m-height);
+
+    &:hover {
+      outline: 1px solid var(--color-focus);
+    }
+
+    &:has(input:focus-visible),
+    &.focus {
+      outline: 2px solid var(--color-link);
+    }
+  }
+
+  input::placeholder {
+    font-weight: lighter;
+    color: var(--color-text-secondary);
+  }
+
+  &-component {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+  }
+
+  &-button {
+    border: none;
+    outline-color: transparent;
+    background-color: transparent;
+  }
+
+  &-list-box {
+    width: 100%;
+    position: absolute;
+    top: calc(var(--form-field-m-height) + $border-size);
+    left: 0;
+    box-shadow: var(--shadow-lg);
+    max-height: calc(5 * var(--form-field-m-height));
+    overflow-y: auto;
+
+    &-empty {
+      min-height: calc(2 * var(--form-field-m-height));
+      gap: var(--space-1-5);
+    }
+  }
+
+  &-list-item {
+    width: 100%;
+    height: var(--form-field-m-height);
+    padding: var(--space-4);
+    background-color: var(--color-primary);
+
+    &.is-focused {
+      background-color: var(--color-secondary-dark);
+    }
+
+    &.is-selected {
+      background-color: var(--color-disabled);
+    }
+  }
+}
