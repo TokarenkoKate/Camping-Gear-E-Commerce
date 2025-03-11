@@ -43,11 +43,13 @@ $border-size: 1px;
   &-list-box {
     width: 100%;
     position: absolute;
-    top: calc(var(--form-field-m-height) + $border-size);
+    top: 0;
     left: 0;
-    box-shadow: var(--shadow-lg);
     max-height: calc(5 * var(--form-field-m-height));
     overflow-y: auto;
+    z-index: var(--z-indices-dropdown);
+    background-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
 
     &-empty {
       min-height: calc(2 * var(--form-field-m-height));

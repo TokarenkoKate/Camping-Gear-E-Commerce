@@ -13,6 +13,7 @@ import {
   getUiSelectOptionByValue,
   getUiSelectPreviousOption,
 } from "../../helpers/ui/select/ui-select-options-helpers";
+import { getUiSelectListboxPosition } from "../../helpers/ui/select/get-ui-select-listbox-position";
 
 // todo: пустые данные, закрытие при внешнем клике
 export const useSelectAutocomplete = ({
@@ -22,6 +23,7 @@ export const useSelectAutocomplete = ({
   value?: string;
   options: UiSelectOption[];
 }) => {
+  const containerNode = useRef<HTMLDivElement>(null);
   const comboboxNode = useRef<HTMLInputElement>(null);
   const buttonNode = useRef<HTMLButtonElement>(null);
   const listboxNode = useRef<HTMLUListElement>(null);
@@ -302,7 +304,25 @@ export const useSelectAutocomplete = ({
     };
   });
 
+  /* =======================================
+   * Listbox position
+   * =======================================
+   * TODO: set up proper positioning for portal on scroll
+   */
+  const parentRect = containerNode.current?.getBoundingClientRect();
+  const portalRect = listboxNode.current?.getBoundingClientRect();
+
+  const { top, left } = getUiSelectListboxPosition(parentRect, portalRect);
+
+  const listboxStyle = {
+    width: parentRect ? `${parentRect.width}px` : "auto",
+    left: `${left}px`,
+    top: `${top}px`,
+    visibility: isListboxOpen ? "visible" : "hidden",
+  };
+
   return {
+    containerNode,
     comboboxNode,
     buttonNode,
     listboxNode,
@@ -316,5 +336,6 @@ export const useSelectAutocomplete = ({
     activeOptionValue,
     onSelectOption,
     onFocusOption,
+    listboxStyle,
   };
 };

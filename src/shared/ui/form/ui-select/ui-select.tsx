@@ -1,26 +1,22 @@
 import ArrowDown from "@/shared/assets/icons/arrow-down.svg";
 import ArrowUp from "@/shared/assets/icons/arrow-up.svg";
 import Empty from "@/shared/assets/icons/empty.svg";
+import { useSelectAutocomplete } from "@/shared/lib/hooks/ui/use-select-autocomplete";
+import { UiSelectProps } from "@/shared/types/ui/ui-select";
 import { UiBox } from "../../ui-box/ui-box";
 import { UiIcon } from "../../ui-icon/ui-icon";
 import { UiHStack } from "../../ui-stack/ui-hstack/ui-hstack";
 import { UiVStack } from "../../ui-stack/ui-vstack/ui-vstack";
 import { UiText } from "../../ui-text/ui-text";
-import { UiSelectOption } from "@/shared/types/ui/ui-select";
 import { UiSelectOptionComponent } from "./ui-select-option";
-import { useSelectAutocomplete } from "@/shared/lib/hooks/ui/use-select-autocomplete";
+import { UiPortal } from "../../ui-portal/ui-portal";
 import cls from "./ui-select.m.scss";
 
-interface UiSelectProps {
-  ariaLabel: string;
-  value?: string;
-  options: UiSelectOption[];
-}
-
 export const UiSelect = (props: UiSelectProps) => {
-  const { ariaLabel, value, options } = props;
+  const { ariaLabel, value, options, ...rest } = props;
 
   const {
+    containerNode,
     comboboxNode,
     buttonNode,
     listboxNode,
@@ -34,11 +30,16 @@ export const UiSelect = (props: UiSelectProps) => {
     activeOptionValue,
     onFocusOption,
     onSelectOption,
+    listboxStyle,
   } = useSelectAutocomplete({ options, value });
 
   return (
     <UiBox className={cls.uiSelect}>
-      <UiHStack className={cls.uiSelectGroup} onClick={onClickCombobox}>
+      <UiHStack
+        className={cls.uiSelectGroup}
+        onClick={onClickCombobox}
+        ref={containerNode}
+      >
         <input
           id="select-input"
           className={cls.uiSelectComponent}
@@ -52,6 +53,7 @@ export const UiSelect = (props: UiSelectProps) => {
           onChange={onChangeInputValue}
           onKeyDown={onKeyDownCombobox}
           autoComplete="off"
+          {...rest}
         />
         <button
           type="button"
@@ -66,12 +68,13 @@ export const UiSelect = (props: UiSelectProps) => {
           <UiIcon Svg={isListboxOpen ? ArrowUp : ArrowDown} />
         </button>
       </UiHStack>
-      {isListboxOpen && (
+      <UiPortal>
         <ul
           role="list"
           className={cls.uiSelectListBox}
           aria-label={ariaLabel}
           ref={listboxNode}
+          style={listboxStyle}
         >
           {displayedOptions.length ? (
             displayedOptions.map((option) => {
@@ -98,7 +101,7 @@ export const UiSelect = (props: UiSelectProps) => {
             </UiVStack>
           )}
         </ul>
-      )}
+      </UiPortal>
     </UiBox>
   );
 };
