@@ -41,6 +41,7 @@
     "@storybook/test": "^8.4.7",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
+    "@tanstack/eslint-plugin-query": "^5.67.2",
     "@types/babel__core": "^7.20.5",
     "@types/node": "^22.7.9",
     "@types/react": "^18.3.12",
@@ -84,6 +85,8 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.1",
+    "@tanstack/react-query": "^5.67.3",
+    "axios": "^1.8.3",
     "classnames": "^2.5.1",
     "dotenv": "^16.4.5",
     "final-form": "^4.20.10",
@@ -93,7 +96,8 @@
     "react-dom": "^18.3.1",
     "react-final-form": "^6.5.9",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^6.28.0"
+    "react-router-dom": "^6.28.0",
+    "react-toastify": "^11.0.5"
   },
   "eslintConfig": {
     "extends": [
