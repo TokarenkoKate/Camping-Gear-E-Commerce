@@ -1,9 +1,5 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
+import { UiBox, UiVStack, UiHStack, UiText, ColorTag } from "@/shared/ui";
 import { ProductDetails } from "@/entities/product/model/types/product";
-import { ColorTag } from "@/shared/ui/color-tag/color-tag";
 import { AddToCartButton } from "@/features/cart";
 import { PaymentChips } from "@/features/payment-chips";
 import { ProductRelatedProducts } from "../product-related-products/product-related-products";

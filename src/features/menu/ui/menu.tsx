@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox } from "@/shared/ui";
 import { MenuDesktopList } from "./menu-list";
 import { MenuMobile } from "./menu-mobile";
 import cls from "./menu.m.scss";

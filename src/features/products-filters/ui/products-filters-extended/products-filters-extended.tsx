@@ -1,9 +1,5 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
+import { UiBox, UiHStack, UiButton, UiText, ColorTag } from "@/shared/ui";
 import { ProductsFilterComponent } from "./products-filter-component";
-import { ColorTag } from "@/shared/ui/color-tag/color-tag";
 import {
   productsFilterColorOptions,
   productsFilterMaterialOptions,

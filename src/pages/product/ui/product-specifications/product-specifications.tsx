@@ -1,7 +1,5 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox, UiVStack, UiText } from "@/shared/ui";
 import { ProductDetails } from "@/entities/product";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
 import cls from "../product-page.m.scss";
 
 interface ProductSpecificationsProps {

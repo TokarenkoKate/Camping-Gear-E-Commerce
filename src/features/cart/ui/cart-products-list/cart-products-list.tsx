@@ -1,5 +1,4 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
+import { UiBox, UiVStack } from "@/shared/ui";
 import { ProductCart } from "@/entities/product";
 import { CartProductCard } from "../cart-product-card/cart-product-card";
 import cls from "../cart-sidebar/cart-sidebar.m.scss";

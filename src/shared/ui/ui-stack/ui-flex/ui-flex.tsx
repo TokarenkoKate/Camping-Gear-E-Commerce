@@ -4,7 +4,7 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox } from "../../ui-box/ui-box";
 import cls from "./ui-flex.m.scss";
 import classNames from "classnames";
 

@@ -1,8 +1,8 @@
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
 import { useSelector } from "react-redux";
+import { UiButton } from "@/shared/ui";
+import { useDisclosure } from "@/shared/lib/hooks/use-disclosure";
 import { cartProductsCountSelector } from "../model/selectors/cart-selector";
 import { CartSidebar } from "./cart-sidebar/cart-sidebar";
-import { useDisclosure } from "@/shared/lib/hooks/use-disclosure";
 
 export const Cart = () => {
   const { isOpen, onClose, toggleOpen } = useDisclosure();

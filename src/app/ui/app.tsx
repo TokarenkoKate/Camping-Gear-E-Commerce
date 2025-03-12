@@ -1,9 +1,8 @@
 import "../styles/index.scss";
 import { Outlet } from "react-router-dom";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox, UiVStack } from "@/shared/ui";
 import { Navbar } from "@/widgets/navbar";
 import { Footer } from "@/widgets/footer";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
 
 export const App = () => {
   return (

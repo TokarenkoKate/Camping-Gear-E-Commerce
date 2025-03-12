@@ -1,5 +1,5 @@
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { PaymentChip } from "@/shared/ui/payment-chip/payment-chip";
+import { UiHStack } from "@/shared/ui";
+import { PaymentChip } from "@/shared/ui";
 import { paymentChips } from "../model/const";
 import cls from "./payment-chips.m.scss";
 

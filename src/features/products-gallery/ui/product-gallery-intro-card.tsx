@@ -1,7 +1,4 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
+import { UiBox, UiVStack, UiText, UiButton } from "@/shared/ui";
 import cls from "./product-gallery.m.scss";
 
 export interface ProductGalleryIntroCardProps {

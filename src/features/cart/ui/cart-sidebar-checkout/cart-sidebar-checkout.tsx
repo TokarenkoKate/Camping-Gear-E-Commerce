@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
+import { UiVStack, UiButton, UiText } from "@/shared/ui";
 import { AppRoutes } from "@/shared/const/router";
 import cls from "../cart-sidebar/cart-sidebar.m.scss";
 

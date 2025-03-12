@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
+import { Fragment } from "react/jsx-runtime";
 import classNames from "classnames";
 import { UiSelectOption } from "@/shared/types/ui/ui-select";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { Fragment } from "react/jsx-runtime";
+import { UiVStack, UiText } from "@/shared/ui";
 import cls from "./products-filters-extended.m.scss";
 
 interface ProductsFilterComponentProps {

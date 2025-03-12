@@ -1,12 +1,14 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { Logo } from "@/shared/ui/logo/logo";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiLink } from "@/shared/ui/ui-link/ui-link";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
-import { UiDivider } from "@/shared/ui/ui-divider/ui-divider";
-import { SocialLink } from "@/shared/ui/social-link/social-link";
+import {
+  UiBox,
+  Logo,
+  UiText,
+  UiHStack,
+  UiVStack,
+  UiLink,
+  UiButton,
+  UiDivider,
+  SocialLink,
+} from "@/shared/ui";
 import {
   footerLinks,
   socialLinks,

@@ -1,8 +1,5 @@
 import { Link, To } from "react-router-dom";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiIcon } from "@/shared/ui/ui-icon/ui-icon";
+import { UiBox, UiVStack, UiText, UiIcon } from "@/shared/ui";
 import { Category } from "../model/types/category";
 import cls from "./category-card.m.scss";
 

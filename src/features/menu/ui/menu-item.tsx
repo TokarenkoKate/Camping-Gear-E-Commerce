@@ -1,4 +1,4 @@
-import { UiLink } from "@/shared/ui/ui-link/ui-link";
+import { UiLink } from "@/shared/ui";
 import { MenuItem } from "../model/const/menu";
 import { MenuItemType } from "../model/types/menu";
 import { ShopNavigationButton } from "@/features/shop-navigation";

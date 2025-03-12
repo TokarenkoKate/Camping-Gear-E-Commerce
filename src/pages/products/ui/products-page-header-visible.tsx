@@ -1,10 +1,6 @@
 import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
 import FiltersIcon from "@/shared/assets/icons/filters-20-20.svg";
-import { UiIcon } from "@/shared/ui/ui-icon/ui-icon";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
+import { UiIcon, UiHStack, UiVStack, UiButton, UiText } from "@/shared/ui";
 import { productsHeaderIconSize } from "../model/const";
 import { ProductsFilterCategories } from "@/features/products-filters/ui/products-filters-categories/products-filter-categories";
 import cls from "./products-page.m.scss";

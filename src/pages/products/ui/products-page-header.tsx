@@ -1,5 +1,5 @@
 import { useDisclosure } from "@/shared/lib/hooks/use-disclosure";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
+import { UiVStack } from "@/shared/ui";
 import { ProductsPageHeaderVisible } from "./products-page-header-visible";
 import { ProductsFiltersExtended } from "@/features/products-filters/ui/products-filters-extended/products-filters-extended";
 import cls from "./products-page.m.scss";

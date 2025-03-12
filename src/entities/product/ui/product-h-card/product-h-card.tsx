@@ -1,8 +1,5 @@
 import { PropsWithChildren } from "react";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiImage } from "@/shared/ui/ui-image/ui-image";
+import { UiHStack, UiVStack, UiText, UiImage } from "@/shared/ui";
 import { ProductCart } from "../../model/types/product";
 import cls from "./product-h-card.m.scss";
 

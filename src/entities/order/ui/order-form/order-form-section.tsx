@@ -1,7 +1,5 @@
 import { PropsWithChildren, ReactNode } from "react";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
+import { UiVStack, UiText, UiHStack } from "@/shared/ui";
 import cls from "./order-form.m.scss";
 
 interface OrderFormSectionProps {

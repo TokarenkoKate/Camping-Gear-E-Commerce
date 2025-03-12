@@ -7,7 +7,7 @@ import {
   useRef,
 } from "react";
 import classNames from "classnames";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox } from "../ui-box/ui-box";
 import cls from "./grid-with-inner-border.m.scss";
 import { useWindowResize } from "@/shared/lib/hooks/use-window-resize";
 import { removeBorderFromGrid } from "@/features/products-gallery/model/utils/remove-border-from-grid";

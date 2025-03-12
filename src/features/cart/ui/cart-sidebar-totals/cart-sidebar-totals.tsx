@@ -1,6 +1,4 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
+import { UiBox, UiHStack, UiText } from "@/shared/ui";
 import cls from "../cart-sidebar/cart-sidebar.m.scss";
 
 export const CartSidebarTotals = () => {

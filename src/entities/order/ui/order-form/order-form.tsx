@@ -1,10 +1,14 @@
-import { useForm } from "@/shared/lib/hooks/ui/use-form";
-import { UiInput } from "@/shared/ui/form/ui-input/ui-input";
-import { UiSelect } from "@/shared/ui/form/ui-select/ui-select";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
 import classNames from "classnames";
+import {
+  UiInput,
+  UiSelect,
+  UiBox,
+  UiHStack,
+  UiVStack,
+  UiFormField,
+  UiRadioButtonGroup,
+} from "@/shared/ui";
+import { useForm } from "@/shared/lib/hooks/ui/use-form";
 import {
   orderFormDeliveryMethodOptions,
   orderFormFieldPlaceholder,
@@ -13,8 +17,6 @@ import {
   orderFormSectionTitle,
 } from "../../model/config/form";
 import { OrderFormSection } from "./order-form-section";
-import { UiFormField } from "@/shared/ui/form/ui-form-field/ui-form-field";
-import { UiRadioButtonGroup } from "@/shared/ui/form/ui-radio-buttons/ui-radio-button-group/ui-radio-button-group";
 import { OrderFormSubmitButton } from "./order-form-submit-button";
 import cls from "./order-form.m.scss";
 

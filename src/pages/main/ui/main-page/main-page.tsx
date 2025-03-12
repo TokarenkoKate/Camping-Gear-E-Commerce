@@ -1,4 +1,4 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox } from "@/shared/ui";
 import { MainPageHeader } from "../main-page-header/main-page-header";
 import { MainPageArticles } from "../main-page-articles/main-page-articles";
 import { ProductsGallery } from "@/features/products-gallery";

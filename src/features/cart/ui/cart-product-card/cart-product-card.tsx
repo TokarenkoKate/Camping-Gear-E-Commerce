@@ -1,5 +1,5 @@
 import { ProductCart, ProductHCard } from "@/entities/product";
-import { CounterButton } from "@/shared/ui/counter-button/counter-button";
+import { CounterButton } from "@/shared/ui";
 
 interface CartProductCardInterface {
   product: ProductCart;

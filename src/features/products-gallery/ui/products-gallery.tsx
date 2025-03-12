@@ -1,5 +1,5 @@
 import { ProductCard, ProductSummary } from "@/entities/product";
-import { GridWithInnerBorder } from "@/shared/ui/grid-with-inner-border/grid-with-inner-border";
+import { GridWithInnerBorder } from "@/shared/ui";
 import {
   ProductGalleryIntroCard,
   ProductGalleryIntroCardProps,

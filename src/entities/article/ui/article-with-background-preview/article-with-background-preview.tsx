@@ -1,13 +1,10 @@
 import classNames from "classnames";
 import { ClassnamesMods } from "@/shared/types/classnames";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox, UiVStack, UiText, UiButton } from "@/shared/ui";
 import {
   ArticlePreview,
   ArticlePreviewWithBackgroundCardType,
 } from "../../model/types/article";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
 import cls from "./article-with-background-preview.m.scss";
 
 interface ArticleWithBackgroundPreviewProps {

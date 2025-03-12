@@ -1,8 +1,5 @@
 import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
+import { UiBox, UiHStack, UiText, UiButton } from "@/shared/ui";
 import { ProductsGallery } from "@/features/products-gallery";
 import { mockProductId1, mockProductId2 } from "@/mocks/products/product";
 import cls from "../product-page.m.scss";

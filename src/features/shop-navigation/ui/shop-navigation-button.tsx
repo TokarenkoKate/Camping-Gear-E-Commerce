@@ -1,6 +1,6 @@
 import { PropsWithChildren, useRef } from "react";
 import { ShopNavigation } from "./shop-navigation";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
+import { UiButton } from "@/shared/ui";
 import { useDisclosure } from "@/shared/lib/hooks/use-disclosure";
 
 interface ShopNavigationButtonProps {

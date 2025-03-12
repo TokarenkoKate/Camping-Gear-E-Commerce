@@ -1,8 +1,5 @@
 import { RefObject, useRef } from "react";
-import { UiPortal } from "@/shared/ui/ui-portal/ui-portal";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiOverlay } from "@/shared/ui/ui-overlay/ui-overlay";
-import { GridWithInnerBorder } from "@/shared/ui/grid-with-inner-border/grid-with-inner-border";
+import { UiPortal, UiBox, UiOverlay, GridWithInnerBorder } from "@/shared/ui";
 import { CategoryCard } from "@/entities/category";
 import { categoryItems } from "../../../entities/category/model/const/shop-categories";
 import { useOutsideClick } from "@/shared/lib/hooks/use-outside-click";

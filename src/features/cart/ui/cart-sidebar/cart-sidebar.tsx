@@ -1,9 +1,5 @@
 import Close from "@/shared/assets/icons/close-20-20.svg";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
-import { UiSidebar } from "@/shared/ui/ui-sidebar/ui-sidebar";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
+import { UiButton, UiSidebar, UiHStack, UiVStack, UiText } from "@/shared/ui";
 import { CardProductsList } from "../cart-products-list/cart-products-list";
 import { CartSidebarTotals } from "../cart-sidebar-totals/cart-sidebar-totals";
 import { CartSidebarCheckout } from "../cart-sidebar-checkout/cart-sidebar-checkout";

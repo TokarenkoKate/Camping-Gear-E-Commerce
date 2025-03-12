@@ -1,4 +1,4 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox } from "@/shared/ui";
 import { ProductInfo } from "./product-info/product-info";
 import { mockProductDetails } from "@/mocks/products/product";
 import { ProductVisuals } from "./product-visuals/product-visuals";

@@ -1,6 +1,4 @@
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiVStack } from "@/shared/ui/ui-stack/ui-vstack/ui-vstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
+import { UiBox, UiVStack, UiText } from "@/shared/ui";
 import { ProductDetails } from "@/entities/product";
 import cls from "../product-page.m.scss";
 

@@ -1,4 +1,4 @@
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
+import { UiButton } from "@/shared/ui";
 import cls from "./order-form.m.scss";
 
 export const OrderFormSubmitButton = () => {

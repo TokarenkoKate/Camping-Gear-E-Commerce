@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
+import { UiButton } from "@/shared/ui";
 import cls from "./login.m.scss";
 
 interface LoginProps {

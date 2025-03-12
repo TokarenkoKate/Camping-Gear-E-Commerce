@@ -1,8 +1,7 @@
-import { UiIcon } from "@/shared/ui/ui-icon/ui-icon";
-import cls from "./search.m.scss";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
-import SearchIcon from "@/shared/assets/icons/search-20-20.svg";
 import classNames from "classnames";
+import SearchIcon from "@/shared/assets/icons/search-20-20.svg";
+import { UiIcon, UiButton } from "@/shared/ui";
+import cls from "./search.m.scss";
 
 export const Search = () => {
   return (

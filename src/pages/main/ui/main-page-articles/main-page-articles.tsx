@@ -10,7 +10,7 @@ import {
   mockArticlePreviewWithBackground,
   mockArticlePreviewWithBackgroundHorizontal,
 } from "@/mocks/articles/article";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox } from "@/shared/ui";
 import cls from "../main-page/main-page.m.scss";
 
 export const MainPageArticles = () => {

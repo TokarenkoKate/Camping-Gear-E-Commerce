@@ -1,7 +1,7 @@
 import { Cart } from "@/features/cart";
 import { Login } from "@/features/login";
 import { Search } from "@/features/search";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
+import { UiHStack } from "@/shared/ui";
 import cls from "./navbar.m.scss";
 
 export const NavbarActions = () => {

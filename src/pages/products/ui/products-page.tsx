@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
+import { UiBox } from "@/shared/ui";
 import { EMPTY_STRING } from "@/shared/const/common-string";
 import { ProductsPageParams } from "../types/products-page";
 import { ProductsPageHeader } from "./products-page-header";

@@ -1,12 +1,14 @@
 import classNames from "classnames";
 import ArrowExternalRight from "@/shared/assets/icons/arrow-external-right-20-20.svg";
 import { ClassnamesMods } from "@/shared/types/classnames";
-import { UiBox } from "@/shared/ui/ui-box/ui-box";
-import { UiHStack } from "@/shared/ui/ui-stack/ui-hstack/ui-hstack";
-import { UiText } from "@/shared/ui/ui-text/ui-text";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
-import { UiIcon } from "@/shared/ui/ui-icon/ui-icon";
-import { UiImage } from "@/shared/ui/ui-image/ui-image";
+import {
+  UiBox,
+  UiHStack,
+  UiText,
+  UiButton,
+  UiIcon,
+  UiImage,
+} from "@/shared/ui";
 import {
   ArticlePreview,
   ArticlePreviewCardType,

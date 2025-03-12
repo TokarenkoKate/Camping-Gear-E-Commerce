@@ -1,5 +1,5 @@
 import { useAppDispatch } from "@/shared/lib/hooks/use-app-dispatch";
-import { UiButton } from "@/shared/ui/ui-button/ui-button";
+import { UiButton } from "@/shared/ui";
 import { cartActions } from "../model/slice/cart-slice";
 
 type AddToCartButtonProps = {
