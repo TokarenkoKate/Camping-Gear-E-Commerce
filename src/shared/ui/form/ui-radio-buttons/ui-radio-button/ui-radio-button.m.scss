@@ -1,0 +1,55 @@
+$radio-icon-size: 24px;
+$radio-icon-size-checked: 14px;
+
+.ui-radio-button {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+
+  &-input {
+    appearance: none;
+    position: relative;
+    width: $radio-icon-size;
+    height: $radio-icon-size;
+    background: var(--color-primary);
+    border: 1px solid var(--color-accent);
+    transition: 0.2s;
+    border-radius: 50%;
+
+    &::after {
+      overflow: hidden;
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--color-accent);
+      border-radius: 50%;
+      transition: 0.2s;
+    }
+
+    &:active {
+      border-width: 3px;
+    }
+
+    &:focus-visible {
+      outline: 4px solid var(--color-link);
+      outline-offset: 2px;
+    }
+
+    &:checked::after {
+      width: $radio-icon-size-checked;
+      height: $radio-icon-size-checked;
+      transition: 0.2s;
+    }
+  }
+
+  &-label {
+    padding-left: var(--space-3);
+  }
+}
