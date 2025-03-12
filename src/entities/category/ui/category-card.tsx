@@ -1,5 +1,5 @@
 import { Link, To } from "react-router-dom";
-import { UiBox, UiVStack, UiText, UiIcon } from "@/shared/ui";
+import { UiBox, UiVStack, UiText } from "@/shared/ui";
 import { Category } from "../model/types/category";
 import cls from "./category-card.m.scss";
 
@@ -12,8 +12,10 @@ export const CategoryCard = ({
   category,
   onRedirectClick,
 }: CategoryCardProps) => {
-  const { name, description, href, Svg } = category;
-  const redirectPath: To = `/shop/${href}`;
+  const { name, alias, image } = category;
+  const redirectPath: To = `/shop/${alias}`;
+
+  const imagePath = `${process.env.APP_API_HOST}/${image}`;
 
   return (
     <Link
@@ -22,10 +24,9 @@ export const CategoryCard = ({
       onClick={onRedirectClick}
     >
       <UiBox className={cls.categoryCardContent}>
-        <UiIcon Svg={Svg} className={cls.categoryCardImg} />
+        <img src={imagePath} className={cls.categoryCardImg} alt={name} />
         <UiVStack className={cls.categoryCardTexts}>
           <UiText className={cls.categoryCardTitle}>{name}</UiText>
-          {description && <UiText>{description}</UiText>}
         </UiVStack>
       </UiBox>
     </Link>

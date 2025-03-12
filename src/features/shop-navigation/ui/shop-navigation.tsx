@@ -1,9 +1,10 @@
 import { RefObject, useRef } from "react";
 import { UiPortal, UiBox, UiOverlay, GridWithInnerBorder } from "@/shared/ui";
-import { CategoryCard } from "@/entities/category";
+import { categoriesSelector, CategoryCard } from "@/entities/category";
 import { categoryItems } from "../../../entities/category/model/const/shop-categories";
 import { useOutsideClick } from "@/shared/lib/hooks/use-outside-click";
 import { useDisableBodyScroll } from "@/shared/lib/hooks/use-disable-scroll";
+import { useSelector } from "react-redux";
 import cls from "./shop-navigation.m.scss";
 
 interface ShopNavigationProps {
@@ -18,6 +19,7 @@ export const ShopNavigation = ({
   onClose,
 }: ShopNavigationProps) => {
   const contentRef = useRef<HTMLUListElement>(null);
+  const categories = useSelector(categoriesSelector);
 
   useOutsideClick({
     ref: contentRef,
@@ -37,7 +39,7 @@ export const ShopNavigation = ({
           borderColor="#d0d0d0"
           ref={contentRef}
         >
-          {categoryItems.map((category) => {
+          {categories?.map((category) => {
             return (
               <CategoryCard
                 category={category}
