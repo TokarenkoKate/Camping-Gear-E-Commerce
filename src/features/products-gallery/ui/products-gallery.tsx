@@ -5,6 +5,7 @@ import {
   ProductGalleryIntroCardProps,
 } from "./product-gallery-intro-card";
 import { PRODUCTS_GALLERY_MIN_COLUMN_WIDTH } from "../model/const/products-gallery";
+import { ProductsEmptyGallery } from "./products-empty-gallery";
 
 interface ProductsGalleryProps {
   introCardProps?: ProductGalleryIntroCardProps;
@@ -27,6 +28,10 @@ export const ProductsGallery = ({
   ) : null;
 
   const itemsLength = introCard ? products.length + 1 : products.length;
+
+  if (!products || !products.length) {
+    return <ProductsEmptyGallery />;
+  }
 
   return (
     <GridWithInnerBorder
