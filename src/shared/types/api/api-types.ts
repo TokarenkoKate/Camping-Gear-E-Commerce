@@ -24,3 +24,8 @@ export type ApiResponseWithPager<T> = {
     sum: number;
   };
 };
+
+export type ApiPagerQueryParams = {
+  page?: number;
+  perPage?: number;
+};
