@@ -1,6 +1,7 @@
 import ArrowDown from "@/shared/assets/icons/arrow-down.svg";
 import ArrowUp from "@/shared/assets/icons/arrow-up.svg";
 import Empty from "@/shared/assets/icons/empty.svg";
+import { EMPTY_STRING } from "@/shared/const/common-string";
 import { useSelectAutocomplete } from "@/shared/lib/hooks/ui/use-select-autocomplete";
 import { UiSelectProps } from "@/shared/types/ui/ui-select";
 import { UiBox } from "../../ui-box/ui-box";
@@ -13,7 +14,7 @@ import { UiPortal } from "../../ui-portal/ui-portal";
 import cls from "./ui-select.m.scss";
 
 export const UiSelect = (props: UiSelectProps) => {
-  const { ariaLabel, value, options, ...rest } = props;
+  const { ariaLabel = EMPTY_STRING, value, options, ...rest } = props;
 
   const {
     containerNode,
