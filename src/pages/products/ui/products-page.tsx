@@ -1,26 +1,17 @@
-import { useParams } from "react-router-dom";
-import { UiBox } from "@/shared/ui";
-import { EMPTY_STRING } from "@/shared/const/common-string";
-import { ProductsPageParams } from "../types/products-page";
-import { ProductsPageHeader } from "./products-page-header";
 import { ProductsGallery } from "@/features/products-gallery";
-import { categoryItems } from "@/entities/category/model/const/shop-categories";
-import { mockProductsGallery } from "@/mocks/products/product";
+import { UiBox } from "@/shared/ui";
+import { useProductsPage } from "../model/hooks/use-products-page";
+import { ProductsPageHeader } from "./products-page-header";
 import cls from "./products-page.m.scss";
 
 export const ProductsPage = () => {
-  const params = useParams<ProductsPageParams>();
-  const category = params.category;
-
-  const categoryName =
-    categoryItems.find((categoryItem) => categoryItem.href === category)
-      ?.name || EMPTY_STRING;
+  const { products, categoryName } = useProductsPage();
 
   return (
     <UiBox className={cls.productsPage}>
       <ProductsPageHeader categoryName={categoryName} />
       <ProductsGallery
-        products={mockProductsGallery}
+        products={products}
         className={cls.productsPageGallery}
       />
     </UiBox>
