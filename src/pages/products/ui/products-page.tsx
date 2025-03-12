@@ -5,7 +5,14 @@ import { ProductsPageHeader } from "./products-page-header";
 import cls from "./products-page.m.scss";
 
 export const ProductsPage = () => {
-  const { products, isLoading, categoryName } = useProductsPage();
+  const {
+    products,
+    isLoading,
+    categoryName,
+    totalLength,
+    isFetchingNextPage,
+    fetchNextPage,
+  } = useProductsPage();
 
   return (
     <UiBox className={cls.productsPage}>
@@ -14,6 +21,9 @@ export const ProductsPage = () => {
         products={products}
         isLoading={isLoading}
         className={cls.productsPageGallery}
+        totalLength={totalLength}
+        isFetchingNextPage={isFetchingNextPage}
+        fetchNextPage={fetchNextPage}
       />
     </UiBox>
   );

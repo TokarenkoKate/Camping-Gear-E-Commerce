@@ -7,12 +7,21 @@ import {
 import { PRODUCTS_GALLERY_MIN_COLUMN_WIDTH } from "../model/const/products-gallery";
 import { ProductsEmptyGallery } from "./empty/products-empty-gallery";
 import { ProductsLoadingGallery } from "./loading/products-loading-gallery";
+import { InfiniteScroll } from "@/shared/ui/infinite-scroll/infinite-scroll";
+import { InfiniteScrollProps } from "@/shared/types/ui/infinite-scroll";
 
-interface ProductsGalleryProps {
+interface ProductsGalleryProps
+  extends Partial<
+    Pick<
+      InfiniteScrollProps,
+      "fetchNextPage" | "isFetchingNextPage" | "totalLength"
+    >
+  > {
   introCardProps?: ProductGalleryIntroCardProps;
   products: ProductSummary[];
   className?: string;
   isLoading: boolean;
+  infiniteScroll?: boolean;
 }
 
 export const ProductsGallery = ({
@@ -20,6 +29,10 @@ export const ProductsGallery = ({
   products,
   isLoading,
   className,
+  infiniteScroll,
+  totalLength,
+  isFetchingNextPage,
+  fetchNextPage,
 }: ProductsGalleryProps) => {
   const isEmpty = !products || !products.length;
 
@@ -42,16 +55,33 @@ export const ProductsGallery = ({
 
   const itemsLength = introCard ? products.length + 1 : products.length;
 
+  const galleryContent = (
+    <>
+      {introCard}
+      {products.map((product) => (
+        <ProductCard product={product} key={product.id} />
+      ))}
+    </>
+  );
+
   return (
     <GridWithInnerBorder
       itemsLength={itemsLength}
       columnMinWidth={PRODUCTS_GALLERY_MIN_COLUMN_WIDTH}
       className={className}
     >
-      {introCard}
-      {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
-      ))}
+      {infiniteScroll && totalLength && fetchNextPage ? (
+        <InfiniteScroll
+          totalLength={totalLength}
+          dataLength={products.length}
+          isFetchingNextPage={isFetchingNextPage}
+          fetchNextPage={fetchNextPage}
+        >
+          {galleryContent}
+        </InfiniteScroll>
+      ) : (
+        galleryContent
+      )}
     </GridWithInnerBorder>
   );
 };
