@@ -51,4 +51,9 @@ $img-max-h: 291px;
   &:hover .name {
     text-decoration: underline;
   }
+
+  &-loading {
+    padding: var(--space-5);
+    gap: var(--space-3);
+  }
 }

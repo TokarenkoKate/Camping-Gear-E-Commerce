@@ -18,5 +18,5 @@ export const useProductsPage = () => {
 
   const products = flatMapDataPages(data);
 
-  return { categoryName, products };
+  return { categoryName, isLoading, products };
 };

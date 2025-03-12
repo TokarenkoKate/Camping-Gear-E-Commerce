@@ -1,4 +1,4 @@
-import { ProductGalleryIntroCardProps } from "@/features/products-gallery/ui/product-gallery-intro-card";
+import { ProductGalleryIntroCardProps } from "@/features/products-gallery/ui/intro-card/product-gallery-intro-card";
 
 export const newInGalleryIntroCard: ProductGalleryIntroCardProps = {
   title: "New In",

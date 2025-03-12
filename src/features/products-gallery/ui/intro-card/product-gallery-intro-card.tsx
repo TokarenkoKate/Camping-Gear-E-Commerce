@@ -1,5 +1,5 @@
 import { UiBox, UiVStack, UiText, UiButton } from "@/shared/ui";
-import cls from "./product-gallery.m.scss";
+import cls from "../product-gallery.m.scss";
 
 export interface ProductGalleryIntroCardProps {
   title: string;

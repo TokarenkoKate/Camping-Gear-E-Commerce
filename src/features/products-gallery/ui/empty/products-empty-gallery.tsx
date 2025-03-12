@@ -1,10 +1,21 @@
 import { UiIcon, UiText, UiVStack } from "@/shared/ui";
 import EmptyList from "@/shared/assets/icons/empty-list.svg";
-import cls from "./product-gallery.m.scss";
+import cls from "../product-gallery.m.scss";
+import classNames from "classnames";
 
-export const ProductsEmptyGallery = () => {
+interface ProductsEmptyGalleryProps {
+  className?: string;
+}
+
+export const ProductsEmptyGallery = ({
+  className,
+}: ProductsEmptyGalleryProps) => {
   return (
-    <UiVStack max align="center" className={cls.productGalleryEmpty}>
+    <UiVStack
+      max
+      align="center"
+      className={classNames(cls.productGalleryEmpty, className)}
+    >
       <UiIcon Svg={EmptyList} />
       <UiVStack align="center" className={cls.productGalleryEmptyTexts}>
         <UiText tone="secondary" variant="headingSm" fontWeight="medium">

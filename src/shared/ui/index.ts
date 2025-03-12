@@ -25,3 +25,4 @@ export { UiHStack } from "./ui-stack/ui-hstack/ui-hstack";
 export { UiVStack } from "./ui-stack/ui-vstack/ui-vstack";
 export { UiText } from "./ui-text/ui-text";
 export { UiButtonCheckboxGroup } from "./ui-button-checkbox/ui-button-checkbox-group";
+export { Skeleton } from "./skeleton/skeleton";
