@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import { AppRouteType } from "@/shared/types/router";
 import { AppRoutes, appRoutesPaths } from "@/shared/const/router";
 import { MainPage } from "@/pages/main";
@@ -38,5 +39,9 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.NOT_FOUND]: {
     path: appRoutesPaths[AppRoutes.NOT_FOUND],
     element: <NotFoundPage />,
+  },
+  [AppRoutes.NOT_FOUND_REDIRECT]: {
+    path: appRoutesPaths[AppRoutes.NOT_FOUND_REDIRECT],
+    element: <Navigate replace to={appRoutesPaths[AppRoutes.NOT_FOUND]} />,
   },
 };
