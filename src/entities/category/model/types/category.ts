@@ -4,3 +4,10 @@ export interface Category {
   alias: string;
   image: string;
 }
+
+export interface CategoryAttribute {
+  id: number;
+  key: string;
+  values: string[];
+  isMulti: boolean;
+}

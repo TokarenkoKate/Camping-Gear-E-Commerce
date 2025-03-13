@@ -11,12 +11,18 @@ export const ProductsPage = () => {
     categoryName,
     totalLength,
     isFetchingNextPage,
+    filterAttributes,
     fetchNextPage,
+    onSubmitFilters,
   } = useProductsPage();
 
   return (
     <UiBox className={cls.productsPage}>
-      <ProductsPageHeader categoryName={categoryName} />
+      <ProductsPageHeader
+        categoryName={categoryName}
+        filterAttributes={filterAttributes}
+        onSubmitFilters={onSubmitFilters}
+      />
       <ProductsGallery
         products={products}
         isLoading={isLoading}

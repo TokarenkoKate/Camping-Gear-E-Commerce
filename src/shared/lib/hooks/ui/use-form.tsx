@@ -6,6 +6,7 @@ import { Form, FormProps } from "react-final-form";
 export type UiFormProps<T> = {
   children: ReactNode;
   initialValues?: Partial<T>;
+  className?: string;
   onSubmit: (values: T, form: FormApi<T>) => object | Promise<object> | void;
   onChange?: FormEventHandler<HTMLFormElement>;
 };
@@ -14,15 +15,21 @@ export const useForm = <T,>() => {
   return useMemo(() => {
     const UiForm: FC<UiFormProps<T> & FormProps<T, Partial<T>>> = ({
       children,
-      onChange,
+      className,
       mutators,
+      onChange,
       ...props
     }) => (
       <Form
         {...props}
         mutators={{ ...arrayMutators, ...mutators }}
         render={({ handleSubmit }) => (
-          <form onChange={onChange} onSubmit={handleSubmit} autoComplete="off">
+          <form
+            onChange={onChange}
+            onSubmit={handleSubmit}
+            autoComplete="off"
+            className={className}
+          >
             {children}
           </form>
         )}

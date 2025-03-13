@@ -1,7 +1,6 @@
 import { RefObject, useRef } from "react";
 import { UiPortal, UiBox, UiOverlay, GridWithInnerBorder } from "@/shared/ui";
 import { categoriesSelector, CategoryCard } from "@/entities/category";
-import { categoryItems } from "../../../entities/category/model/const/shop-categories";
 import { useOutsideClick } from "@/shared/lib/hooks/use-outside-click";
 import { useDisableBodyScroll } from "@/shared/lib/hooks/use-disable-scroll";
 import { useSelector } from "react-redux";
@@ -29,12 +28,16 @@ export const ShopNavigation = ({
 
   useDisableBodyScroll(isOpen);
 
+  if (!categories) {
+    return null;
+  }
+
   return (
     <UiPortal>
       <UiBox className={cls.shopNavigation}>
         <UiOverlay className={cls.shopNavigationOverlay} />
         <GridWithInnerBorder
-          itemsLength={categoryItems.length}
+          itemsLength={categories.length}
           className={cls.shopNavigationContent}
           borderColor="#d0d0d0"
           ref={contentRef}

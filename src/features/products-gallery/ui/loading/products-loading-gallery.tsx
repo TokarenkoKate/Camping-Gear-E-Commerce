@@ -6,7 +6,7 @@ type ProductsLoadingGalleryProps = {
   className?: string;
 };
 
-const loadingProducts = Array.from(Array(6).keys());
+const loadingProducts = Array.from(Array(4).keys());
 
 export const ProductsLoadingGallery = (props: ProductsLoadingGalleryProps) => {
   const { className } = props;

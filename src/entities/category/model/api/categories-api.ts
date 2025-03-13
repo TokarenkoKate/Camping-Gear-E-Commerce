@@ -1,6 +1,13 @@
-import { Category } from "../types/category";
+import { ApiEndpoint } from "@/shared/config/api/api-enpoints";
+import { Category, CategoryAttribute } from "../types/category";
 import { ApiGet } from "@/shared/config/api/api-methods";
 
 export const CategoriesApi = {
-  getCategories: () => ApiGet<Array<Category>>({ endpoint: "categories" }),
+  getCategories: () =>
+    ApiGet<Array<Category>>({ endpoint: ApiEndpoint.categories }),
+
+  getCategoryAttributes: (categoryId: number | undefined) =>
+    ApiGet<Array<CategoryAttribute>>({
+      endpoint: `${ApiEndpoint.categories}/${categoryId}/attributes`,
+    }),
 };

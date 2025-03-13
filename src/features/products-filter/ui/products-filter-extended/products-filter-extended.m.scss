@@ -1,11 +1,13 @@
 @import "/src/app/styles/mixins/responsive";
 
-.products-filters {
+$products-filter-grid-col-size: 22px;
+
+.products-filter {
   width: 100%;
-  padding: var(--space-10) var(--space-3-5);
   display: flex;
   flex-direction: column;
   align-items: normal;
+  padding: var(--space-10) var(--space-3-5);
   gap: var(--space-8);
   border: 1px solid var(--color-border-dark);
   border-bottom: none;
@@ -53,8 +55,16 @@
 
     &-grid > &-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, 22px);
+      grid-template-columns: repeat(auto-fill, $products-filter-grid-col-size);
       gap: var(--space-6);
+    }
+  }
+
+  &-button {
+    font-weight: 400;
+
+    &-selected {
+      font-weight: 600;
     }
   }
 }

@@ -1,26 +1,33 @@
 import classNames from "classnames";
 import cls from "./color-tag.m.scss";
-import { UiBox } from "../ui-box/ui-box";
 
 interface ColorTagProps {
   color: string;
   selected?: boolean;
   className?: string;
+  onToggleColor?(color: string, value: boolean): void;
 }
 
-export const ColorTag = ({ color, selected, className }: ColorTagProps) => {
+export const ColorTag = ({
+  color,
+  selected,
+  className,
+  onToggleColor,
+}: ColorTagProps) => {
+  const onClickColorTag = () => {
+    onToggleColor?.(color, !selected);
+  };
+
   return (
-    <UiBox
+    <button
+      style={{ backgroundColor: color }}
       className={classNames(
         cls.colorTag,
         { [cls.selected]: selected },
         className
       )}
-    >
-      <button
-        style={{ backgroundColor: color }}
-        className={cls.colorTagButton}
-      />
-    </UiBox>
+      onClick={onClickColorTag}
+      type="button"
+    />
   );
 };

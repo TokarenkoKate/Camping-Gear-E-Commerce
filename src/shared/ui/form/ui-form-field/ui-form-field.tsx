@@ -1,18 +1,12 @@
-import {
-  Field,
-  FieldInputProps,
-  FieldMetaState,
-  useField,
-} from "react-final-form";
+import { Field, useField } from "react-final-form";
 import { UiBox } from "../../ui-box/ui-box";
 import { UiText } from "../../ui-text/ui-text";
+import { UiFieldRenderProps } from "@/shared/types/ui/ui-form";
 
 export type UiFormFieldProps<T extends object, Value> = T & {
   name: string;
   label?: string;
-  component: React.ComponentType<
-    FieldInputProps<Value> & FieldMetaState<Value> & T
-  >;
+  component: React.ComponentType<UiFieldRenderProps<Value> & T>;
 };
 
 export const UiFormField = <T extends object, Value>(
