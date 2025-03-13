@@ -11,12 +11,12 @@ export const App = () => {
   return (
     <UiVStack className="app" align="normal">
       <Navbar />
-      <UiBox className="app-content">
+      <UiVStack className="app-content" align="normal" max>
         <UiBox className="app-main" as="main">
           <Outlet />
         </UiBox>
         <Footer />
-      </UiBox>
+      </UiVStack>
     </UiVStack>
   );
 };
