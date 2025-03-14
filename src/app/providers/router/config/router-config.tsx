@@ -6,6 +6,8 @@ import { ProductsPage } from "@/pages/products";
 import { ProductPage } from "@/pages/product";
 import { CartPage } from "@/pages/cart";
 import { NotFoundPage } from "@/pages/not-found-page";
+import { LoginPage } from "@/pages/login";
+import { SignUpPage } from "@/pages/signup";
 
 export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.HOME]: {
@@ -35,6 +37,14 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.CART]: {
     path: appRoutesPaths[AppRoutes.CART],
     element: <CartPage />,
+  },
+  [AppRoutes.LOGIN]: {
+    path: appRoutesPaths[AppRoutes.LOGIN],
+    element: <LoginPage />,
+  },
+  [AppRoutes.SIGNUP]: {
+    path: appRoutesPaths[AppRoutes.SIGNUP],
+    element: <SignUpPage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: appRoutesPaths[AppRoutes.NOT_FOUND],

@@ -5,9 +5,11 @@ export enum AppRoutes {
   EVENTS = "events",
   COLLECTIONS = "collections",
   JOURNAL = "journal",
+  CART = "cart",
+  LOGIN = "login",
+  SIGNUP = "signup",
   NOT_FOUND = "not-found",
   NOT_FOUND_REDIRECT = "not-found-redirect",
-  CART = "cart",
 }
 
 export const INDEX_ROUTE_PATH = "/";
@@ -21,6 +23,8 @@ export const appRoutesPaths: Record<AppRoutes, string> = {
   [AppRoutes.COLLECTIONS]: "/collections",
   [AppRoutes.JOURNAL]: "/journal",
   [AppRoutes.CART]: "/cart",
+  [AppRoutes.LOGIN]: "/login",
+  [AppRoutes.SIGNUP]: "/signup",
   [AppRoutes.NOT_FOUND]: NOT_FOUND_PATH,
   [AppRoutes.NOT_FOUND_REDIRECT]: "*",
 };
