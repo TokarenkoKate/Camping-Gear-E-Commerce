@@ -1,14 +1,34 @@
 $arrow-width: var(--space-2-5);
 $link-arrow-gap: var(--space-2-5);
 
+/* stylelint-disable custom-property-pattern */
 .ui-link {
+  --ui-link-color: transparent;
+  --ui-link-color_hover: transparent;
+  --ui-link-color_active: transparent;
+
   position: relative;
-  color: var(--color-text-primary);
+  color: var(--ui-link-color);
   transition: all 0.2s;
   cursor: pointer;
 
+  /*
+  * tones
+  */
+  &.base {
+    --ui-link-color: var(--color-text-primary);
+    --ui-link-color_hover: var(--color-text-secondary);
+    --ui-link-color_active: var(--color-accent-dark);
+  }
+
+  &.accent {
+    --ui-link-color: var(--color-link);
+    --ui-link-color_hover: var(--color-link-light);
+    --ui-link-color_active: var(--color-link-dark);
+  }
+
   &:hover {
-    color: var(--color-text-secondary);
+    color: var(--ui-link-color_hover);
 
     .arrow {
       opacity: 1;
@@ -16,7 +36,7 @@ $link-arrow-gap: var(--space-2-5);
   }
 
   &:active {
-    color: var(--color-accent-dark);
+    color: var(--ui-link-color_active);
   }
 
   &:focus-visible {

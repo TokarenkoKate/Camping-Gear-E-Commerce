@@ -27,3 +27,4 @@ export { UiVStack } from "./ui-stack/ui-vstack/ui-vstack";
 export { UiText } from "./ui-text/ui-text";
 export { UiButtonCheckboxGroup } from "./ui-button-checkbox/ui-button-checkbox-group";
 export { Skeleton } from "./skeleton/skeleton";
+export { LoginLink } from "./login-link/login-link";

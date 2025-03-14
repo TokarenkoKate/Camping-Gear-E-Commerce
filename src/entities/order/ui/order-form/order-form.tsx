@@ -7,6 +7,7 @@ import {
   UiVStack,
   UiFormField,
   UiRadioButtonGroup,
+  LoginLink,
 } from "@/shared/ui";
 import { useForm } from "@/shared/lib/hooks/ui/use-form";
 import {
@@ -31,14 +32,16 @@ export const OrderForm = ({ className }: OrderFormProps) => {
     <UiBox className={classNames(cls.orderForm, className)} max>
       <Form onSubmit={() => {}}>
         <UiVStack className={cls.orderFormSections} max align="normal">
-          <OrderFormSection title={orderFormSectionTitle.customer}>
+          <OrderFormSection
+            title={orderFormSectionTitle.customer}
+            extraContent={<LoginLink />}
+          >
             <UiHStack max className={cls.orderFormRow}>
               <UiFormField
                 name={OrderFormInputName.fullName}
                 placeholder={orderFormFieldPlaceholder.fullName}
                 component={UiInput}
               />
-
               <UiFormField
                 name={OrderFormInputName.email}
                 placeholder={orderFormFieldPlaceholder.email}

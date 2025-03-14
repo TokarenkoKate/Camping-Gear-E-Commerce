@@ -13,14 +13,16 @@ export const UiLink = memo(function UiLink(props: UiLinkProps) {
     target = "_blank",
     rel = "noopener noreferrer",
     children,
-    className,
     variant = "default",
+    tone = "base",
+    className,
     ...otherProps
   } = props;
 
   const withArrow = variant === "withArrow";
   const mods: ClassnamesMods = {
     [cls[variant]]: true,
+    [cls[tone]]: true,
   };
 
   const content = (
