@@ -5,7 +5,14 @@ import { UiHStack } from "../../ui-stack/ui-hstack/ui-hstack";
 import cls from "./ui-input.m.scss";
 
 export const UiInput = (props: UiInputProps) => {
-  const { className, type = "text", ...otherProps } = props;
+  const {
+    className,
+    type = "text",
+    name,
+    value,
+    placeholder,
+    onChange,
+  } = props;
 
   const ref = useRef<HTMLInputElement>(null);
   const mods = {};
@@ -13,10 +20,13 @@ export const UiInput = (props: UiInputProps) => {
   return (
     <UiHStack className={classNames(cls.uiInput, mods, [className])}>
       <input
+        name={name}
+        value={value}
+        placeholder={placeholder}
         ref={ref}
         type={type}
         className={cls.uiInputComponent}
-        {...otherProps}
+        onChange={onChange}
       />
     </UiHStack>
   );

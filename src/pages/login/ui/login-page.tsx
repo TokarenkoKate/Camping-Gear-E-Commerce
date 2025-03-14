@@ -2,8 +2,11 @@ import { UiBox, UiText, UiVStack } from "@/shared/ui";
 import { AuthForm, AuthFormType, AuthSection } from "@/features/auth";
 import { appRoutesPaths } from "@/shared/const/router";
 import cls from "./login-page.m.scss";
+import { useLogin } from "@/features/auth/model/api/use-login";
 
 export const LoginPage = () => {
+  const onSubmitForm = useLogin();
+
   return (
     <UiBox className={cls.loginPage}>
       <AuthSection
@@ -12,7 +15,7 @@ export const LoginPage = () => {
         className={cls.loginSection}
         formType={AuthFormType.login}
       >
-        <AuthForm type={AuthFormType.login} />
+        <AuthForm type={AuthFormType.login} onSubmit={onSubmitForm} />
       </AuthSection>
       <AuthSection
         title="New to CEIN"

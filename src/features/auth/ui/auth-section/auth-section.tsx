@@ -35,7 +35,7 @@ export const AuthSection = ({
         asLink={Boolean(redirectPath)}
         to={redirectPath || EMPTY_STRING}
         type={formType ? "submit" : "button"}
-        id={formType ? authFormName[formType] : EMPTY_STRING}
+        form={formType ? authFormName[formType] : EMPTY_STRING}
         className={cls.authSectionButton}
       >
         {buttonText}

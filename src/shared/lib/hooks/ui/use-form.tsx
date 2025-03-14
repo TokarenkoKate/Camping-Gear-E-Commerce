@@ -17,6 +17,8 @@ export const useForm = <T,>() => {
       children,
       className,
       mutators,
+      name,
+      id,
       onChange,
       ...props
     }) => (
@@ -28,6 +30,8 @@ export const useForm = <T,>() => {
             onChange={onChange}
             onSubmit={handleSubmit}
             autoComplete="off"
+            name={name}
+            id={id}
             className={className}
           >
             {children}
