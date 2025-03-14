@@ -7,7 +7,7 @@ export const LoginLink = () => {
     <UiText as="span">
       {`Already registered? `}
       <UiText as="span">
-        <UiLink to={appRoutesPaths.login} tone="accent">{`login `}</UiLink>
+        <UiLink to={appRoutesPaths.login} tone="accent">{`Login `}</UiLink>
         now
       </UiText>
     </UiText>

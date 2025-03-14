@@ -1,0 +1,36 @@
+@import "/src/app/styles/mixins/responsive";
+
+$section-border: 1px solid var(--color-border-dark);
+
+.auth-section {
+  gap: var(--space-10);
+  padding: var(--space-10) var(--space-3-5);
+  border: $section-border;
+
+  &:first-of-type {
+    border-right: $section-border;
+    border-bottom: none;
+  }
+
+  @include responsive("small") {
+    gap: var(--space-10);
+    padding: var(--space-20);
+  }
+
+  @include responsive("medium") {
+    border-top: none;
+
+    &:first-of-type {
+      border-right: none;
+      border-bottom: $section-border;
+    }
+  }
+
+  &-button.auth-section-button {
+    min-width: 100%;
+
+    @include responsive("small") {
+      min-width: auto;
+    }
+  }
+}
