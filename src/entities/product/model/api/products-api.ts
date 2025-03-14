@@ -16,6 +16,11 @@ export const ProductsApi = {
       endpoint: `${ApiEndpoint.products}/${productId}`,
     }),
 
+  getLatestProducts: () =>
+    ApiGet<Array<ProductSummary>>({
+      endpoint: `${ApiEndpoint.products}/latest`,
+    }),
+
   getRelatedProducts: (productId: number | undefined) =>
     ApiGet<Array<ProductSummary>>({
       endpoint: `${ApiEndpoint.products}/${productId}/related`,
