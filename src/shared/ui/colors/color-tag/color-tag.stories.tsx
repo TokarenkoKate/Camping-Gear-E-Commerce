@@ -1,7 +1,7 @@
 import type { Meta } from "@storybook/react";
-import { UiVStack } from "../ui-stack/ui-vstack/ui-vstack";
-import { UiHStack } from "../ui-stack/ui-hstack/ui-hstack";
-import { StorybookExample } from "../storybook-example/storybook-example";
+import { StorybookExample } from "../../storybook-example/storybook-example";
+import { UiHStack } from "../../ui-stack/ui-hstack/ui-hstack";
+import { UiVStack } from "../../ui-stack/ui-vstack/ui-vstack";
 import { ColorTag as ColorTagComponent } from "./color-tag";
 
 export default {

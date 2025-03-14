@@ -18,22 +18,24 @@ interface ProductsGalleryProps
     >
   > {
   introCardProps?: ProductGalleryIntroCardProps;
-  products: ProductSummary[];
+  products: ProductSummary[] | undefined;
   className?: string;
-  isLoading: boolean;
+  isLoading?: boolean;
   infiniteScroll?: boolean;
 }
 
-export const ProductsGallery = ({
-  introCardProps,
-  products,
-  isLoading,
-  className,
-  infiniteScroll,
-  totalLength,
-  isFetchingNextPage,
-  fetchNextPage,
-}: ProductsGalleryProps) => {
+export const ProductsGallery = (props: ProductsGalleryProps) => {
+  const {
+    introCardProps,
+    products,
+    isLoading = false,
+    className,
+    infiniteScroll,
+    totalLength,
+    isFetchingNextPage,
+    fetchNextPage,
+  } = props;
+
   const isEmpty = !products || !products.length;
 
   if (isLoading) {

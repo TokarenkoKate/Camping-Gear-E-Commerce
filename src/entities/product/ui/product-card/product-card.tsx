@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Link, To } from "react-router-dom";
+import { AppRoutes } from "@/shared/const/router";
 import {
   UiBox,
   UiHStack,
@@ -9,6 +10,8 @@ import {
   ColorTag,
 } from "@/shared/ui";
 import { ProductSummary } from "../../model/types/product";
+import { getProductColorFromAttributes } from "../../model/lib/get-product-color-from-attributes";
+import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
 import cls from "./product-card.m.scss";
 
 interface ProductCardProps {
@@ -17,27 +20,32 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ product, className }: ProductCardProps) => {
-  const { id, name, thumbnailUrl, colors, category, price } = product;
-  const redirectPath: To = `/product/${id}`;
+  const { id, name, thumbnail, category, price, attributes } = product;
+
+  const redirectPath: To = `/${AppRoutes.PRODUCT}/${id}`;
+  const imagePath = getImageSrcPath(thumbnail);
+  const colors = getProductColorFromAttributes(attributes);
 
   return (
     <Link to={redirectPath} className={classNames(cls.productCard, className)}>
       <UiVStack className={cls.productCardContent}>
         <UiHStack className={cls.imgWrapper} justify="center">
-          <UiImage src={thumbnailUrl} alt={name} className={cls.img} />
+          <UiImage src={imagePath} alt={name} className={cls.img} />
         </UiHStack>
         <UiHStack justify="between" className={cls.header} max>
           <UiText className={cls.category}>{category}</UiText>
           <UiText>{price}</UiText>
         </UiHStack>
         <UiText className={cls.name}>{name}</UiText>
-        <UiHStack className={cls.colorsList} as="ul" role="list">
-          {colors.map((color) => (
-            <UiBox key={color} as="li">
-              <ColorTag color={color} />
-            </UiBox>
-          ))}
-        </UiHStack>
+        {colors && (
+          <UiHStack className={cls.colorsList} as="ul" role="list">
+            {colors.map((color) => (
+              <UiBox key={color} as="li">
+                <ColorTag color={color} />
+              </UiBox>
+            ))}
+          </UiHStack>
+        )}
       </UiVStack>
     </Link>
   );

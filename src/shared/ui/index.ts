@@ -1,4 +1,5 @@
-export { ColorTag } from "./color-tag/color-tag";
+export { ColorTag } from "./colors/color-tag/color-tag";
+export { ColorsList } from "./colors/colors-list/colors-list";
 export { CounterButton } from "./counter-button/counter-button";
 export { UiFormField } from "./form/ui-form-field/ui-form-field";
 export { UiInput } from "./form/ui-input/ui-input";

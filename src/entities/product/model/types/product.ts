@@ -6,14 +6,33 @@ interface ProductBase {
   name: string;
   category: string;
   price: string;
-  colors: string[];
+  currency: string;
+  attributes: ProductAttribute[];
 }
 
 /**
  * Short product object for products galleries
  */
 export interface ProductSummary extends ProductBase {
-  thumbnailUrl: string;
+  thumbnail: string;
+}
+
+/**
+ * Full product object for details page
+ */
+export interface ProductDetails extends ProductBase {
+  image: string;
+  title: string;
+  description: string;
+  detailsImages: string[];
+}
+
+/**
+ * Product attribute type, such as colors, size, occupant capacity, etc.
+ */
+export interface ProductAttribute {
+  key: string;
+  values: string[];
 }
 
 /**
@@ -23,34 +42,4 @@ export interface ProductSummary extends ProductBase {
 export interface ProductCart extends Omit<ProductSummary, "colors"> {
   reward?: string;
   color: string;
-}
-
-/**
- * Full product object for details page
- */
-export interface ProductDetails extends ProductBase {
-  imageUrl: string;
-  reward?: string;
-  visuals: ProductVisuals;
-  specifications: ProductSpecifications;
-}
-
-/**
- * Data for product visual representation section
- */
-export interface ProductVisuals {
-  title: string;
-  description: string;
-  imagesUrl: string[];
-}
-
-/**
- * Data for product visual representation section
- */
-export interface ProductSpecifications {
-  imageUrl: string;
-  rows: Array<{
-    name: string;
-    value: string;
-  }>;
 }

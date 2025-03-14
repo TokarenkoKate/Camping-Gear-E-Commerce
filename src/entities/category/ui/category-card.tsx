@@ -1,6 +1,7 @@
 import { Link, To } from "react-router-dom";
 import { UiBox, UiVStack, UiText } from "@/shared/ui";
 import { Category } from "../model/types/category";
+import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
 import cls from "./category-card.m.scss";
 
 interface CategoryCardProps {
@@ -15,7 +16,7 @@ export const CategoryCard = ({
   const { name, alias, image } = category;
   const redirectPath: To = `/shop/${alias}`;
 
-  const imagePath = `${process.env.APP_API_HOST}/${image}`;
+  const imagePath = getImageSrcPath(image);
 
   return (
     <Link

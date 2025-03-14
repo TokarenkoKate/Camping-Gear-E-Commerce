@@ -1,14 +1,20 @@
-import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
-import { UiBox, UiHStack, UiText, UiButton } from "@/shared/ui";
+import { ProductSummary } from "@/entities/product";
 import { ProductsGallery } from "@/features/products-gallery";
-import { mockProductId1, mockProductId2 } from "@/mocks/products/product";
+import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
+import { UiBox, UiButton, UiHStack, UiText } from "@/shared/ui";
 import cls from "../product-page.m.scss";
 
-export const ProductRelatedProducts = () => {
+interface ProductRelatedProductsProps {
+  products: ProductSummary[] | undefined;
+}
+
+export const ProductRelatedProducts = ({
+  products,
+}: ProductRelatedProductsProps) => {
   return (
     <UiBox className={cls.relatedProducts}>
       <ProductsGallery
-        products={[mockProductId1, mockProductId2]}
+        products={products}
         className={cls.relatedProductsGallery}
       />
       <UiHStack
