@@ -9,7 +9,7 @@ export const removeBorderFromGrid = ({
   itemsLength,
   borderColor,
 }: {
-  grid: HTMLUListElement | undefined;
+  grid: HTMLElement | null;
   itemsLength: number;
   borderColor: string;
 }) => {

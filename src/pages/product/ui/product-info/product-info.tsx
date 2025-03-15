@@ -5,7 +5,7 @@ import { PaymentChips } from "@/features/payment-chips";
 import { ProductRelatedProducts } from "../product-related-products/product-related-products";
 import { getProductColorFromAttributes } from "@/entities/product";
 import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
-import cls from "../product-page.m.scss";
+import cls from "../product-page/product-page.m.scss";
 
 interface ProductInfoProps {
   product: ProductDetails;

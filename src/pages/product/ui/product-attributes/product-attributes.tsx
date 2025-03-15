@@ -3,7 +3,7 @@ import { UiBox, UiVStack, UiText, ColorsList } from "@/shared/ui";
 import { COLOR_CATEGORY_ATTRIBUTE_KEY } from "@/entities/category";
 import { ProductDetails } from "@/entities/product";
 import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
-import cls from "../product-page.m.scss";
+import cls from "../product-page/product-page.m.scss";
 
 type ProductAttributesProps = Pick<
   ProductDetails,

@@ -2,7 +2,7 @@ import { ProductSummary } from "@/entities/product";
 import { ProductsGallery } from "@/features/products-gallery";
 import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
 import { UiBox, UiButton, UiHStack, UiText } from "@/shared/ui";
-import cls from "../product-page.m.scss";
+import cls from "../product-page/product-page.m.scss";
 
 interface ProductRelatedProductsProps {
   products: ProductSummary[] | undefined;

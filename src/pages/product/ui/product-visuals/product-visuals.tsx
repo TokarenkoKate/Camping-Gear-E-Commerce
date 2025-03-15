@@ -1,7 +1,7 @@
 import { UiBox, UiVStack, UiText } from "@/shared/ui";
 import { ProductDetails } from "@/entities/product";
 import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
-import cls from "../product-page.m.scss";
+import cls from "../product-page/product-page.m.scss";
 
 type ProductVisualProps = Pick<
   ProductDetails,

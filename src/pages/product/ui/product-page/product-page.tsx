@@ -1,12 +1,12 @@
 import { NOT_FOUND_PATH } from "@/shared/const/router";
 import { UiBox } from "@/shared/ui";
 import { useNavigate } from "react-router-dom";
-import { useProductPage } from "../model/lib/use-product-page";
-import { ProductAttributes } from "./product-attributes/product-attributes";
-import { ProductInfo } from "./product-info/product-info";
-import { ProductSimilarProducts } from "./product-similar-products/product-similar-products";
-import { ProductVisuals } from "./product-visuals/product-visuals";
-import { ProductLoading } from "./product-loading/product-info-loading";
+import { useProductPage } from "../../model/lib/use-product-page";
+import { ProductAttributes } from "../product-attributes/product-attributes";
+import { ProductInfo } from "../product-info/product-info";
+import { ProductSimilarProducts } from "../product-similar-products/product-similar-products";
+import { ProductVisuals } from "../product-visuals/product-visuals";
+import { ProductLoading } from "../product-loading/product-info-loading";
 import cls from "./product-page.m.scss";
 
 export const ProductPage = () => {

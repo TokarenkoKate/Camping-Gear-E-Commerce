@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Skeleton, UiBox, UiHStack, UiVStack } from "@/shared/ui";
-import cls from "../product-page.m.scss";
+import cls from "../product-page/product-page.m.scss";
 
 export const ProductLoading = () => {
   return (

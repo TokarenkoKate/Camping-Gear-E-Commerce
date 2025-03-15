@@ -1,9 +1,9 @@
 import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
 import FiltersIcon from "@/shared/assets/icons/filters-20-20.svg";
 import { UiIcon, UiHStack, UiVStack, UiButton, UiText } from "@/shared/ui";
-import { productsHeaderIconSize } from "../model/const/const";
 import { ProductsFilterCategories } from "@/features/products-filter/ui/products-filter-categories/products-filter-categories";
-import cls from "./products-page.m.scss";
+import { productsHeaderIconSize } from "../../model/const/const";
+import cls from "../products-page/products-page.m.scss";
 
 interface ProductsPageHeaderVisibleProps {
   categoryName: string;

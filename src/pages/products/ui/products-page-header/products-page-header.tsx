@@ -4,7 +4,7 @@ import { ProductsPageHeaderVisible } from "./products-page-header-visible";
 import { ProductsFilterExtended } from "@/features/products-filter/ui/products-filter-extended/products-filter-extended";
 import { CategoryAttribute } from "@/entities/category";
 import { ProductsFilterFormValues } from "@/features/products-filter";
-import cls from "./products-page.m.scss";
+import cls from "../products-page/products-page.m.scss";
 
 interface ProductsPageHeaderProps {
   categoryName: string;
