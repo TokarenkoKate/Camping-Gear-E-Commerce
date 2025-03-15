@@ -8,6 +8,7 @@ export enum AppRoutes {
   CART = "cart",
   LOGIN = "login",
   SIGNUP = "signup",
+  PROFILE = "profile",
   NOT_FOUND = "not-found",
   NOT_FOUND_REDIRECT = "not-found-redirect",
 }
@@ -25,6 +26,7 @@ export const appRoutesPaths: Record<AppRoutes, string> = {
   [AppRoutes.CART]: "/cart",
   [AppRoutes.LOGIN]: "/login",
   [AppRoutes.SIGNUP]: "/signup",
+  [AppRoutes.PROFILE]: "/profile",
   [AppRoutes.NOT_FOUND]: NOT_FOUND_PATH,
   [AppRoutes.NOT_FOUND_REDIRECT]: "*",
 };

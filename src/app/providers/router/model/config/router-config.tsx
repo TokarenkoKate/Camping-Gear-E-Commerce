@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
-import { AppRouteType } from "@/shared/types/router";
 import { AppRoutes, appRoutesPaths } from "@/shared/const/router";
+import { AppRouteType } from "../types/router";
 import { MainPage } from "@/pages/main";
 import { ProductsPage } from "@/pages/products";
 import { ProductPage } from "@/pages/product";
@@ -8,6 +8,7 @@ import { CartPage } from "@/pages/cart";
 import { NotFoundPage } from "@/pages/not-found-page";
 import { LoginPage } from "@/pages/login";
 import { SignUpPage } from "@/pages/signup";
+import { ProfilePage } from "@/pages/profile";
 
 export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.HOME]: {
@@ -45,6 +46,10 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.SIGNUP]: {
     path: appRoutesPaths[AppRoutes.SIGNUP],
     element: <SignUpPage />,
+  },
+  [AppRoutes.PROFILE]: {
+    path: appRoutesPaths[AppRoutes.PROFILE],
+    element: <ProfilePage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: appRoutesPaths[AppRoutes.NOT_FOUND],
