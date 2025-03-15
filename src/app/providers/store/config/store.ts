@@ -1,12 +1,14 @@
 import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
 import { cartReducer } from "@/features/cart";
 import { StateSchema } from "./state-schema";
-import { categoriesReducer } from "@/entities/category/model/slice/categories-slice";
+import { userReducer } from "@/entities/user";
+import { categoriesReducer } from "@/entities/category";
 
 export function createReduxStore() {
   const rootReducer: ReducersMapObject<StateSchema> = {
     cart: cartReducer,
     categories: categoriesReducer,
+    user: userReducer,
   };
 
   const store = configureStore({
