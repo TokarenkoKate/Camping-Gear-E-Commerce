@@ -11,7 +11,7 @@ export const CartSidebarCheckout = ({ onClose }: CartSidebarCheckoutProps) => {
   const navigate = useNavigate();
 
   const onCheckoutClick = () => {
-    navigate(AppRoutes.CART);
+    navigate(AppRoutes.CART, { viewTransition: true });
     onClose();
   };
 

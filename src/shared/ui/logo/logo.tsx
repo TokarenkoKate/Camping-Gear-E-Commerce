@@ -16,7 +16,7 @@ const logoSizeClassnames: Record<"md" | "lg", string> = {
 
 export const Logo = ({ className, size = "md" }: LogoProps) => {
   return (
-    <UiLink to={INDEX_ROUTE_PATH} className={className}>
+    <UiLink to={INDEX_ROUTE_PATH} className={className} viewTransition>
       <UiIcon Svg={LogoIcon} className={logoSizeClassnames[size]} />
     </UiLink>
   );

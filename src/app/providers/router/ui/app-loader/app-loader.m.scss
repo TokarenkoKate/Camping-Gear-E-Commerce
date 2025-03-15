@@ -3,7 +3,12 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  place-items: center center;
+  align-items: center;
+  justify-content: center;
+
+  &-content {
+    margin-bottom: 100px;
+  }
 
   &-player {
     width: 300px;

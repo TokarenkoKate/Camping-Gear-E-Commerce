@@ -7,7 +7,7 @@ import { AppRouteType } from "../../types/router";
  * adds RequireAuth wrapper for protected routes
  */
 export const renderRoute = (route: AppRouteType): AppRouteType => {
-  const element = <PageWrapper>{route.element}</PageWrapper>;
+  const element = <PageWrapper path={route.path}>{route.element}</PageWrapper>;
 
   return {
     ...route,

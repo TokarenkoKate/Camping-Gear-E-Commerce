@@ -22,6 +22,7 @@ export const CategoryCard = ({
     <Link
       to={redirectPath}
       className={cls.categoryCard}
+      viewTransition
       onClick={onRedirectClick}
     >
       <UiBox className={cls.categoryCardContent}>

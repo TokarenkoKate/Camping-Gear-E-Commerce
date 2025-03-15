@@ -27,7 +27,11 @@ export const ProductCard = ({ product, className }: ProductCardProps) => {
   const colors = getProductColorFromAttributes(attributes);
 
   return (
-    <Link to={redirectPath} className={classNames(cls.productCard, className)}>
+    <Link
+      to={redirectPath}
+      className={classNames(cls.productCard, className)}
+      viewTransition
+    >
       <UiVStack className={cls.productCardContent}>
         <UiHStack className={cls.imgWrapper} justify="center">
           <UiImage src={imagePath} alt={name} className={cls.img} />
