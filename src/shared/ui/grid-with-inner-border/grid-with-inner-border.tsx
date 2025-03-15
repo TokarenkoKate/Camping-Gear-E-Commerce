@@ -23,10 +23,10 @@ interface GridWithInnerBorderProps extends PropsWithChildren {
   lineThickness?: string;
   className?: string;
 }
-export type GridRef = HTMLUListElement | undefined;
+export type GridRef = HTMLElement | undefined;
 
 export const GridWithInnerBorder = forwardRef<
-  GridRef,
+  HTMLElement,
   GridWithInnerBorderProps
 >(function GridWithInnerBorder(props, forwardRef) {
   const {
@@ -39,8 +39,8 @@ export const GridWithInnerBorder = forwardRef<
     ...restProps
   } = props;
 
-  const ref = useRef<GridRef>();
-  useImperativeHandle(forwardRef, () => ref.current);
+  const ref = useRef<HTMLElement>(null);
+  useImperativeHandle(forwardRef, () => ref.current!);
 
   const baseStyleVariables: CSSProperties = {
     "--border-color": borderColor,
