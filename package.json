@@ -84,6 +84,7 @@
     "webpack-plugin-serve": "^1.6.0"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.6.0",
     "@reduxjs/toolkit": "^2.5.1",
     "@tanstack/react-query": "^5.67.3",
     "axios": "^1.8.3",
@@ -91,6 +92,7 @@
     "dotenv": "^16.4.5",
     "final-form": "^4.20.10",
     "final-form-arrays": "^3.1.0",
+    "motion": "^12.5.0",
     "react": "^18.3.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
