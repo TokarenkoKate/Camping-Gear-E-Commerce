@@ -2,7 +2,7 @@ import { ApiGet } from "@/shared/config/api/api-methods";
 import { ProductsApiQueryParams } from "../types/product-api";
 import { ApiResponseWithPager } from "@/shared/types/api/api-types";
 import { ProductDetails, ProductSummary } from "../types/product";
-import { ApiEndpoint } from "@/shared/config/api/api-enpoints";
+import { ApiEndpoint } from "@/shared/config/api/api-endpoints";
 
 export const ProductsApi = {
   getProducts: (queryParams?: ProductsApiQueryParams) =>

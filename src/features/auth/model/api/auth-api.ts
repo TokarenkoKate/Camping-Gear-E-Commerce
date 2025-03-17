@@ -1,4 +1,4 @@
-import { ApiEndpoint } from "@/shared/config/api/api-enpoints";
+import { ApiEndpoint } from "@/shared/config/api/api-endpoints";
 import { Credentials } from "../types/auth-form";
 import { ApiGet, ApiPost } from "@/shared/config/api/api-methods";
 import { User } from "@/entities/user";
