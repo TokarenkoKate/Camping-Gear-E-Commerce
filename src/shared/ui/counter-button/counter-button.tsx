@@ -8,17 +8,25 @@ import cls from "./counter-button.m.scss";
 
 interface CounterButtonProps {
   count: number;
+  size?: "small" | "medium";
+  className?: string;
   onIncrement: VoidFunction;
   onDecrement: VoidFunction;
 }
 
 export const CounterButton = ({
   count,
+  size = "medium",
+  className,
   onIncrement,
   onDecrement,
 }: CounterButtonProps) => {
   return (
-    <UiHStack className={cls.counterButton} justify="between" align="center">
+    <UiHStack
+      className={classNames(cls.counterButton, cls[size], className)}
+      justify="between"
+      align="center"
+    >
       <button
         onClick={onDecrement}
         className={classNames(cls.button, cls.buttonLeft)}

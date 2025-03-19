@@ -1,8 +1,8 @@
 import { UiBox, UiVStack, UiHStack, UiText, ColorsList } from "@/shared/ui";
 import { ProductDetails, ProductSummary } from "@/entities/product";
-import { AddToCartButton } from "@/features/cart";
 import { PaymentChips } from "@/features/payment-chips";
 import { ProductRelatedProducts } from "../product-related-products/product-related-products";
+import { AddProductToCartButton } from "@/features/add-product-to-cart";
 import { getProductColorFromAttributes } from "@/entities/product";
 import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
 import cls from "../product-page/product-page.m.scss";
@@ -41,7 +41,10 @@ export const ProductInfo = ({ product, relatedProducts }: ProductInfoProps) => {
               <ColorsList colors={colors} className={cls.colorsList} />
             </UiVStack>
           )}
-          <AddToCartButton productId={id} className={cls.addToCartButton} />
+          <AddProductToCartButton
+            productId={id}
+            className={cls.addToCartButton}
+          />
           <PaymentChips />
         </UiVStack>
         <ProductRelatedProducts products={relatedProducts} />

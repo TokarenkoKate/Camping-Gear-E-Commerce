@@ -31,3 +31,13 @@ export const handleFetchCart = async () => {
     console.error(err);
   }
 };
+
+export const updateCartQueryData = (cart: Cart) => {
+  queryClient.setQueryData<Cart>([CART_QUERY_KEY], () => {
+    return cart;
+  });
+};
+
+export const getCartQueryData = () => {
+  return queryClient.getQueryData<Cart>([CART_QUERY_KEY]);
+};

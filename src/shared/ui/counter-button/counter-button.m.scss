@@ -1,20 +1,36 @@
-$counter-button-width: 112px;
-$counter-button-height: 31px;
-$counter-button-radius: 30px;
-
 .counter-button {
-  width: $counter-button-width;
-  height: $counter-button-height;
+  --counter-button-width: 0;
+  --counter-button-side-elements-width: 0;
+  --counter-button-height: 0;
+  --counter-button-radius: 0;
+
+  width: var(--counter-button-width);
+  height: var(--counter-button-height);
   border: 1px solid var(--color-border);
-  border-radius: $counter-button-radius;
+  border-radius: var(--counter-button-radius);
   background-color: var(--color-primary);
   user-select: none;
 
+  /** sizes */
+  &.small {
+    --counter-button-width: 112px;
+    --counter-button-side-elements-width: 38px;
+    --counter-button-height: 31px;
+    --counter-button-radius: 30px;
+  }
+
+  &.medium {
+    --counter-button-width: 100%;
+    --counter-button-side-elements-width: 40%;
+    --counter-button-height: 56px;
+    --counter-button-radius: 30px;
+  }
+
   .button {
-    width: 38px;
+    width: var(--counter-button-side-elements-width);
     height: 100%;
     border: none;
-    border-radius: $counter-button-radius;
+    border-radius: var(--counter-button-radius);
     background-color: inherit;
     outline-color: transparent;
     transition: all 0.2s;
