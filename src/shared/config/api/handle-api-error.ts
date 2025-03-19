@@ -8,8 +8,8 @@ export const handleApiError = (error: AxiosError) => {
       return toast.error(errorMessages.Error_400, { toastId: "err_400" });
     case 404:
       return toast.error(
-        error.response.data
-          ? error.response.data.error
+        error?.response?.data
+          ? error?.response?.data?.error
           : errorMessages.Error_Network,
         {
           toastId: "err_404",

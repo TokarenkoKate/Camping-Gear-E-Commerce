@@ -1,10 +1,14 @@
-export const fetchWithMinDelay = async <T>(
-  request: () => Promise<T>,
+export const fetchWithMinDelay = async (
+  requests: Array<() => Promise<unknown>>,
   minDelay: number = 2000
-): Promise<T> => {
+) => {
   const start = Date.now();
 
-  const result: T = await request();
+  const result = await Promise.allSettled(
+    requests.map(async (request) => {
+      await request();
+    })
+  );
 
   const elapsed = Date.now() - start;
   const remainingTime = Math.max(minDelay - elapsed, 0);

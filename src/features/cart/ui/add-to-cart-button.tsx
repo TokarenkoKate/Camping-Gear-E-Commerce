@@ -1,6 +1,4 @@
-import { useAppDispatch } from "@/shared/lib/hooks/use-app-dispatch";
 import { UiButton } from "@/shared/ui";
-import { cartActions } from "../model/slice/cart-slice";
 
 type AddToCartButtonProps = {
   productId: number;
@@ -11,11 +9,7 @@ export const AddToCartButton = ({
   productId,
   className,
 }: AddToCartButtonProps) => {
-  const dispatch = useAppDispatch();
-
-  const onClickAddToCart = () => {
-    dispatch(cartActions.incrementProduct(productId));
-  };
+  const onClickAddToCart = () => {};
 
   return (
     <UiButton

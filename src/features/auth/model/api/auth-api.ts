@@ -4,7 +4,13 @@ import { ApiGet, ApiPost } from "@/shared/config/api/api-methods";
 import { User } from "@/entities/user";
 
 export const AuthApi = {
-  me: () => ApiGet<User>({ endpoint: `${ApiEndpoint.auth}/me` }),
+  me: () =>
+    ApiGet<User>({
+      endpoint: `${ApiEndpoint.auth}/me`,
+      options: {
+        skipErrorInterceptor: true,
+      },
+    }),
 
   login: (body: Credentials) =>
     ApiPost<User>(`${ApiEndpoint.auth}/login`, body),

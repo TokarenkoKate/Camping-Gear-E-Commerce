@@ -1,10 +1,7 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
+import { AppRouterType } from "../../model/types/router";
 import { AppLoader } from "../app-loader/app-loader";
-import { getRouterConfig } from "../../model/lib/utils/get-router-config";
 
-export const AppRouter = () => {
-  const routerConfig = getRouterConfig();
-  const router = createBrowserRouter(routerConfig);
-
+export const AppRouter = ({ router }: { router: AppRouterType }) => {
   return <RouterProvider router={router} fallbackElement={<AppLoader />} />;
 };

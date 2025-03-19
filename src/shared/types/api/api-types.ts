@@ -3,12 +3,18 @@ import { ApiContentType } from "../../config/api/api-content-type";
 export type ApiInstanceOptions = {
   useBearer?: boolean;
   contentType?: ApiContentType;
+  skipErrorInterceptor?: boolean;
 };
 
 export type ApiQueryParams = Record<string, unknown>;
 
 export type ApiResponseType<T> = {
   data: T;
+};
+
+export type ApiResponseSimple = {
+  message: string;
+  success: boolean;
 };
 
 export type Pager = {

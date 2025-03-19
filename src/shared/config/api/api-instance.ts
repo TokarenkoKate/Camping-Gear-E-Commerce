@@ -6,7 +6,10 @@ export const getCurrentUserToken = () => {
   return EMPTY_STRING;
 };
 
-export const apiInstance = (useBearer: boolean = true) => {
+export const apiInstance = (
+  useBearer: boolean = true,
+  skipErrorInterceptor: boolean = false
+) => {
   const token = getCurrentUserToken();
   const AxiosConfig: AxiosRequestConfig = {
     baseURL: process.env.APP_API_HOST,
@@ -25,8 +28,11 @@ export const apiInstance = (useBearer: boolean = true) => {
   axiosInstance.interceptors.response.use(
     (response) => response,
     (error: AxiosError) => {
-      if (axios.isAxiosError(error)) handleApiError(error);
-      return Promise.reject(error);
+      if (axios.isAxiosError(error) && !skipErrorInterceptor) {
+        handleApiError(error);
+        return Promise.reject(error);
+      }
+      return null;
     }
   );
 

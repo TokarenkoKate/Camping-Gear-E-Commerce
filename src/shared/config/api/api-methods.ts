@@ -18,9 +18,9 @@ export const ApiGet = <T>({
   queryParams?: ApiQueryParams;
   options?: ApiInstanceOptions;
 }): Promise<T> => {
-  const { useBearer, contentType } = options;
+  const { useBearer, skipErrorInterceptor = false, contentType } = options;
 
-  return apiInstance(useBearer)
+  return apiInstance(useBearer, skipErrorInterceptor)
     .get<T>(endpoint, {
       params: queryParams,
       headers: {
