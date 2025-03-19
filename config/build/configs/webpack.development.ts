@@ -1,20 +1,20 @@
 import { Configuration } from "webpack";
 import { BuildOptions } from "../types/config";
 import { buildStyleLoader } from "../parts/loaders/css/build-style-loader";
-import { buildWebpackPluginServe } from "../parts/plugins/build-webpack-plugin-serve";
 import { buildDevTool } from "../parts/devtool/build-dev-tool";
+import { buildDevServer } from "../parts/dev-server/build-webpack-plugin-serve";
 
 export const developmentConfig = (options: BuildOptions): Configuration => {
-  const { paths } = options;
+  const { port } = options;
 
   /** loaders */
   const styleLoader = buildStyleLoader();
 
-  /** plugins */
-  const pluginServe = buildWebpackPluginServe(paths);
-
   /** devtool */
   const devtool = buildDevTool("development");
+
+  /** dev server */
+  const pluginServe = buildDevServer(port);
 
   return {
     entry: ["webpack-plugin-serve/client"],
@@ -26,6 +26,6 @@ export const developmentConfig = (options: BuildOptions): Configuration => {
     module: {
       rules: [styleLoader],
     },
-    plugins: [pluginServe],
+    devServer: pluginServe,
   };
 };
