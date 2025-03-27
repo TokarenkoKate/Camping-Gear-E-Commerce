@@ -83,6 +83,10 @@
 .heading-lg {
   font-size: var(--fs-800);
   line-height: var(--lh-800);
+
+  @include responsive("extra-large") {
+    font-size: calc(var(--fs-800-max) * 1px);
+  }
 }
 
 .heading-xl {
