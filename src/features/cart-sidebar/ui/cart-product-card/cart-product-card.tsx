@@ -1,31 +1,31 @@
-import { ProductCart, ProductHCard } from "@/entities/product";
+import { CartItem } from "@/entities/cart";
+import { ProductHCard } from "@/entities/product";
 import { CounterButton } from "@/shared/ui";
 
 interface CartProductCardInterface {
-  product: ProductCart;
-  count: number;
+  cartItem: CartItem;
   onAddProduct(productId: number): void;
   onRemoveProduct(productId: number): void;
 }
 
 export const CartProductCard = ({
-  product,
-  count,
+  cartItem,
   onAddProduct,
   onRemoveProduct,
 }: CartProductCardInterface) => {
   const onIncrement = () => {
-    onAddProduct(product.id);
+    onAddProduct(cartItem.product.id);
   };
 
   const onDecrement = () => {
-    onRemoveProduct(product.id);
+    onRemoveProduct(cartItem.id);
   };
 
   return (
-    <ProductHCard product={product}>
+    <ProductHCard product={cartItem.product}>
       <CounterButton
-        count={count}
+        count={cartItem.quantity}
+        size="small"
         onIncrement={onIncrement}
         onDecrement={onDecrement}
       />

@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   getCartItemByProductId,
   useCartMutations,
   updateCartQueryData,
-  getCartQueryData,
+  useGetCart,
 } from "@/entities/cart";
 import { CounterButton, UiButton } from "@/shared/ui";
-import { useEffect, useState } from "react";
 
 type AddToCartButtonProps = {
   productId: number;
@@ -29,7 +29,7 @@ export const AddProductToCartButton = ({
     setHasMounted(true);
   }, []);
 
-  const cart = getCartQueryData();
+  const { data: cart } = useGetCart();
   const cartItem = getCartItemByProductId(cart?.items, productId);
 
   const { addCartItemMutation, removeCartItemMutation } = useCartMutations();

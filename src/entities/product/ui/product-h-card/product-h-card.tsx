@@ -1,34 +1,29 @@
 import { PropsWithChildren } from "react";
 import { UiHStack, UiVStack, UiText, UiImage } from "@/shared/ui";
-import { ProductCart } from "../../model/types/product";
+import { ProductDetails } from "../../model/types/product";
 import cls from "./product-h-card.m.scss";
 
 interface ProductHCardProps {
-  product: ProductCart;
+  product: ProductDetails;
 }
 
 export const ProductHCard = ({
   product,
   children,
 }: PropsWithChildren<ProductHCardProps>) => {
-  const { name, thumbnailUrl, color, price, reward } = product;
+  const { name, image, price } = product;
 
   return (
     <UiHStack className={cls.productHCard} max>
       <UiHStack className={cls.imgWrapper} justify="center">
-        <UiImage src={thumbnailUrl} alt={name} className={cls.img} />
+        <UiImage src={image} alt={name} className={cls.img} />
       </UiHStack>
       <UiVStack className={cls.content} max>
         <UiHStack className={cls.contentRow} max justify="between">
           <UiText>{name}</UiText>
           <UiText>{price}</UiText>
         </UiHStack>
-        <UiHStack className={cls.contentRow} max justify="between">
-          <UiText variant="bodyXs">{color}</UiText>
-          <UiText variant="bodyXs" tone="secondary">
-            {reward}
-          </UiText>
-        </UiHStack>
+
         {children}
       </UiVStack>
     </UiHStack>

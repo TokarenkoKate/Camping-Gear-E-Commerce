@@ -12,7 +12,7 @@ $ui-sidebar-min-width: 420px;
 
   &-content {
     height: 100%;
-    min-width: $ui-sidebar-min-width;
+    width: $ui-sidebar-min-width;
     background-color: var(--color-primary);
     transition: 0.3s transform;
     transform: translate($ui-sidebar-min-width);

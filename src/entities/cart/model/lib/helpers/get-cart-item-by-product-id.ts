@@ -6,5 +6,7 @@ export const getCartItemByProductId = (
 ) => {
   if (!cartItems || cartItems?.length < 1 || !productId) return null;
 
-  return cartItems.find((cartItem) => cartItem.product?.id === productId);
+  return (
+    cartItems.find((cartItem) => cartItem.product?.id === productId) || null
+  );
 };

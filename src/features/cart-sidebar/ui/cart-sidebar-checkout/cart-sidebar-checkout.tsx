@@ -5,9 +5,13 @@ import cls from "../cart-sidebar/cart-sidebar.m.scss";
 
 interface CartSidebarCheckoutProps {
   onClose: VoidFunction;
+  disabled: boolean;
 }
 
-export const CartSidebarCheckout = ({ onClose }: CartSidebarCheckoutProps) => {
+export const CartSidebarCheckout = ({
+  onClose,
+  disabled,
+}: CartSidebarCheckoutProps) => {
   const navigate = useNavigate();
 
   const onCheckoutClick = () => {
@@ -18,7 +22,12 @@ export const CartSidebarCheckout = ({ onClose }: CartSidebarCheckoutProps) => {
   return (
     <UiVStack className={cls.cartSidebarCheckout} max>
       <UiText>Shipping costs are calculated during checkout</UiText>
-      <UiButton variant="background" max onClick={onCheckoutClick}>
+      <UiButton
+        variant="background"
+        max
+        onClick={onCheckoutClick}
+        disabled={disabled}
+      >
         Checkout
       </UiButton>
     </UiVStack>
