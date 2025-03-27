@@ -8,7 +8,8 @@
     width: 100%;
     padding: var(--space-10) var(--space-4);
     background-size: cover;
-    background-image: url("../../../../shared/assets/images/about.png");
+    background-image: url("../../../../shared/assets/images/about.avif"),
+      url("../../../../shared/assets/images/about.png");
     aspect-ratio: 325 / 424;
     background-position: center;
 
