@@ -88,6 +88,10 @@
 .heading-xl {
   font-size: var(--fs-900);
   line-height: var(--lh-900);
+
+  @include responsive("extra-large") {
+    font-size: calc(var(--fs-900-max) * 1px);
+  }
 }
 
 .hero {

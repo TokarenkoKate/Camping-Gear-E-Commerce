@@ -20,4 +20,59 @@
       aspect-ratio: 1400 / 761;
     }
   }
+
+  &-intro {
+    width: 100%;
+    display: flex;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    padding: var(--space-12-5) var(--space-4) 150px;
+
+    @include responsive("medium") {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 85px;
+      padding: var(--space-12-5) var(--space-5) 150px;
+      flex-direction: row;
+    }
+
+    &-title {
+      text-transform: capitalize;
+    }
+
+    &-subtitle {
+      text-transform: capitalize;
+    }
+  }
+
+  &-manifesto {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 0 16px 40px;
+
+    @include responsive("small") {
+      padding: var(--space-12-5) var(--space-20) var(--space-12-5)
+        var(--space-5);
+    }
+
+    @include responsive("medium") {
+      grid-template-columns: 333px 1fr;
+    }
+
+    &-extra-text {
+      display: none;
+
+      @include responsive("medium") {
+        display: inline;
+      }
+    }
+
+    &-content {
+      gap: var(--space-10);
+    }
+
+    &-texts {
+      gap: var(--space-6);
+    }
+  }
 }

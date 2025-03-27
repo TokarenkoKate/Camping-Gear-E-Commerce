@@ -13,7 +13,12 @@ export const MenuItemComponent = ({ menuItem, menuItemKey }: MenuItemProps) => {
   if (menuItem.path) {
     return (
       <li className={cls.menuListItem} key={menuItem.text}>
-        <UiLink to={menuItem.path} className={cls.menuLink} variant="withArrow">
+        <UiLink
+          to={menuItem.path}
+          className={cls.menuLink}
+          variant="withArrow"
+          viewTransition
+        >
           {menuItem.text}
         </UiLink>
       </li>
