@@ -75,4 +75,17 @@
       gap: var(--space-6);
     }
   }
+
+  &-articles {
+    display: grid;
+    grid-template-columns: auto;
+
+    @include responsive("large") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &-journal {
+    border: 1px solid var(--color-border-dark);
+  }
 }

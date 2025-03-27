@@ -15,6 +15,6 @@ export interface ArticlePreview
   extends ArticlePreviewRequired,
     ArticlePreviewOptional {}
 
-export type ArticlePreviewCardType = "fullPage" | "halfPage";
+export type ArticlePreviewCardType = "large" | "medium" | "small";
 
 export type ArticlePreviewWithBackgroundCardType = "vertical" | "horizontal";

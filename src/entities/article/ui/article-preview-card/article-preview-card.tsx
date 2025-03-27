@@ -14,46 +14,50 @@ import {
   ArticlePreviewCardType,
 } from "../../model/types/article";
 import cls from "./article-preview-card.m.scss";
+import { appRoutesPaths } from "@/shared/const/router";
 
 interface ArticlePreviewProps {
   article: ArticlePreview;
   cardType: ArticlePreviewCardType;
+  withRedirect?: boolean;
 }
 
 export const ArticlePreviewCard = ({
   article,
   cardType,
+  withRedirect,
 }: ArticlePreviewProps) => {
+  const { id, type, date, title, description, img } = article;
   const mods: ClassnamesMods = {
     [cls[cardType]]: true,
   };
 
-  const isFullPageType = cardType === "fullPage";
+  const isLargeType = cardType === "large";
 
   return (
     <UiBox className={classNames(cls.articlePreview, mods)}>
       <UiHStack justify="between" className={cls.articlePreviewHeader} max>
-        <UiText variant="bodySm">{article.type}</UiText>
-        {isFullPageType && <UiText variant="bodySm">{article.date}</UiText>}
+        <UiText variant="bodySm">{type}</UiText>
+        {isLargeType && <UiText variant="bodySm">{date}</UiText>}
       </UiHStack>
       <UiBox className={cls.articlePreviewContent}>
         <UiText variant="headingMd" as="h3" className={cls.articlePreviewTitle}>
-          {article.title}
+          {title}
         </UiText>
-        <UiText className={cls.articlePreviewDescription}>
-          {article.description}
-        </UiText>
-        {isFullPageType && (
-          <UiButton variant="outlined" round className={cls.articlePreviewLink}>
+        <UiText className={cls.articlePreviewDescription}>{description}</UiText>
+        {withRedirect && (
+          <UiButton
+            variant="outlined"
+            round
+            className={cls.articlePreviewLink}
+            asLink
+            to={`${appRoutesPaths.journal}/${id}`}
+          >
             <UiIcon Svg={ArrowExternalRight} />
           </UiButton>
         )}
       </UiBox>
-      <UiImage
-        src={article.img}
-        alt={article.title}
-        className={cls.articlePreviewImage}
-      />
+      <UiImage src={img} alt={title} className={cls.articlePreviewImage} />
     </UiBox>
   );
 };

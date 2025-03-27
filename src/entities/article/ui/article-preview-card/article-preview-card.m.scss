@@ -37,7 +37,7 @@ $image-max-h: 395px;
     object-fit: cover;
   }
 
-  &.full-page {
+  &.large {
     grid-template-areas:
       "image"
       "header"
@@ -58,7 +58,8 @@ $image-max-h: 395px;
     }
   }
 
-  &.half-page {
+  &.medium,
+  &.small {
     grid-template-areas:
       "header"
       "image"
@@ -79,6 +80,12 @@ $image-max-h: 395px;
 
     .article-preview-image {
       max-height: $image-max-h;
+    }
+  }
+
+  &.small {
+    .article-preview-content {
+      flex-direction: column;
     }
   }
 }

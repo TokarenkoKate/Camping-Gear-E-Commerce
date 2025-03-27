@@ -16,25 +16,16 @@ import cls from "../main-page/main-page.m.scss";
 export const MainPageArticles = () => {
   return (
     <UiBox className={cls.mainPageArticles}>
-      <ArticlePreviewCard article={mockArticle} cardType="fullPage" />
+      <ArticlePreviewCard article={mockArticle} cardType="large" withRedirect />
       <UiBox className={cls.mainPageArticlesGrid}>
         <ArticleWithBackgroundPreview
           article={mockArticlePreviewWithBackground}
           className={cls.mainPageArticlesGridItemLong}
           type="vertical"
         />
-        <ArticlePreviewCard
-          article={mockArticleHalfPage1}
-          cardType="halfPage"
-        />
-        <ArticlePreviewCard
-          article={mockArticleHalfPage2}
-          cardType="halfPage"
-        />
-        <ArticlePreviewCard
-          article={mockArticleHalfPage3}
-          cardType="halfPage"
-        />
+        <ArticlePreviewCard article={mockArticleHalfPage1} cardType="large" />
+        <ArticlePreviewCard article={mockArticleHalfPage2} cardType="large" />
+        <ArticlePreviewCard article={mockArticleHalfPage3} cardType="large" />
       </UiBox>
       <ArticleWithBackgroundPreview
         article={mockArticlePreviewWithBackgroundHorizontal}

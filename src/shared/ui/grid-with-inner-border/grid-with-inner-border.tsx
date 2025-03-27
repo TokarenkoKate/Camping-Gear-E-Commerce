@@ -7,7 +7,7 @@ import {
   useRef,
 } from "react";
 import classNames from "classnames";
-import { UiBox } from "../ui-box/ui-box";
+import { UiBox, UiBoxProps } from "../ui-box/ui-box";
 import cls from "./grid-with-inner-border.m.scss";
 import { useWindowResize } from "@/shared/lib/hooks/use-window-resize";
 import { removeBorderFromGrid } from "@/features/products-gallery/model/utils/remove-border-from-grid";
@@ -16,7 +16,7 @@ import { removeBorderFromGrid } from "@/features/products-gallery/model/utils/re
  * Responsive grid component, that adds inner borders between grid items;
  */
 
-interface GridWithInnerBorderProps extends PropsWithChildren {
+interface GridWithInnerBorderProps extends PropsWithChildren, UiBoxProps {
   itemsLength: number;
   columnMinWidth?: string;
   borderColor?: string;
