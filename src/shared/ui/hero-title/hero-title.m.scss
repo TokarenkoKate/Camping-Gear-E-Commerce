@@ -1,8 +1,15 @@
 @import "/src/app/styles/mixins/responsive";
 
 .hero-title {
+  --hero-title-color: var(--color-accent-dark);
+
   position: relative;
   width: max-content;
+  color: var(--hero-title-color);
+
+  &-inverted {
+    --hero-title-color: var(--color-text-primary-inverted);
+  }
 
   &-registered {
     --size-spacing: 1px;
@@ -17,7 +24,7 @@
     line-height: 1em;
     text-align: center;
     font-weight: inherit;
-    border: 0.5px solid var(--color-accent-dark);
+    border: 0.5px solid var(--hero-title-color);
 
     @include responsive("medium") {
       --size-spacing: 2px;
@@ -31,19 +38,26 @@
       border-width: 2px;
     }
   }
+}
 
-  &-subtitle {
-    font-size: var(--fs-300);
-    line-height: var(--lh-300);
+.hero-subtitle {
+  --hero-subtitle-color: var(--color-accent-dark);
 
-    @include responsive("medium") {
-      font-size: var(--fs-500);
-      line-height: var(--lh-500);
-    }
+  &-inverted {
+    --hero-subtitle-color: var(--color-text-primary-inverted);
+  }
 
-    @include responsive("large") {
-      font-size: var(--fs-600);
-      line-height: var(--lh-600);
-    }
+  color: var(--hero-subtitle-color);
+  font-size: var(--fs-300);
+  line-height: var(--lh-300);
+
+  @include responsive("medium") {
+    font-size: var(--fs-500);
+    line-height: var(--lh-500);
+  }
+
+  @include responsive("large") {
+    font-size: var(--fs-600);
+    line-height: var(--lh-600);
   }
 }
