@@ -10,6 +10,7 @@ import { LoginPage } from "@/pages/login";
 import { SignUpPage } from "@/pages/signup";
 import { ProfilePage } from "@/pages/profile";
 import { AboutPage } from "@/pages/about";
+import { JournalPage } from "@/pages/journal";
 
 export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.HOME]: {
@@ -34,7 +35,7 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
   },
   [AppRoutes.JOURNAL]: {
     path: appRoutesPaths[AppRoutes.JOURNAL],
-    element: <div />,
+    element: <JournalPage />,
   },
   [AppRoutes.CART]: {
     path: appRoutesPaths[AppRoutes.CART],
