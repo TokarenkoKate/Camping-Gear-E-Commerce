@@ -9,6 +9,7 @@ import { NotFoundPage } from "@/pages/not-found-page";
 import { LoginPage } from "@/pages/login";
 import { SignUpPage } from "@/pages/signup";
 import { ProfilePage } from "@/pages/profile";
+import { AboutPage } from "@/pages/about";
 
 export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.HOME]: {
@@ -23,9 +24,9 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
     path: appRoutesPaths[AppRoutes.PRODUCT],
     element: <ProductPage />,
   },
-  [AppRoutes.EVENTS]: {
-    path: appRoutesPaths[AppRoutes.EVENTS],
-    element: <div />,
+  [AppRoutes.ABOUT]: {
+    path: appRoutesPaths[AppRoutes.ABOUT],
+    element: <AboutPage />,
   },
   [AppRoutes.COLLECTIONS]: {
     path: appRoutesPaths[AppRoutes.COLLECTIONS],

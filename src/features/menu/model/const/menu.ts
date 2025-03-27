@@ -3,7 +3,7 @@ import { MenuItemType } from "../types/menu";
 
 export enum MenuItem {
   shop = "shop",
-  events = "events",
+  about = "about",
   collections = "collections",
   journal = "journal",
 }
@@ -12,9 +12,9 @@ export const menuItems: MenuItemType = {
   [MenuItem.shop]: {
     text: "shop",
   },
-  [MenuItem.events]: {
-    text: "events",
-    path: appRoutesPaths[AppRoutes.EVENTS],
+  [MenuItem.about]: {
+    text: "about",
+    path: appRoutesPaths[AppRoutes.ABOUT],
   },
   [MenuItem.collections]: {
     text: "collections",
