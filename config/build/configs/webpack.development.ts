@@ -17,7 +17,6 @@ export const developmentConfig = (options: BuildOptions): Configuration => {
   const pluginServe = buildDevServer(port);
 
   return {
-    entry: ["webpack-plugin-serve/client"],
     watch: true,
     watchOptions: {
       ignored: ["dist/**/*", "docs/**/*", "node_modules/**/*", "public/**/*"],

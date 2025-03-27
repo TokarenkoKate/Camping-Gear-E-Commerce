@@ -6,7 +6,7 @@
 
 export const buildImageLoader = () => {
   return {
-    test: /\.(png|jpe?g|gif)$/i,
+    test: /\.(png|jpe?g|gif|avif)$/i,
     type: "asset",
     parser: { dataUrlCondition: { maxSize: 8192 } },
     generator: {
