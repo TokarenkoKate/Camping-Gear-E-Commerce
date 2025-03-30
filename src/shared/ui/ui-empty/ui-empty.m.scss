@@ -1,0 +1,8 @@
+.ui-empty {
+  padding: var(--space-8) 0;
+  gap: var(--space-4);
+
+  &-texts {
+    gap: var(--space-2);
+  }
+}

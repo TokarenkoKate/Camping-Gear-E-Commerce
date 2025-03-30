@@ -1,11 +1,10 @@
 import { ProductCard, ProductSummary } from "@/entities/product";
-import { GridWithInnerBorder } from "@/shared/ui";
+import { GridWithInnerBorder, UiEmpty } from "@/shared/ui";
 import {
   ProductGalleryIntroCard,
   ProductGalleryIntroCardProps,
 } from "./intro-card/product-gallery-intro-card";
 import { PRODUCTS_GALLERY_MIN_COLUMN_WIDTH } from "../model/const/products-gallery";
-import { ProductsEmptyGallery } from "./empty/products-empty-gallery";
 import { ProductsLoadingGallery } from "./loading/products-loading-gallery";
 import { InfiniteScroll } from "@/shared/ui/infinite-scroll/infinite-scroll";
 import { InfiniteScrollProps } from "@/shared/types/ui/infinite-scroll";
@@ -43,7 +42,7 @@ export const ProductsGallery = (props: ProductsGalleryProps) => {
   }
 
   if (isEmpty) {
-    return <ProductsEmptyGallery className={className} />;
+    return <UiEmpty className={className} />;
   }
 
   const introCard = introCardProps ? (
