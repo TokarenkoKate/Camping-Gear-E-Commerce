@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import { useCategoryAttributesQuery } from "@/entities/category/model/api/use-category-attributes-query";
-import { ProductsFilterFormValues } from "@/features/products-filter";
+import { ListHeaderFormValues } from "@/features/list-header";
+import { useCategoryAttributesQuery } from "@/entities/category";
 import { getTypedObjectKeys } from "@/shared/lib/helpers/get-typed-object";
 
 /**
@@ -17,9 +17,9 @@ export const useProductsPageFilters = (categoryId: number | undefined) => {
    * State to store filter form values
    */
   const [filterFormValues, setFilterFormValues] =
-    useState<ProductsFilterFormValues | null>(null);
+    useState<ListHeaderFormValues | null>(null);
 
-  const onSubmitFilters = (filterValues: ProductsFilterFormValues) => {
+  const onSubmitFilters = (filterValues: ListHeaderFormValues) => {
     setFilterFormValues(filterValues);
   };
 

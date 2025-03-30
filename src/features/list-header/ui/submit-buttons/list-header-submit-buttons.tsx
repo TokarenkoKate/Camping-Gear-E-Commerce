@@ -1,15 +1,15 @@
 import { UiHStack, UiButton } from "@/shared/ui";
-import cls from "../products-filter-extended.m.scss";
 import { useForm, useFormState } from "react-final-form";
-import { isProductsFilterFormEmpty } from "@/features/products-filter/model/lib/is-products-filter-form-empty";
+import { isListHeaderFormEmpty } from "../../model/lib/is-list-header-filter-form-empty";
+import cls from "../header/list-header.m.scss";
 
-export const ProductsFilterSubmitButtons = ({
+export const ListHeaderSubmitButtons = ({
   onResetFilters,
 }: {
   onResetFilters: VoidFunction;
 }) => {
   const { values } = useFormState();
-  const isEmptyForm = isProductsFilterFormEmpty(values);
+  const isEmptyForm = isListHeaderFormEmpty(values);
 
   const form = useForm();
 
@@ -19,7 +19,7 @@ export const ProductsFilterSubmitButtons = ({
   };
 
   return (
-    <UiHStack className={cls.productsFilterButtons}>
+    <UiHStack className={cls.listHeaderButtons}>
       <UiButton
         variant="outlined"
         type="reset"

@@ -1,6 +1,6 @@
-import { ProductsGallery } from "@/features/products-gallery";
 import { UiBox } from "@/shared/ui";
-import { ProductsPageHeader } from "../products-page-header/products-page-header";
+import { ListHeader } from "@/features/list-header";
+import { ProductsGallery } from "@/features/products-gallery";
 import { useProductsPage } from "../../model/hooks/use-products-page";
 import cls from "./products-page.m.scss";
 
@@ -18,8 +18,9 @@ export const ProductsPage = () => {
 
   return (
     <UiBox className={cls.productsPage}>
-      <ProductsPageHeader
-        categoryName={categoryName}
+      <ListHeader
+        title={categoryName}
+        subtitle="Shop collection"
         filterAttributes={filterAttributes}
         onSubmitFilters={onSubmitFilters}
       />

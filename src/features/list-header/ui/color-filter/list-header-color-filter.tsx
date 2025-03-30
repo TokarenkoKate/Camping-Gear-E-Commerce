@@ -1,18 +1,18 @@
 import classNames from "classnames";
-import { CategoryAttribute } from "@/entities/category";
 import { ColorTag, UiText, UiVStack } from "@/shared/ui";
 import { UiFieldRenderProps } from "@/shared/types/ui/ui-form";
-import cls from "../products-filter-extended.m.scss";
+import { ListHeaderFilterAttribute } from "../../model/types/list-header";
+import cls from "../header/list-header.m.scss";
 
-type ProductCategoryColorFilter = Partial<UiFieldRenderProps<string[]>> & {
-  categoryColorAttribute: CategoryAttribute;
+type ListHeaderColorFilter = Partial<UiFieldRenderProps<string[]>> & {
+  categoryColorAttribute: ListHeaderFilterAttribute;
 };
 
-export const ProductCategoryColorFilter = ({
+export const ListHeaderColorFilter = ({
   value: selectedColors = [],
   categoryColorAttribute,
   onChange,
-}: ProductCategoryColorFilter) => {
+}: ListHeaderColorFilter) => {
   const { key, values: colorValues } = categoryColorAttribute;
 
   const onToggleColor = (color: string, checked: boolean) => {
@@ -30,14 +30,18 @@ export const ProductCategoryColorFilter = ({
   return (
     <UiVStack
       className={classNames(
-        cls.productsFilterComponent,
-        cls.productsFilterComponentGrid
+        cls.listHeaderFilterComponent,
+        cls.listHeaderFilterComponentGrid
       )}
     >
       <UiText as="h3" variant="headingSm">
         {key}
       </UiText>
-      <UiVStack as="ul" role="list" className={cls.productsFilterComponentList}>
+      <UiVStack
+        as="ul"
+        role="list"
+        className={cls.listHeaderFilterComponentList}
+      >
         {colorValues.map((colorValue) => (
           <ColorTag
             color={colorValue}

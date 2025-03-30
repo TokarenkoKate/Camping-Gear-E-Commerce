@@ -1,0 +1,102 @@
+@import "/src/app/styles/mixins/responsive";
+
+$list-header-grid-col-size: 22px;
+
+.list-header {
+  width: 100%;
+
+  &-visible {
+    width: 100%;
+    padding: var(--space-10) var(--space-3-5);
+
+    @include responsive("small") {
+      padding: var(--space-10) var(--space-5);
+    }
+  }
+
+  &-title,
+  &-subtitle {
+    text-transform: uppercase;
+  }
+
+  &-subtitle {
+    margin-bottom: var(--space-3);
+  }
+
+  &-title-wrapper {
+    gap: var(--space-3);
+    margin-bottom: var(--space-7);
+  }
+
+  &-filters {
+    width: 100%;
+    gap: var(--space-2-5);
+  }
+
+  &-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+    padding: var(--space-10) var(--space-3-5);
+    gap: var(--space-8);
+    border: 1px solid var(--color-border-dark);
+    border-bottom: none;
+    background-color: var(--color-secondary);
+
+    @include responsive("small") {
+      padding: var(--space-10) var(--space-5);
+    }
+
+    @include responsive("large") {
+      flex-direction: row;
+    }
+
+    &-group {
+      display: grid;
+      grid-template-columns: auto;
+      gap: var(--space-10-5);
+      flex: 1;
+
+      @include responsive("medium") {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-8);
+      }
+    }
+
+    &-component {
+      gap: var(--space-6);
+
+      &-list {
+        width: 100%;
+        gap: var(--space-2);
+      }
+
+      &-grid > &-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, $list-header-grid-col-size);
+        gap: var(--space-6);
+      }
+    }
+
+    &-button {
+      font-weight: 400;
+
+      &-selected {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-buttons {
+    width: 100%;
+    justify-content: space-between;
+    align-self: flex-end;
+    gap: var(--space-4);
+
+    @include responsive("small") {
+      width: auto;
+      justify-content: start;
+    }
+  }
+}

@@ -1,19 +1,19 @@
 import classNames from "classnames";
-import { CategoryAttribute } from "@/entities/category";
 import { UiFieldRenderProps } from "@/shared/types/ui/ui-form";
 import { UiText, UiVStack } from "@/shared/ui";
-import { ProductsFilterTextButton } from "./products-filter-text-button";
-import cls from "../products-filter-extended.m.scss";
+import { ListHeaderTextButton } from "./list-header-text-button";
+import { ListHeaderFilterAttribute } from "../../model/types/list-header";
+import cls from "../header/list-header.m.scss";
 
-type ProductCategoryColorFilter = Partial<UiFieldRenderProps<string[]>> & {
-  categoryColorAttribute: CategoryAttribute;
+type ListHeaderColorFilter = Partial<UiFieldRenderProps<string[]>> & {
+  categoryColorAttribute: ListHeaderFilterAttribute;
 };
 
-export const ProductCategoryTextFilter = ({
+export const ListHeaderTextFilter = ({
   categoryColorAttribute,
   value: selectedValues = [],
   onChange,
-}: ProductCategoryColorFilter) => {
+}: ListHeaderColorFilter) => {
   const { key, values: attributeValues } = categoryColorAttribute;
 
   const onToggleAttributeValue = (color: string, checked: boolean) => {
@@ -29,13 +29,17 @@ export const ProductCategoryTextFilter = ({
   };
 
   return (
-    <UiVStack className={classNames(cls.productsFilterComponent)}>
+    <UiVStack className={classNames(cls.listHeaderFilterComponent)}>
       <UiText as="h3" variant="headingSm">
         {key}
       </UiText>
-      <UiVStack as="ul" role="list" className={cls.productsFilterComponentList}>
+      <UiVStack
+        as="ul"
+        role="list"
+        className={cls.listHeaderFilterComponentList}
+      >
         {attributeValues.map((attributeValue) => (
-          <ProductsFilterTextButton
+          <ListHeaderTextButton
             name={key}
             value={attributeValue}
             isChecked={selectedValues.includes(attributeValue)}

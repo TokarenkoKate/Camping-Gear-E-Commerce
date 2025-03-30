@@ -1,13 +1,13 @@
 import { getTypedObjectKeys } from "@/shared/lib/helpers/get-typed-object";
 
 /**
- * Helper to check whether products filter form values empty,
+ * Helper to check whether list header form values empty,
  * used for submit buttons,
  * i.e. to disable reset button, if empty
  * @param formValues filter form values
  * @returns true if form is empty, otherwise false
  */
-export const isProductsFilterFormEmpty = (
+export const isListHeaderFormEmpty = (
   formValues: Record<string, string[]> | undefined
 ) => {
   if (!formValues) {

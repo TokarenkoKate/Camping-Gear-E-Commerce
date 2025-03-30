@@ -1,20 +1,20 @@
 import classNames from "classnames";
 import { UiButton } from "@/shared/ui";
-import cls from "../products-filter-extended.m.scss";
+import cls from "../header/list-header.m.scss";
 
-interface ProductsFilterTextButtonProps {
+interface ListHeaderTextButtonProps {
   name: string;
   value: string;
   isChecked: boolean;
   onToggleValue(value: string, checked: boolean): void;
 }
 
-export const ProductsFilterTextButton = ({
+export const ListHeaderTextButton = ({
   name,
   value,
   isChecked,
   onToggleValue,
-}: ProductsFilterTextButtonProps) => {
+}: ListHeaderTextButtonProps) => {
   const onClick = () => {
     onToggleValue(value, !isChecked);
   };
@@ -28,8 +28,8 @@ export const ProductsFilterTextButton = ({
       name={name}
       aria-checked={isChecked}
       className={classNames(
-        cls.productsFilterButton,
-        isChecked && cls.productsFilterButtonSelected
+        cls.listHeaderFilterButton,
+        isChecked && cls.listHeaderFilterButtonSelected
       )}
     >
       {value}
