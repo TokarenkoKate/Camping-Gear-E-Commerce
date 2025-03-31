@@ -66,6 +66,11 @@ $button-size-m-width-mobile: 164px;
     cursor: default;
   }
 
+  &.loading {
+    pointer-events: none;
+    cursor: default;
+  }
+
   &:focus-visible {
     box-shadow:
       0 0 0 4px var(--color-primary),

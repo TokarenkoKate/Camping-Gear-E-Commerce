@@ -4,7 +4,12 @@ import ArrowExternalRight from "@/shared/assets/icons/arrow-external-right-20-20
 import { StorybookExample } from "../storybook-example/storybook-example";
 import { UiHStack } from "../ui-stack/ui-hstack/ui-hstack";
 import { UiVStack } from "../ui-stack/ui-vstack/ui-vstack";
-import { UiButtonSize, UiButtonVariant } from "@/shared/types/ui/ui-button";
+import {
+  UiButtonProps,
+  UiButtonSize,
+  UiButtonVariant,
+} from "@/shared/types/ui/ui-button";
+import { useState } from "react";
 
 export default {
   component: UiButton,
@@ -29,28 +34,41 @@ export const All = {
   },
 };
 
+const ButtonWithLoadingState = (props: UiButtonProps) => {
+  const [loading, setIsLoading] = useState(false);
+
+  const onClickShowLoading = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 0);
+  };
+
+  return <UiButton {...props} onClick={onClickShowLoading} loading={loading} />;
+};
+
 const renderButtonExamples = (variant: UiButtonVariant, size: UiButtonSize) => {
   return (
     <UiHStack style={{ gap: "14px" }}>
-      <UiButton variant={variant} size={size}>
+      <ButtonWithLoadingState variant={variant} size={size}>
         Label
-      </UiButton>
-      <UiButton variant={variant} size={size} disabled>
+      </ButtonWithLoadingState>
+      <ButtonWithLoadingState variant={variant} size={size} disabled>
         Label
-      </UiButton>
-      <UiButton variant={variant} round size={size}>
+      </ButtonWithLoadingState>
+      <ButtonWithLoadingState variant={variant} round size={size}>
         10
-      </UiButton>
-      <UiButton variant={variant} round size={size} disabled>
+      </ButtonWithLoadingState>
+      <ButtonWithLoadingState variant={variant} round size={size} disabled>
         10
-      </UiButton>
-      <UiButton
+      </ButtonWithLoadingState>
+      <ButtonWithLoadingState
         variant={variant}
         round
         size={size}
         leftIconSvg={ArrowExternalRight}
       />
-      <UiButton
+      <ButtonWithLoadingState
         variant={variant}
         round
         size={size}

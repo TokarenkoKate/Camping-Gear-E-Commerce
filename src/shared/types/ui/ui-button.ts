@@ -30,5 +30,6 @@ export interface UiButtonProps
   disabled?: boolean;
   asLink?: boolean;
   max?: boolean;
+  loading?: boolean;
   className?: string;
 }

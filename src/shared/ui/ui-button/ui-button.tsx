@@ -1,11 +1,16 @@
+import { forwardRef, useImperativeHandle } from "react";
+import classNames from "classnames";
+import { Link } from "react-router-dom";
 import { ClassnamesMods } from "@/shared/types/classnames";
 import { UiButtonProps } from "@/shared/types/ui/ui-button";
-import classNames from "classnames";
-import { forwardRef } from "react";
-import { Link } from "react-router-dom";
 import { UiIcon } from "../ui-icon/ui-icon";
 import { UiArrowIcon } from "../ui-arrow-icon/ui-arrow-icon";
+import { UiSpinner } from "../ui-spinner/ui-spinner";
+import { useUiButtonLoadingState } from "@/shared/lib/hooks/ui/use-ui-button-loading-state";
+import { useUiButtonLoadingDimensions } from "@/shared/lib/hooks/ui/use-ui-button-loading-dimensions";
 import cls from "./ui-button.m.scss";
+
+const invertedColorModeVariants = ["background", "outlinedInverted"];
 
 export type UiButtonRef = HTMLButtonElement | null;
 
@@ -19,6 +24,7 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
       leftIconSvg,
       rightIconSvg,
       disabled,
+      loading,
       className,
       asLink,
       to,
@@ -29,23 +35,44 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
       ...restProps
     } = props;
 
+    /**
+     * Handle button loading state
+     */
+    const isLoading = useUiButtonLoadingState(loading);
+
+    /**
+     * Handle button dimensions on loading state change
+     */
+    const { width, height, buttonRef } =
+      useUiButtonLoadingDimensions(isLoading);
+
+    useImperativeHandle(forwardRef, () => buttonRef.current!);
+
     const withArrow = variant === "plainWithArrow";
 
     const mods: ClassnamesMods = {
       [cls[variant]]: true,
       [cls[size]]: true,
       [cls.disabled]: disabled,
+      [cls.loading]: isLoading,
       [cls.round]: round,
       [cls.max]: max,
     };
 
-    const content = (
+    const content = !isLoading ? (
       <>
         {withArrow && <UiArrowIcon className={cls.arrow} />}
         {leftIconSvg && <UiIcon Svg={leftIconSvg} className={cls.icon} />}
         {children}
         {rightIconSvg && <UiIcon Svg={rightIconSvg} className={cls.icon} />}
       </>
+    ) : (
+      <UiSpinner
+        size={size === "medium" ? "medium" : "small"}
+        mode={
+          invertedColorModeVariants.includes(variant) ? "default" : "inverted"
+        }
+      />
     );
 
     if (asLink) {
@@ -74,9 +101,10 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
     return (
       <button
         type="button"
-        disabled={disabled}
+        disabled={disabled || isLoading}
         className={classNames(cls.uiButton, mods, className)}
-        ref={forwardRef}
+        ref={buttonRef}
+        style={isLoading ? { width: `${width}px`, height: `${height}px` } : {}}
         {...restProps}
       >
         {content}
