@@ -1,19 +1,46 @@
 .ui-spinner {
-  width: 48px;
-  height: 48px;
+  --spinner-size: 0;
+  --spinner-border-size: 0;
+  --spinner-color: none;
+
+  &.small {
+    --spinner-size: 10px;
+    --spinner-border-size: 2px;
+  }
+
+  &.medium {
+    --spinner-size: 24px;
+    --spinner-border-size: 3px;
+  }
+
+  &.large {
+    --spinner-size: 48px;
+    --spinner-border-size: 5px;
+  }
+
+  &.default {
+    --spinner-color: var(--color-primary);
+  }
+
+  &.inverted {
+    --spinner-color: var(--color-accent);
+  }
+
+  width: var(--spinner-size);
+  height: var(--spinner-size);
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite;
-}
 
-.ui-spinner::before {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 5px solid var(--color-primary);
-  animation: spin 2s linear infinite;
+  &::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: var(--spinner-border-size) solid var(--spinner-color);
+    animation: spin 2s linear infinite;
+  }
 }
 
 @keyframes rotate {
