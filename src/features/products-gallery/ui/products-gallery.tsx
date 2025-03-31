@@ -42,7 +42,13 @@ export const ProductsGallery = (props: ProductsGalleryProps) => {
   }
 
   if (isEmpty) {
-    return <UiEmpty className={className} />;
+    return (
+      <UiEmpty
+        title="No products"
+        description="It seems there are no products yet"
+        className={className}
+      />
+    );
   }
 
   const introCard = introCardProps ? (

@@ -6,19 +6,21 @@ import { UiText } from "../ui-text/ui-text";
 import cls from "./ui-empty.m.scss";
 
 interface UiEmptyProps {
+  title: string;
+  description: string;
   className?: string;
 }
 
-export const UiEmpty = ({ className }: UiEmptyProps) => {
+export const UiEmpty = ({ title, description, className }: UiEmptyProps) => {
   return (
     <UiVStack max align="center" className={classNames(cls.uiEmpty, className)}>
       <UiIcon Svg={EmptyList} />
       <UiVStack align="center" className={cls.uiEmptyTexts}>
         <UiText tone="secondary" variant="headingSm" fontWeight="medium">
-          No Articles
+          {title}
         </UiText>
         <UiText tone="secondary" variant="bodyLg">
-          It seems there are no articles yet
+          {description}
         </UiText>
       </UiVStack>
     </UiVStack>

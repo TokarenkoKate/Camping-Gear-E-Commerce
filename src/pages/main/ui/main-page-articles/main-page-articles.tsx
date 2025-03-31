@@ -23,9 +23,9 @@ export const MainPageArticles = () => {
           className={cls.mainPageArticlesGridItemLong}
           type="vertical"
         />
-        <ArticlePreviewCard article={mockArticleHalfPage1} cardType="large" />
-        <ArticlePreviewCard article={mockArticleHalfPage2} cardType="large" />
-        <ArticlePreviewCard article={mockArticleHalfPage3} cardType="large" />
+        <ArticlePreviewCard article={mockArticleHalfPage1} cardType="medium" />
+        <ArticlePreviewCard article={mockArticleHalfPage2} cardType="medium" />
+        <ArticlePreviewCard article={mockArticleHalfPage3} cardType="medium" />
       </UiBox>
       <ArticleWithBackgroundPreview
         article={mockArticlePreviewWithBackgroundHorizontal}
