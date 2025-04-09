@@ -5,7 +5,9 @@ export type {
   Article,
   ArticlePreview,
   ArticlePreviewCardType,
+  ArticleBlock,
 } from "./model/types/article";
+export { ArticleBlockType } from "./model/const/article";
 export { useGetArticlesInfiniteQuery } from "./api/use-get-articles-infinite-query";
 export { useGetArticlesCategories } from "./api/use-get-articles-categories";
 export { useGetArticleQuery } from "./api/use-get-article-query";

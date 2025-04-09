@@ -1,0 +1,20 @@
+@import "/src/app/styles/mixins/responsive";
+
+.article-blocks {
+  max-width: 750px;
+  margin: 0 auto;
+  gap: var(--space-10);
+  padding: var(--space-12-5) var(--space-3-5);
+
+  .article-block {
+    &-image {
+      aspect-ratio: 3 / 2;
+      width: 100%;
+      height: 100%;
+
+      @include responsive("medium") {
+        aspect-ratio: 19 / 15;
+      }
+    }
+  }
+}
