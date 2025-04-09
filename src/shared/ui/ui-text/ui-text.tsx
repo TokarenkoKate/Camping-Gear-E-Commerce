@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import classNames from "classnames";
 import {
   UiTextElement,
@@ -16,8 +16,8 @@ export interface UiTextProps {
   tone?: UiTextTone;
   align?: UiTextAlign;
   fontWeight?: UiTextFontWeight;
-  truncate?: boolean;
   className?: string;
+  lineClamp?: number;
 }
 
 export const UiText = (props: UiTextProps) => {
@@ -28,7 +28,7 @@ export const UiText = (props: UiTextProps) => {
     tone,
     align,
     fontWeight,
-    truncate = false,
+    lineClamp,
     className,
     ...restProps
   } = props;
@@ -39,14 +39,18 @@ export const UiText = (props: UiTextProps) => {
     tone && cls[tone],
     align && cls[align],
     fontWeight && cls[fontWeight],
-    truncate && cls.truncate,
+    lineClamp && cls.truncate,
     className
   );
+
+  const styleVariables: CSSProperties = {
+    "--no-of-lines": lineClamp,
+  };
 
   const UiTextComponent = as;
 
   return (
-    <UiTextComponent className={classes} {...restProps}>
+    <UiTextComponent className={classes} style={styleVariables} {...restProps}>
       {children}
     </UiTextComponent>
   );

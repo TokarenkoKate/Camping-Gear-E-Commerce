@@ -134,7 +134,11 @@
 * features
 */
 .truncate {
-  overflow: hidden;
-  white-space: nowrap;
+  --no-of-lines: 0;
+
+  display: -webkit-box;
+  -webkit-line-clamp: var(--no-of-lines);
+  -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+  overflow: hidden;
 }

@@ -2,7 +2,8 @@
 
 $content-max-w: 350px;
 $image-min-h: 280px;
-$image-h: 395px;
+$image-max-h: 585px;
+$image-h-large: 395px;
 $image-h-medium: 260px;
 $image-h-small: 280px;
 
@@ -40,6 +41,7 @@ $image-h-small: 280px;
     height: 100%;
     min-width: 0;
     min-height: $image-min-h;
+    max-height: $image-max-h;
     object-fit: cover;
   }
 
@@ -96,7 +98,7 @@ $image-h-small: 280px;
       }
 
       @include responsive("large") {
-        height: $image-h;
+        height: $image-h-large;
       }
     }
   }

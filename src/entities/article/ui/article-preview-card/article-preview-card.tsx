@@ -18,6 +18,12 @@ import cls from "./article-preview-card.m.scss";
 import { appRoutesPaths } from "@/shared/const/router";
 import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
 
+const noOfLines: Record<ArticlePreviewCardType, number> = {
+  large: 5,
+  medium: 3,
+  small: 3,
+};
+
 interface ArticlePreviewProps {
   article: ArticlePreview;
   cardType: ArticlePreviewCardType;
@@ -50,7 +56,9 @@ export const ArticlePreviewCard = ({
         <UiText variant="headingMd" as="h3" className={cls.articlePreviewTitle}>
           {title}
         </UiText>
-        <UiText className={cls.articlePreviewDescription}>{description}</UiText>
+        <UiBox className={cls.articlePreviewDescription}>
+          <UiText lineClamp={noOfLines[cardType]}>{description}</UiText>
+        </UiBox>
         {withRedirect && (
           <UiButton
             variant="outlined"
