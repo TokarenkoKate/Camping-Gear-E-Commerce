@@ -11,3 +11,4 @@ export { ArticleBlockType } from "./model/const/article";
 export { useGetArticlesInfiniteQuery } from "./api/use-get-articles-infinite-query";
 export { useGetArticlesCategories } from "./api/use-get-articles-categories";
 export { useGetArticleQuery } from "./api/use-get-article-query";
+export { useGetSimilarArticles } from "./api/use-get-similar-articles";

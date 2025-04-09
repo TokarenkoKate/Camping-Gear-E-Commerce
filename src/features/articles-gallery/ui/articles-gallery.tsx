@@ -13,6 +13,7 @@ import {
 } from "@/entities/article";
 import { ArticlesLoadingGallery } from "./articles-loading-gallery";
 import cls from "./articles-gallery.m.scss";
+import { getNormalizedNumber } from "@/shared/lib/helpers/get-normalized-number";
 
 interface ArticlesGalleryProps
   extends Partial<
@@ -22,7 +23,7 @@ interface ArticlesGalleryProps
     >
   > {
   showFirstPreviewCard?: boolean;
-  articles: ArticlePreview[];
+  articles: ArticlePreview[] | undefined;
   articlesCardType: ArticlePreviewCardType;
   isLoading?: boolean;
 }
@@ -42,13 +43,15 @@ export const ArticlesGallery = (props: ArticlesGalleryProps) => {
    * For some articles galleries allowed to show a first preview card
    * before the list
    */
-  const [previewCard, ...restArticles] = articles;
+  const [previewCard, ...restArticles] = articles || [];
   const articlesWithoutPreviewCard = showFirstPreviewCard
     ? restArticles
     : articles;
 
-  const articlesLength = articles.length;
-  const articlesWithoutPreviewLength = articlesWithoutPreviewCard.length;
+  const articlesLength = getNormalizedNumber(articles?.length);
+  const articlesWithoutPreviewLength = getNormalizedNumber(
+    articlesWithoutPreviewCard?.length
+  );
 
   const isEmpty = !articles || !articlesLength;
 
@@ -82,7 +85,7 @@ export const ArticlesGallery = (props: ArticlesGalleryProps) => {
           itemsLength={articlesWithoutPreviewLength}
           className={cls.articlesGalleryList}
         >
-          {articlesWithoutPreviewCard.map((article) => (
+          {articlesWithoutPreviewCard?.map((article) => (
             <ArticlePreviewCard
               article={article}
               cardType={articlesCardType}

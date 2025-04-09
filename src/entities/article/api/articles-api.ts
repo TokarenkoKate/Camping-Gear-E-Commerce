@@ -20,4 +20,9 @@ export const ArticlesApi = {
     ApiGet<Article>({
       endpoint: `${ApiEndpoint.articles}/${articleId}`,
     }),
+
+  getSimilarArticles: (articleId: number | undefined) =>
+    ApiGet<Array<ArticlePreview>>({
+      endpoint: `${ApiEndpoint.articles}/${articleId}/similar`,
+    }),
 };

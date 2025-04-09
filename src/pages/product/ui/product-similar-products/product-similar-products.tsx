@@ -1,9 +1,8 @@
+import { UiBox } from "@/shared/ui";
 import { useGetSimilarProducts } from "@/entities/product";
 import { ProductsGallery } from "@/features/products-gallery";
 import { useInView } from "react-intersection-observer";
 import cls from "../product-page/product-page.m.scss";
-
-import { UiBox } from "@/shared/ui";
 
 export const ProductSimilarProducts = ({
   productId,
