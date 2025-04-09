@@ -30,10 +30,6 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
     path: appRoutesPaths[AppRoutes.ABOUT],
     element: <AboutPage />,
   },
-  [AppRoutes.COLLECTIONS]: {
-    path: appRoutesPaths[AppRoutes.COLLECTIONS],
-    element: <div />,
-  },
   [AppRoutes.JOURNAL]: {
     path: appRoutesPaths[AppRoutes.JOURNAL],
     element: <JournalPage />,
