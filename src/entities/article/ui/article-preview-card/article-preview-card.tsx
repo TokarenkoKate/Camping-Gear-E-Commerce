@@ -15,6 +15,7 @@ import {
 } from "../../model/types/article";
 import cls from "./article-preview-card.m.scss";
 import { appRoutesPaths } from "@/shared/const/router";
+import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
 
 interface ArticlePreviewProps {
   article: ArticlePreview;
@@ -27,12 +28,13 @@ export const ArticlePreviewCard = ({
   cardType,
   withRedirect,
 }: ArticlePreviewProps) => {
-  const { id, type, date, title, description, img } = article;
+  const { id, type, date, title, description, image } = article;
   const mods: ClassnamesMods = {
     [cls[cardType]]: true,
   };
 
   const isLargeType = cardType === "large";
+  const imagePath = getImageSrcPath(image);
 
   return (
     <UiBox className={classNames(cls.articlePreview, mods)}>
@@ -57,7 +59,11 @@ export const ArticlePreviewCard = ({
           </UiButton>
         )}
       </UiBox>
-      <UiImage src={img} alt={title} className={cls.articlePreviewImage} />
+      <UiImage
+        src={imagePath}
+        alt={title}
+        className={cls.articlePreviewImage}
+      />
     </UiBox>
   );
 };

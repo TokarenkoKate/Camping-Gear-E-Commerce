@@ -3,10 +3,10 @@ export interface Article {
   title: string;
   date: string;
   type: string;
-  img: string;
+  image: string;
 }
 
-type ArticlePreviewRequired = Pick<Article, "id" | "title" | "img"> & {
+type ArticlePreviewRequired = Pick<Article, "id" | "title" | "image"> & {
   description: string;
 };
 type ArticlePreviewOptional = Partial<Pick<Article, "type" | "date">>;

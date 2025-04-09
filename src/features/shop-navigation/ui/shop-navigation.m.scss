@@ -5,6 +5,7 @@
 
   position: fixed;
   inset: var(--shop-navigation-fixed-inset);
+  z-index: var(--z-indices-navigation);
 
   &-content {
     height: 100%;
