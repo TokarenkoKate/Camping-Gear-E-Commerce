@@ -8,3 +8,4 @@ export type {
 } from "./model/types/article";
 export { useGetArticlesInfiniteQuery } from "./api/use-get-articles-infinite-query";
 export { useGetArticlesCategories } from "./api/use-get-articles-categories";
+export { useGetArticleQuery } from "./api/use-get-article-query";

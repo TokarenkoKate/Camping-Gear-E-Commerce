@@ -16,6 +16,7 @@ import {
 import cls from "./article-preview-card.m.scss";
 import { appRoutesPaths } from "@/shared/const/router";
 import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
+import { To } from "react-router-dom";
 
 interface ArticlePreviewProps {
   article: ArticlePreview;
@@ -34,6 +35,7 @@ export const ArticlePreviewCard = ({
   };
 
   const isLargeType = cardType === "large";
+  const redirectPath: To = `${appRoutesPaths.journal}/${id}`;
   const imagePath = getImageSrcPath(image);
 
   return (
@@ -53,7 +55,7 @@ export const ArticlePreviewCard = ({
             round
             className={cls.articlePreviewLink}
             asLink
-            to={`${appRoutesPaths.journal}/${id}`}
+            to={redirectPath}
           >
             <UiIcon Svg={ArrowExternalRight} />
           </UiButton>

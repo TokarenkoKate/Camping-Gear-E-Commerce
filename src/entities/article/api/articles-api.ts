@@ -2,7 +2,7 @@ import { ApiGet } from "@/shared/config/api/api-methods";
 import { ApiResponseWithPager } from "@/shared/types/api/api-types";
 import { ApiEndpoint } from "@/shared/config/api/api-endpoints";
 import { ArticlesApiQueryParams } from "../model/types/articles-api";
-import { ArticlePreview } from "../model/types/article";
+import { Article, ArticlePreview } from "../model/types/article";
 
 export const ArticlesApi = {
   getArticles: (queryParams?: ArticlesApiQueryParams) =>
@@ -14,5 +14,10 @@ export const ArticlesApi = {
   getArticlesCategories: () =>
     ApiGet<string[]>({
       endpoint: `${ApiEndpoint.articles}/categories`,
+    }),
+
+  getArticle: (articleId: number | undefined) =>
+    ApiGet<Article>({
+      endpoint: `${ApiEndpoint.articles}/${articleId}`,
     }),
 };
