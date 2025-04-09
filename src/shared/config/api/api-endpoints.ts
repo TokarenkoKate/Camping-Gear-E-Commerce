@@ -3,4 +3,5 @@ export enum ApiEndpoint {
   products = "products",
   auth = "auth",
   cart = "cart",
+  articles = "articles",
 }

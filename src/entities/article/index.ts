@@ -6,3 +6,5 @@ export type {
   ArticlePreview,
   ArticlePreviewCardType,
 } from "./model/types/article";
+export { useGetArticlesInfiniteQuery } from "./api/use-get-articles-infinite-query";
+export { useGetArticlesCategories } from "./api/use-get-articles-categories";

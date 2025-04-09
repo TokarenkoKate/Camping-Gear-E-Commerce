@@ -55,8 +55,14 @@ export const GridWithInnerBorder = forwardRef<
   });
 
   useEffect(() => {
-    removeBorderFromGrid({ grid: ref.current, itemsLength, borderColor });
-  }, []);
+    if (itemsLength) {
+      removeBorderFromGrid({ grid: ref.current, itemsLength, borderColor });
+    }
+  }, [itemsLength]);
+
+  if (!itemsLength) {
+    return null;
+  }
 
   return (
     <UiBox

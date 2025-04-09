@@ -5,27 +5,30 @@ import { ListHeaderTextButton } from "./list-header-text-button";
 import { ListHeaderFilterAttribute } from "../../model/types/list-header";
 import cls from "../header/list-header.m.scss";
 
-type ListHeaderColorFilter = Partial<UiFieldRenderProps<string[]>> & {
-  categoryColorAttribute: ListHeaderFilterAttribute;
+type ListHeaderTextFilter = Partial<UiFieldRenderProps<string[] | string>> & {
+  attributeFilter: ListHeaderFilterAttribute;
 };
 
 export const ListHeaderTextFilter = ({
-  categoryColorAttribute,
-  value: selectedValues = [],
+  attributeFilter,
+  value: selectedValue,
   onChange,
-}: ListHeaderColorFilter) => {
-  const { key, values: attributeValues } = categoryColorAttribute;
+}: ListHeaderTextFilter) => {
+  const { key, values: attributeValues, isMulti } = attributeFilter;
 
-  const onToggleAttributeValue = (color: string, checked: boolean) => {
-    let updatedColors = [...selectedValues];
-    if (checked) {
-      updatedColors = updatedColors.concat(color);
+  const onToggleAttributeValue = (value: string, checked: boolean) => {
+    if (!isMulti) {
+      onChange?.(value);
     } else {
-      updatedColors = updatedColors.filter(
-        (selectedColor) => selectedColor !== color
-      );
+      let updatedValues =
+        selectedValue && Array.isArray(selectedValue) ? [...selectedValue] : [];
+      if (checked) {
+        updatedValues = updatedValues.concat(value);
+      } else {
+        updatedValues = updatedValues.filter((curr) => curr !== value);
+      }
+      onChange?.(updatedValues);
     }
-    onChange?.(updatedColors);
   };
 
   return (
@@ -38,15 +41,22 @@ export const ListHeaderTextFilter = ({
         role="list"
         className={cls.listHeaderFilterComponentList}
       >
-        {attributeValues.map((attributeValue) => (
-          <ListHeaderTextButton
-            name={key}
-            value={attributeValue}
-            isChecked={selectedValues.includes(attributeValue)}
-            onToggleValue={onToggleAttributeValue}
-            key={attributeValue}
-          />
-        ))}
+        {attributeValues.map((attributeValue) => {
+          const isChecked =
+            selectedValue && Array.isArray(selectedValue)
+              ? selectedValue?.includes(attributeValue)
+              : selectedValue === attributeValue;
+
+          return (
+            <ListHeaderTextButton
+              name={key}
+              value={attributeValue}
+              isChecked={isChecked}
+              onToggleValue={onToggleAttributeValue}
+              key={attributeValue}
+            />
+          );
+        })}
       </UiVStack>
     </UiVStack>
   );

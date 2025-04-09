@@ -29,3 +29,5 @@ export { UiButtonCheckboxGroup } from "./ui-button-checkbox/ui-button-checkbox-g
 export { Skeleton } from "./skeleton/skeleton";
 export { LoginLink } from "./login-link/login-link";
 export { UiEmpty } from "./ui-empty/ui-empty";
+export { FormAutoSave } from "./form-autosave/form-autosave";
+export { SlideToggle } from "./slide-toggle/slide-toggle";

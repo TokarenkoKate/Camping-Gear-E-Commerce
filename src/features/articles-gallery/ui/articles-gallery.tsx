@@ -1,4 +1,10 @@
-import { GridWithInnerBorder, UiButton, UiEmpty, UiVStack } from "@/shared/ui";
+import {
+  GridWithInnerBorder,
+  UiBox,
+  UiButton,
+  UiEmpty,
+  UiVStack,
+} from "@/shared/ui";
 import { InfiniteScrollProps } from "@/shared/types/ui/infinite-scroll";
 import {
   ArticlePreview,
@@ -15,6 +21,7 @@ interface ArticlesGalleryProps
       "fetchNextPage" | "isFetchingNextPage" | "totalLength"
     >
   > {
+  showFirstPreviewCard?: boolean;
   articles: ArticlePreview[];
   articlesCardType: ArticlePreviewCardType;
   isLoading?: boolean;
@@ -28,9 +35,21 @@ export const ArticlesGallery = (props: ArticlesGalleryProps) => {
     totalLength,
     isFetchingNextPage,
     fetchNextPage,
+    showFirstPreviewCard,
   } = props;
 
+  /**
+   * For some articles galleries allowed to show a first preview card
+   * before the list
+   */
+  const [previewCard, ...restArticles] = articles;
+  const articlesWithoutPreviewCard = showFirstPreviewCard
+    ? restArticles
+    : articles;
+
   const articlesLength = articles.length;
+  const articlesWithoutPreviewLength = articlesWithoutPreviewCard.length;
+
   const isEmpty = !articles || !articlesLength;
 
   if (isLoading) {
@@ -50,28 +69,37 @@ export const ArticlesGallery = (props: ArticlesGalleryProps) => {
     totalLength && articlesLength ? totalLength > articlesLength : false;
 
   return (
-    <UiVStack max align="center" className={cls.articlesGallery}>
-      <GridWithInnerBorder
-        itemsLength={articlesLength}
-        className={cls.articlesGalleryList}
-      >
-        {articles.map((article) => (
-          <ArticlePreviewCard
-            article={article}
-            cardType={articlesCardType}
-            withRedirect
-            key={article.id}
-          />
-        ))}
-      </GridWithInnerBorder>
-      <UiButton
-        variant="outlined"
-        disabled={!hasMore}
-        onClick={fetchNextPage}
-        loading={isFetchingNextPage}
-      >
-        Show more
-      </UiButton>
-    </UiVStack>
+    <UiBox>
+      {Boolean(showFirstPreviewCard && previewCard && !isLoading) && (
+        <ArticlePreviewCard
+          article={previewCard}
+          cardType="large"
+          withRedirect
+        />
+      )}
+      <UiVStack max align="center" className={cls.articlesGallery}>
+        <GridWithInnerBorder
+          itemsLength={articlesWithoutPreviewLength}
+          className={cls.articlesGalleryList}
+        >
+          {articlesWithoutPreviewCard.map((article) => (
+            <ArticlePreviewCard
+              article={article}
+              cardType={articlesCardType}
+              withRedirect
+              key={article.id}
+            />
+          ))}
+        </GridWithInnerBorder>
+        <UiButton
+          variant="outlined"
+          disabled={!hasMore}
+          onClick={fetchNextPage}
+          loading={isFetchingNextPage}
+        >
+          Show more
+        </UiButton>
+      </UiVStack>
+    </UiBox>
   );
 };

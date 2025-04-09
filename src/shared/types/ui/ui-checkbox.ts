@@ -1,7 +1,7 @@
 export type UiCheckboxValue = string | number;
 
-export type UiCheckboxOption = {
-  value: UiCheckboxValue;
+export type UiCheckboxOption<T extends UiCheckboxValue> = {
+  value: T;
   label: string;
   disabled?: boolean;
 };
@@ -44,12 +44,10 @@ export interface UiCheckboxProps {
   "aria-invalid"?: true | undefined;
 }
 
-export interface UiCheckboxGroupProps extends Pick<UiCheckboxProps, "name"> {
-  values: Array<UiCheckboxValue>;
-  options: Array<UiCheckboxOption>;
+export interface UiCheckboxGroupProps<T extends UiCheckboxValue>
+  extends Pick<UiCheckboxProps, "name"> {
+  values: Array<T> | undefined;
+  options: Array<UiCheckboxOption<T>>;
   description?: string;
-  onChange(
-    event: React.ChangeEvent<HTMLInputElement>,
-    values: Array<UiCheckboxValue>
-  ): void;
+  onChange(event: React.ChangeEvent<HTMLInputElement>, values: Array<T>): void;
 }

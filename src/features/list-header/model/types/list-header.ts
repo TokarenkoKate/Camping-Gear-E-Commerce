@@ -1,4 +1,4 @@
-export type ListHeaderFormValues = Record<string, string[]> | null;
+export type ListHeaderFormValues = Record<string, string[] | string> | null;
 
 export type ListHeaderFilterAttribute = {
   id: number;

@@ -5,15 +5,15 @@ import { ListHeaderFilterAttribute } from "../../model/types/list-header";
 import cls from "../header/list-header.m.scss";
 
 type ListHeaderColorFilter = Partial<UiFieldRenderProps<string[]>> & {
-  categoryColorAttribute: ListHeaderFilterAttribute;
+  attributeFilter: ListHeaderFilterAttribute;
 };
 
 export const ListHeaderColorFilter = ({
   value: selectedColors = [],
-  categoryColorAttribute,
+  attributeFilter,
   onChange,
 }: ListHeaderColorFilter) => {
-  const { key, values: colorValues } = categoryColorAttribute;
+  const { key, values: colorValues } = attributeFilter;
 
   const onToggleColor = (color: string, checked: boolean) => {
     let updatedColors = [...selectedColors];

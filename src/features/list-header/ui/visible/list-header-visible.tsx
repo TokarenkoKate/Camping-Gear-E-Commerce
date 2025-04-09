@@ -1,21 +1,16 @@
-import { useState } from "react";
 import ArrowRight from "@/shared/assets/icons/arrow-right-20-20.svg";
 import FiltersIcon from "@/shared/assets/icons/filters-20-20.svg";
-import {
-  UiIcon,
-  UiHStack,
-  UiVStack,
-  UiButton,
-  UiText,
-  UiButtonCheckboxGroup,
-} from "@/shared/ui";
-import { UiCheckboxValue } from "@/shared/types/ui/ui-checkbox";
+import { UiButton, UiHStack, UiIcon, UiText, UiVStack } from "@/shared/ui";
+import { ListHeaderCategoriesForm } from "../categories-form/list-header-categories-form";
 import cls from "../header/list-header.m.scss";
 
 interface ListHeaderVisibleProps {
   subtitle: string;
   title: string;
+  categories?: string[];
+  selectedCategories?: string[] | undefined;
   onToggleExpandable: VoidFunction;
+  onChangeCategories?(categories: string[] | undefined): void;
 }
 
 const ARROW_ICON_SIZE = "42px";
@@ -23,16 +18,11 @@ const ARROW_ICON_SIZE = "42px";
 export const ListHeaderVisible = ({
   subtitle,
   title,
+  categories,
+  selectedCategories,
   onToggleExpandable,
+  onChangeCategories,
 }: ListHeaderVisibleProps) => {
-  const [values, setValues] = useState<Array<UiCheckboxValue>>([]);
-  const onChange = (
-    _event: React.ChangeEvent<HTMLInputElement>,
-    values: Array<UiCheckboxValue>
-  ) => {
-    setValues(values);
-  };
-
   return (
     <UiVStack className={cls.listHeaderVisible}>
       <UiText className={cls.listHeaderSubtitle} as="h2">
@@ -56,12 +46,13 @@ export const ListHeaderVisible = ({
           size="small"
           onClick={onToggleExpandable}
         />
-        <UiButtonCheckboxGroup
-          name="productCategories"
-          options={[]}
-          values={values}
-          onChange={onChange}
-        />
+        {categories && onChangeCategories && (
+          <ListHeaderCategoriesForm
+            categories={categories}
+            selectedCategories={selectedCategories}
+            onChangeCategories={onChangeCategories}
+          />
+        )}
       </UiHStack>
     </UiVStack>
   );

@@ -12,19 +12,25 @@ import cls from "../header/list-header.m.scss";
 
 interface ListHeaderExpandableProps {
   filterAttributes: ListHeaderFilterAttribute[];
+  initialFilterValues: ListHeaderFormValues;
   onSubmitFilters(filterValues: ListHeaderFormValues): void;
 }
 
 export const ListHeaderExpandable = ({
   filterAttributes,
+  initialFilterValues,
   onSubmitFilters,
 }: ListHeaderExpandableProps) => {
   const Form = useForm<ListHeaderFormValues>();
 
-  const onResetFilters = () => onSubmitFilters(null);
+  const onResetFilters = () => onSubmitFilters(initialFilterValues);
 
   return (
-    <Form onSubmit={onSubmitFilters} className={cls.listHeaderFilter}>
+    <Form
+      initialValues={initialFilterValues}
+      onSubmit={onSubmitFilters}
+      className={cls.listHeaderFilter}
+    >
       <UiBox className={cls.listHeaderFilterGroup}>
         {filterAttributes.map((filterAttribute) => {
           const isColorAttribute =
@@ -34,7 +40,7 @@ export const ListHeaderExpandable = ({
             <UiFormField
               name={filterAttribute.key}
               key={filterAttribute.key}
-              categoryColorAttribute={filterAttribute}
+              attributeFilter={filterAttribute}
               component={
                 isColorAttribute ? ListHeaderColorFilter : ListHeaderTextFilter
               }
