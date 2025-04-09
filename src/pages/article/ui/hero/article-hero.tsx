@@ -16,7 +16,9 @@ export const ArticleHero = ({ article }: ArticleHeroProps) => {
     <UiVStack className={cls.articleHero}>
       <UiImage src={imagePath} className={cls.articleHeroImage} />
       <UiVStack className={cls.articleHeroContent}>
-        <UiText variant="bodySm">{type}</UiText>
+        <UiText variant="bodySm" className={cls.articleHeroType}>
+          {type}
+        </UiText>
         <UiText variant="headingMd" as="h1">
           {title}
         </UiText>

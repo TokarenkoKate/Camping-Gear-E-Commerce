@@ -5,6 +5,7 @@ import { useArticlePage } from "../../model/hooks/use-article-page";
 import { ArticleHero } from "../hero/article-hero";
 import { ArticleBlocks } from "../blocks/article-blocks";
 import { ArticleSimilarArticles } from "../similar-articles/article-similar-articles";
+import { ArticleLoading } from "../loading/article-loading";
 import cls from "./article-page.m.scss";
 
 export const ArticlePage = () => {
@@ -14,7 +15,7 @@ export const ArticlePage = () => {
   if (isLoading) {
     return (
       <UiBox className={cls.articlePage}>
-        <div />
+        <ArticleLoading />
       </UiBox>
     );
   }

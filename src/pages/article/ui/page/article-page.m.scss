@@ -9,6 +9,10 @@
       padding: var(--space-5);
     }
 
+    &-type {
+      text-transform: capitalize;
+    }
+
     &-image {
       width: 100%;
       height: 100%;
@@ -16,6 +20,12 @@
       object-fit: cover;
       margin-bottom: var(--space-5);
       aspect-ratio: 3 / 2;
+
+      &-loading {
+        @include responsive("medium") {
+          height: 585px;
+        }
+      }
 
       @include responsive("medium") {
         aspect-ratio: unset;

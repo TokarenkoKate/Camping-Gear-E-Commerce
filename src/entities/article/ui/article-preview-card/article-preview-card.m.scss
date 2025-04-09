@@ -15,6 +15,10 @@ $image-h-small: 280px;
     grid-area: header;
   }
 
+  &-type {
+    text-transform: capitalize;
+  }
+
   &-content {
     grid-area: content;
     max-width: 100%;

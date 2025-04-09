@@ -38,6 +38,7 @@ export const JournalArticles = () => {
         isFetchingNextPage={isFetchingNextPage}
         fetchNextPage={fetchNextPage}
         showFirstPreviewCard
+        showLoadMore
       />
     </UiBox>
   );

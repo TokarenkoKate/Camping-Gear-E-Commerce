@@ -23,6 +23,7 @@ interface ArticlesGalleryProps
     >
   > {
   showFirstPreviewCard?: boolean;
+  showLoadMore?: boolean;
   articles: ArticlePreview[] | undefined;
   articlesCardType: ArticlePreviewCardType;
   isLoading?: boolean;
@@ -37,6 +38,7 @@ export const ArticlesGallery = (props: ArticlesGalleryProps) => {
     isFetchingNextPage,
     fetchNextPage,
     showFirstPreviewCard,
+    showLoadMore,
   } = props;
 
   /**
@@ -94,14 +96,16 @@ export const ArticlesGallery = (props: ArticlesGalleryProps) => {
             />
           ))}
         </GridWithInnerBorder>
-        <UiButton
-          variant="outlined"
-          disabled={!hasMore}
-          onClick={fetchNextPage}
-          loading={isFetchingNextPage}
-        >
-          Show more
-        </UiButton>
+        {showLoadMore && (
+          <UiButton
+            variant="outlined"
+            disabled={!hasMore}
+            onClick={fetchNextPage}
+            loading={isFetchingNextPage}
+          >
+            Show more
+          </UiButton>
+        )}
       </UiVStack>
     </UiBox>
   );

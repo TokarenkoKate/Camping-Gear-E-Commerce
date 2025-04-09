@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { To } from "react-router-dom";
 import ArrowExternalRight from "@/shared/assets/icons/arrow-external-right-20-20.svg";
 import { ClassnamesMods } from "@/shared/types/classnames";
 import {
@@ -16,7 +17,6 @@ import {
 import cls from "./article-preview-card.m.scss";
 import { appRoutesPaths } from "@/shared/const/router";
 import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
-import { To } from "react-router-dom";
 
 interface ArticlePreviewProps {
   article: ArticlePreview;
@@ -41,7 +41,9 @@ export const ArticlePreviewCard = ({
   return (
     <UiBox className={classNames(cls.articlePreview, mods)}>
       <UiHStack justify="between" className={cls.articlePreviewHeader} max>
-        <UiText variant="bodySm">{type}</UiText>
+        <UiText variant="bodySm" className={cls.articlePreviewType}>
+          {type}
+        </UiText>
         {isLargeType && <UiText variant="bodySm">{date}</UiText>}
       </UiHStack>
       <UiBox className={cls.articlePreviewContent}>
