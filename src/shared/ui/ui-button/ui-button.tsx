@@ -91,7 +91,11 @@ export const UiButton = forwardRef<UiButtonRef, UiButtonProps>(
 
       if (to) {
         return (
-          <Link to={to} className={classNames(cls.uiButton, mods, className)}>
+          <Link
+            to={to}
+            className={classNames(cls.uiButton, mods, className)}
+            viewTransition
+          >
             {content}
           </Link>
         );

@@ -1,0 +1,17 @@
+.profile-page {
+  width: 100%;
+  padding: var(--space-10);
+  gap: var(--space-10);
+
+  &-info {
+    gap: var(--space-6);
+
+    &-form {
+      width: 100%;
+    }
+
+    &-row {
+      gap: var(--space-6);
+    }
+  }
+}

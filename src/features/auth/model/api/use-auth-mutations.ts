@@ -4,6 +4,7 @@ import { Credentials } from "../types/auth-form";
 
 const LOGIN_MUTATION_KEY = "login";
 const SIGNUP_MUTATION_KEY = "register";
+const LOGOUT_MUTATION_KEY = "register";
 
 export const useAuthMutations = () => {
   const loginMutation = useMutation({
@@ -16,5 +17,10 @@ export const useAuthMutations = () => {
     mutationFn: (credentials: Credentials) => AuthApi.signup(credentials),
   });
 
-  return { loginMutation, signupMutation };
+  const logoutMutation = useMutation({
+    mutationKey: [LOGOUT_MUTATION_KEY],
+    mutationFn: () => AuthApi.logout(),
+  });
+
+  return { loginMutation, signupMutation, logoutMutation };
 };

@@ -2,10 +2,11 @@ import { ApiEndpoint } from "@/shared/config/api/api-endpoints";
 import { Credentials } from "../types/auth-form";
 import { ApiGet, ApiPost } from "@/shared/config/api/api-methods";
 import { User } from "@/entities/user";
+import { UserProfileAuthResponse } from "../types/auth";
 
 export const AuthApi = {
   me: () =>
-    ApiGet<User>({
+    ApiGet<UserProfileAuthResponse>({
       endpoint: `${ApiEndpoint.auth}/me`,
       options: {
         skipErrorInterceptor: true,
@@ -17,4 +18,6 @@ export const AuthApi = {
 
   signup: (body: Credentials) =>
     ApiPost<User>(`${ApiEndpoint.auth}/signup`, body),
+
+  logout: () => ApiPost<string>(`${ApiEndpoint.auth}/logout`),
 };

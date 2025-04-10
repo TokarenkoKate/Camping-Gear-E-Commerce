@@ -7,3 +7,4 @@ export {
   handleFetchProfile,
 } from "./model/api/use-get-user-profile";
 export { useAuth } from "./model/lib/hooks/use-auth";
+export { useLogout } from "./model/api/use-logout";

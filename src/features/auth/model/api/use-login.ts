@@ -3,8 +3,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { appRoutesPaths } from "@/shared/const/router";
 import { AuthFormValues } from "../types/auth-form";
 import { useAuthMutations } from "./use-auth-mutations";
+import { User, userActions } from "@/entities/user";
+import { useAppDispatch } from "@/shared/lib/hooks/use-app-dispatch";
 
 export const useLogin = () => {
+  const dispatch = useAppDispatch();
   const { loginMutation } = useAuthMutations();
   const navigate = useNavigate();
   const location = useLocation();
@@ -12,7 +15,8 @@ export const useLogin = () => {
 
   const onSubmitForm = (formValues: AuthFormValues) => {
     loginMutation.mutate(formValues, {
-      onSuccess: () => {
+      onSuccess: (user: User) => {
+        dispatch(userActions.setUserState(user || null));
         toast.success("You logged in!");
 
         /**
