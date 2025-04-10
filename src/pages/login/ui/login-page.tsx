@@ -9,13 +9,12 @@ export const LoginPage = () => {
 
   return (
     <UiBox className={cls.loginPage}>
-      <AuthSection
-        title="Log In"
-        buttonText="Log In"
-        className={cls.loginSection}
-        formType={AuthFormType.login}
-      >
-        <AuthForm type={AuthFormType.login} onSubmit={onSubmitForm} />
+      <AuthSection title="Log In" className={cls.loginSection}>
+        <AuthForm
+          type={AuthFormType.login}
+          buttonText="Log In"
+          onSubmit={onSubmitForm}
+        />
       </AuthSection>
       <AuthSection
         title="New to CEIN"

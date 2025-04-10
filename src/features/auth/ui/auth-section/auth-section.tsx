@@ -1,15 +1,12 @@
 import { PropsWithChildren } from "react";
 import { To } from "react-router-dom";
 import classNames from "classnames";
-import { EMPTY_STRING } from "@/shared/const/common-string";
 import { UiButton, UiText, UiVStack } from "@/shared/ui";
-import { authFormName, AuthFormType } from "../../model/const/auth-form";
 import cls from "./auth-section.m.scss";
 
 interface AuthSectionProps {
   title: string;
-  buttonText: string;
-  formType?: AuthFormType;
+  buttonText?: string;
   redirectPath?: To;
   className?: string;
 }
@@ -19,7 +16,6 @@ export const AuthSection = ({
   children,
   buttonText,
   redirectPath,
-  formType,
   className,
 }: PropsWithChildren<AuthSectionProps>) => {
   return (
@@ -30,16 +26,17 @@ export const AuthSection = ({
     >
       <UiText variant="headingSm">{title}</UiText>
       {children}
-      <UiButton
-        variant="background"
-        asLink={Boolean(redirectPath)}
-        to={redirectPath || EMPTY_STRING}
-        type={formType ? "submit" : "button"}
-        form={formType ? authFormName[formType] : EMPTY_STRING}
-        className={cls.authSectionButton}
-      >
-        {buttonText}
-      </UiButton>
+      {redirectPath && (
+        <UiButton
+          variant="background"
+          asLink={Boolean(redirectPath)}
+          to={redirectPath}
+          type="button"
+          className={cls.authSectionButton}
+        >
+          {buttonText}
+        </UiButton>
+      )}
     </UiVStack>
   );
 };

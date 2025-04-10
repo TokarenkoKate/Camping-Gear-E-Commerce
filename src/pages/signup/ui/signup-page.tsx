@@ -13,13 +13,12 @@ export const SignUpPage = () => {
 
   return (
     <UiBox className={cls.signupPage}>
-      <AuthSection
-        title="Sign Up"
-        buttonText="Sign Up"
-        className={cls.signupSection}
-        formType={AuthFormType.signup}
-      >
-        <AuthForm type={AuthFormType.signup} onSubmit={onSubmitForm} />
+      <AuthSection title="Sign Up" className={cls.signupSection}>
+        <AuthForm
+          type={AuthFormType.signup}
+          buttonText="Sign Up"
+          onSubmit={onSubmitForm}
+        />
       </AuthSection>
       <AuthSection
         title="New to CEIN"
