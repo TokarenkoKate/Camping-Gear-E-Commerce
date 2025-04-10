@@ -1,6 +1,7 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from "axios";
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 import { handleApiError } from "./handle-api-error";
 import { EMPTY_STRING } from "@/shared/const/common-string";
+import { ApiAxiosError } from "@/shared/types/api/api-errors";
 
 export const getCurrentUserToken = () => {
   return EMPTY_STRING;
@@ -27,7 +28,7 @@ export const apiInstance = (
 
   axiosInstance.interceptors.response.use(
     (response) => response,
-    (error: AxiosError) => {
+    (error: ApiAxiosError) => {
       if (axios.isAxiosError(error) && !skipErrorInterceptor) {
         handleApiError(error);
         return Promise.reject(error);

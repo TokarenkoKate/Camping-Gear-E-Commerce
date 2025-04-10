@@ -13,7 +13,7 @@ export const UiButtonCheckboxGroup = <T extends UiCheckboxValue>(
   props: UiButtonCheckboxGroupProps<T>
 ) => {
   const { options, values, onChange, name, description } = props;
-  const { changeHandler } = useCheckboxGroup({ options, values, onChange });
+  const { changeHandler } = useCheckboxGroup<T>({ options, values, onChange });
 
   return (
     <fieldset className={cls.uiButtonCheckboxGroup}>

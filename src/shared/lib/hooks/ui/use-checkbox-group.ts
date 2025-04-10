@@ -1,14 +1,17 @@
-import { UiCheckboxGroupProps } from "@/shared/types/ui/ui-checkbox";
+import {
+  UiCheckboxGroupProps,
+  UiCheckboxValue,
+} from "@/shared/types/ui/ui-checkbox";
 import { useCallback, useState } from "react";
 
-export const useCheckboxGroup = ({
+export const useCheckboxGroup = <T extends UiCheckboxValue>({
   values: passedValues = [],
   onChange,
-}: Pick<UiCheckboxGroupProps, "options" | "values" | "onChange">) => {
+}: Pick<UiCheckboxGroupProps<T>, "options" | "values" | "onChange">) => {
   const [values, setValues] = useState(passedValues);
 
   const removeValue = useCallback(
-    (originalEvent: React.ChangeEvent<HTMLInputElement>, value: string) => {
+    (originalEvent: React.ChangeEvent<HTMLInputElement>, value: T) => {
       const nextValues = values.includes(value)
         ? values.slice().filter((item) => item !== value)
         : values;
@@ -20,7 +23,7 @@ export const useCheckboxGroup = ({
   );
 
   const addValue = useCallback(
-    (originalEvent: React.ChangeEvent<HTMLInputElement>, value: string) => {
+    (originalEvent: React.ChangeEvent<HTMLInputElement>, value: T) => {
       const nextValues =
         values.includes(value) === true ? values : values.slice().concat(value);
 
@@ -37,9 +40,9 @@ export const useCheckboxGroup = ({
       } = e;
 
       if (checked) {
-        addValue(e, value);
+        addValue(e, value as T);
       } else {
-        removeValue(e, value);
+        removeValue(e, value as T);
       }
     },
     [addValue, removeValue]

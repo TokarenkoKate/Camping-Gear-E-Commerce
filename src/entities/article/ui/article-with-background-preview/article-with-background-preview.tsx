@@ -5,6 +5,7 @@ import {
   ArticlePreview,
   ArticlePreviewWithBackgroundCardType,
 } from "../../model/types/article";
+import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-path";
 import cls from "./article-with-background-preview.m.scss";
 
 interface ArticleWithBackgroundPreviewProps {
@@ -18,22 +19,26 @@ export const ArticleWithBackgroundPreview = ({
   className,
   type,
 }: ArticleWithBackgroundPreviewProps) => {
+  const { title, description, image } = article;
+
   const mods: ClassnamesMods = {
     [cls[type]]: true,
   };
 
+  const imagePath = getImageSrcPath(image);
+
   return (
     <UiBox
       className={classNames(cls.articleWithBackgroundPreview, mods, className)}
-      style={{ backgroundImage: `url(${article.img})` }}
+      style={{ backgroundImage: `url(${imagePath})` }}
     >
       <UiBox className={cls.overlay} />
       <UiVStack className={cls.content} justify="center">
         <UiText variant="headingLg" tone="inverted" className={cls.title}>
-          {article.title}
+          {title}
         </UiText>
         <UiText variant="bodyMd" tone="inverted" className={cls.description}>
-          {article.description}
+          {description}
         </UiText>
         <UiButton variant="outlinedInverted">Read more</UiButton>
       </UiVStack>

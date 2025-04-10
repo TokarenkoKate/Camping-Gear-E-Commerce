@@ -33,7 +33,7 @@ export const useProductsPageFilters = (categoryId: number | undefined) => {
     return getTypedObjectKeys(filterFormValues).reduce(
       (acc, filterKey) => {
         const filterValues = filterFormValues[filterKey];
-        if (filterKey && filterValues && filterValues.length) {
+        if (filterKey && Array.isArray(filterValues) && filterValues.length) {
           acc[filterKey] = filterValues.join(",");
         }
         return acc;

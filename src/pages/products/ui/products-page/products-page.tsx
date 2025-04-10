@@ -23,6 +23,7 @@ export const ProductsPage = () => {
         subtitle="Shop collection"
         filterAttributes={filterAttributes}
         onSubmitFilters={onSubmitFilters}
+        initialFilterValues={null}
       />
       <ProductsGallery
         products={products}
