@@ -5,6 +5,7 @@ import { RouteObject, RouterProviderProps } from "react-router-dom";
  */
 export type AppRouteType = RouteObject & {
   authOnly?: boolean;
+  guestOnly?: boolean;
   userRoles?: string[];
 };
 

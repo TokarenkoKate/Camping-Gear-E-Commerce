@@ -45,10 +45,12 @@ export const routerConfig: Record<AppRoutes, AppRouteType> = {
   [AppRoutes.LOGIN]: {
     path: appRoutesPaths[AppRoutes.LOGIN],
     element: <LoginPage />,
+    guestOnly: true,
   },
   [AppRoutes.SIGNUP]: {
     path: appRoutesPaths[AppRoutes.SIGNUP],
     element: <SignUpPage />,
+    guestOnly: true,
   },
   [AppRoutes.PROFILE]: {
     path: appRoutesPaths[AppRoutes.PROFILE],
