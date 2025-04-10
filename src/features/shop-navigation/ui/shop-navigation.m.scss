@@ -1,4 +1,4 @@
-@import "/src/app/styles/mixins/responsive";
+@use "/src/app/styles/mixins/responsive" as *;
 
 .shop-navigation {
   --shop-navigation-fixed-inset: var(--app-navbar-height) 0 0 0;

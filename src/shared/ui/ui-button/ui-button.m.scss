@@ -1,4 +1,4 @@
-@import "/src/app/styles/mixins/responsive";
+@use "/src/app/styles/mixins/responsive" as *;
 
 /* stylelint-disable custom-property-pattern */
 // TODO: add proper pattern for variables

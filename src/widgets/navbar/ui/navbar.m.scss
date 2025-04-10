@@ -1,5 +1,5 @@
-@import "/src/app/styles/mixins/responsive";
-@import "/src/app/styles/breakpoints";
+@use "/src/app/styles/mixins/responsive" as *;
+@use "/src/app/styles/breakpoints";
 
 .navbar {
   width: 100%;

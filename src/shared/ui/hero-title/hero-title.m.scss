@@ -1,4 +1,4 @@
-@import "/src/app/styles/mixins/responsive";
+@use "/src/app/styles/mixins/responsive" as *;
 
 .hero-title {
   --hero-title-color: var(--color-accent-dark);
@@ -43,13 +43,13 @@
 .hero-subtitle {
   --hero-subtitle-color: var(--color-accent-dark);
 
-  &-inverted {
-    --hero-subtitle-color: var(--color-text-primary-inverted);
-  }
-
   color: var(--hero-subtitle-color);
   font-size: var(--fs-300);
   line-height: var(--lh-300);
+
+  &-inverted {
+    --hero-subtitle-color: var(--color-text-primary-inverted);
+  }
 
   @include responsive("medium") {
     font-size: var(--fs-500);

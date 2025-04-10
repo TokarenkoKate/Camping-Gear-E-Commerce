@@ -1,4 +1,4 @@
-@import "/src/app/styles/mixins/responsive";
+@use "/src/app/styles/mixins/responsive" as *;
 
 $content-max-w: 350px;
 $image-min-h: 280px;

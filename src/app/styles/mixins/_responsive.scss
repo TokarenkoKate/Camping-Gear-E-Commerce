@@ -1,9 +1,9 @@
 @use "sass:map";
-@import "../breakpoints";
+@use "../breakpoints";
 
 @mixin responsive($size) {
-  @if map.has-key($breakpoints, $size) {
-    $breakpoint-min: map.get($breakpoints, $size);
+  @if map.has-key(breakpoints.$breakpoints, $size) {
+    $breakpoint-min: map.get(breakpoints.$breakpoints, $size);
 
     @media (min-width: $breakpoint-min) {
       @content;

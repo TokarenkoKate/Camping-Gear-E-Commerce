@@ -1,4 +1,4 @@
-@import "/src/app/styles/mixins/responsive";
+@use "/src/app/styles/mixins/responsive" as *;
 
 $fixed-content-width: 480px;
 $fixed-image-width-mobile: 410px;
