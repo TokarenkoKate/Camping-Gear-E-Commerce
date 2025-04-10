@@ -24,7 +24,7 @@ export const useGetUserProfile = () => {
   const userProfileQueryKey = useQuery(userProfileQuery);
   const authResponse = userProfileQueryKey.data;
 
-  if (userProfileQueryKey.isSuccess && isEmptyOrNil(authResponse?.user)) {
+  if (userProfileQueryKey.isSuccess && !isEmptyOrNil(authResponse?.user)) {
     dispatch(userActions.setUserState(authResponse?.user || null));
   } else if (userProfileQueryKey.isError) {
     dispatch(userActions.setUserState(null));

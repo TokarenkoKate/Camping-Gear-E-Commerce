@@ -1,15 +1,20 @@
-import { UiButton, UiVStack } from "@/shared/ui";
-import { ProfilePageInfo } from "../info/profile-page-info";
 import LogOut from "@/shared/assets/icons/log-out.svg";
+import { UiButton, UiDivider, UiVStack } from "@/shared/ui";
+import { ProfilePageInfo } from "../info/profile-page-info";
 import { useProfilePage } from "../../model/hooks/use-profile-page";
 import cls from "./profile-page.m.scss";
 
 export const ProfilePage = () => {
-  const { onLogout } = useProfilePage();
+  const { initialProfileFormValues, onSubmitProfileForm, onLogout } =
+    useProfilePage();
 
   return (
     <UiVStack className={cls.profilePage}>
-      <ProfilePageInfo />
+      <ProfilePageInfo
+        initialProfileFormValues={initialProfileFormValues}
+        onSubmitProfileForm={onSubmitProfileForm}
+      />
+      <UiDivider orientation={"horizontal"} />
       <UiButton variant="outlined" leftIconSvg={LogOut} onClick={onLogout}>
         Log out
       </UiButton>

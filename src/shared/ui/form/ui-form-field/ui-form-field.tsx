@@ -2,6 +2,8 @@ import { Field, useField } from "react-final-form";
 import { UiBox } from "../../ui-box/ui-box";
 import { UiText } from "../../ui-text/ui-text";
 import { UiFieldRenderProps } from "@/shared/types/ui/ui-form";
+import { EMPTY_STRING } from "@/shared/const/common-string";
+import cls from "./ui-form-field.m.scss";
 
 export type UiFormFieldProps<T extends object, Value> = T & {
   name: string;
@@ -28,7 +30,9 @@ export const UiFormField = <T extends object, Value>(
           <Component {...input} {...meta} {...(rest as T)} />
         )}
       </Field>
-      {invalid && <UiText>{error}</UiText>}
+      <UiText tone="error" className={cls.uiFormFieldError}>
+        {invalid ? error : EMPTY_STRING}
+      </UiText>
     </UiBox>
   );
 };

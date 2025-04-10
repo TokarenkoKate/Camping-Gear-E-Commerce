@@ -1,3 +1,5 @@
+@import "/src/app/styles/mixins/responsive";
+
 .profile-page {
   width: 100%;
   padding: var(--space-10);
@@ -8,10 +10,18 @@
 
     &-form {
       width: 100%;
+      gap: var(--space-6);
     }
 
-    &-row {
-      gap: var(--space-6);
+    &-fields {
+      display: flex;
+      gap: var(--space-2);
+      flex-direction: column;
+
+      @include responsive("medium") {
+        gap: var(--space-6);
+        flex-direction: row;
+      }
     }
   }
 }
