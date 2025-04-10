@@ -9,7 +9,7 @@ import { getImageSrcPath } from "@/shared/lib/helpers/ui/image/get-image-src-pat
 import cls from "./article-with-background-preview.m.scss";
 
 interface ArticleWithBackgroundPreviewProps {
-  article: ArticlePreview;
+  article: ArticlePreview | undefined;
   className?: string;
   type: ArticlePreviewWithBackgroundCardType;
 }
@@ -19,6 +19,10 @@ export const ArticleWithBackgroundPreview = ({
   className,
   type,
 }: ArticleWithBackgroundPreviewProps) => {
+  if (!article) {
+    return null;
+  }
+
   const { title, description, image } = article;
 
   const mods: ClassnamesMods = {

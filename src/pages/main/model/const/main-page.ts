@@ -13,3 +13,5 @@ export const bestSellersGalleryIntroCard: ProductGalleryIntroCardProps = {
   linkText: "Shop All",
   linkTo: "#",
 };
+
+export const MAIN_PAGE_ARTICLES_LIMIT = 6;

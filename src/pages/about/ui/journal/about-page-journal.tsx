@@ -1,28 +1,21 @@
-import { ArticlePreviewCard } from "@/entities/article";
-import { GridWithInnerBorder } from "@/shared/ui";
-import { mockArticleHalfPage1 } from "@/mocks/articles/article";
-import cls from "../page/about-page.m.scss";
+import { ArticlesGallery } from "@/features/articles-gallery";
+import { useGetLatestArticles } from "@/entities/article";
+import { ABOUT_PAGE_ARTICLES_LIMIT } from "../../model/const/about-page";
 
 export const AboutPageJournal = () => {
-  const articles = [
-    mockArticleHalfPage1,
-    mockArticleHalfPage1,
-    mockArticleHalfPage1,
-  ];
+  const { data: articles, isLoading } = useGetLatestArticles(
+    ABOUT_PAGE_ARTICLES_LIMIT,
+    true
+  );
+
+  const totalLength = articles?.length;
+
   return (
-    <GridWithInnerBorder
-      itemsLength={articles.length}
-      className={cls.aboutPageJournal}
-      as="section"
-    >
-      {articles.map((article) => (
-        <ArticlePreviewCard
-          article={article}
-          cardType="small"
-          withRedirect
-          key={article.id}
-        />
-      ))}
-    </GridWithInnerBorder>
+    <ArticlesGallery
+      articles={articles}
+      articlesCardType="small"
+      isLoading={isLoading}
+      totalLength={totalLength}
+    />
   );
 };

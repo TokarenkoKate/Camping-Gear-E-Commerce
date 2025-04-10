@@ -11,6 +11,12 @@ export const ArticlesApi = {
       queryParams,
     }),
 
+  getLatestArticles: (limit?: number) =>
+    ApiGet<Array<ArticlePreview>>({
+      endpoint: `${ApiEndpoint.articles}/latest`,
+      queryParams: { limit },
+    }),
+
   getArticlesCategories: () =>
     ApiGet<string[]>({
       endpoint: `${ApiEndpoint.articles}/categories`,

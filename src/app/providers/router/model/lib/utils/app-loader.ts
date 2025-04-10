@@ -1,8 +1,10 @@
+import { APP_LOADER_VISIBLE_MIN_TIME } from "../../const/app";
+import { fetchWithMinDelay } from "@/shared/lib/helpers/api/fetch-with-min-delay";
 import { handleFetchProfile } from "@/features/auth";
 import { handleFetchCart } from "@/entities/cart";
 import { handleFetchCategories } from "@/entities/category";
-import { fetchWithMinDelay } from "@/shared/lib/helpers/api/fetch-with-min-delay";
-import { APP_LOADER_VISIBLE_MIN_TIME } from "../../const/app";
+import { handleFetchLatestArticles } from "@/entities/article";
+import { MAIN_PAGE_ARTICLES_LIMIT } from "@/pages/main";
 
 /**
  * Helper is used to prefetch necessary data before app renders on router level.
@@ -17,7 +19,12 @@ export const appLoader = () => async () => {
    * to avoid loader flickering.
    */
   await fetchWithMinDelay(
-    [handleFetchProfile, handleFetchCart, handleFetchCategories],
+    [
+      handleFetchProfile,
+      handleFetchCart,
+      handleFetchCategories,
+      () => handleFetchLatestArticles(MAIN_PAGE_ARTICLES_LIMIT),
+    ],
     APP_LOADER_VISIBLE_MIN_TIME
   );
 

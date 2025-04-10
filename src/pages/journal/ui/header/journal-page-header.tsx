@@ -1,6 +1,6 @@
 import { UiButton, UiIcon, UiText, UiVStack } from "@/shared/ui";
-import JournalJPEG from "@/shared/assets/images/journal.jpg";
-import JournalAvif from "@/shared/assets/images/journal.avif";
+import JournalJPEG from "@/shared/assets/images/journal/journal.jpg";
+import JournalAvif from "@/shared/assets/images/journal/journal.avif";
 import ArrowRightLong from "@/shared/assets/icons/arrow-right-long.svg";
 import cls from "../page/journal-page.m.scss";
 

@@ -12,3 +12,7 @@ export { useGetArticlesInfiniteQuery } from "./api/use-get-articles-infinite-que
 export { useGetArticlesCategories } from "./api/use-get-articles-categories";
 export { useGetArticleQuery } from "./api/use-get-article-query";
 export { useGetSimilarArticles } from "./api/use-get-similar-articles";
+export {
+  useGetLatestArticles,
+  handleFetchLatestArticles,
+} from "./api/use-get-latest-articles";

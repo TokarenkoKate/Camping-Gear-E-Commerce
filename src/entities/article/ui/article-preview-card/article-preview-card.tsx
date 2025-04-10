@@ -25,16 +25,22 @@ const noOfLines: Record<ArticlePreviewCardType, number> = {
 };
 
 interface ArticlePreviewProps {
-  article: ArticlePreview;
+  article: ArticlePreview | undefined;
   cardType: ArticlePreviewCardType;
   withRedirect?: boolean;
+  localImg?: boolean;
 }
 
 export const ArticlePreviewCard = ({
   article,
   cardType,
   withRedirect,
+  localImg,
 }: ArticlePreviewProps) => {
+  if (!article) {
+    return null;
+  }
+
   const { id, type, date, title, description, image } = article;
   const mods: ClassnamesMods = {
     [cls[cardType]]: true,
@@ -42,7 +48,7 @@ export const ArticlePreviewCard = ({
 
   const isLargeType = cardType === "large";
   const redirectPath: To = `${appRoutesPaths.journal}/${id}`;
-  const imagePath = getImageSrcPath(image);
+  const imagePath = localImg ? image : getImageSrcPath(image);
 
   return (
     <UiBox className={classNames(cls.articlePreview, mods)}>

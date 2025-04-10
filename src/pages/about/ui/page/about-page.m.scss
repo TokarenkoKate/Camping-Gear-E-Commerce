@@ -8,8 +8,8 @@
     width: 100%;
     padding: var(--space-10) var(--space-4);
     background-size: cover;
-    background-image: url("../../../../shared/assets/images/about.avif"),
-      url("../../../../shared/assets/images/about.png");
+    background-image: url("../../../../shared/assets/images/about/about.avif"),
+      url("../../../../shared/assets/images/about/about.png");
     aspect-ratio: 325 / 424;
     background-position: center;
 
@@ -77,16 +77,12 @@
     }
   }
 
-  &-articles {
+  &-messages {
     display: grid;
     grid-template-columns: auto;
 
     @include responsive("large") {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
-
-  &-journal {
-    border: 1px solid var(--color-border-dark);
   }
 }

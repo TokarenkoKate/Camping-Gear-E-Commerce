@@ -1,34 +1,34 @@
+import { UiBox } from "@/shared/ui";
 import {
   ArticlePreviewCard,
   ArticleWithBackgroundPreview,
+  useGetLatestArticles,
 } from "@/entities/article";
-import {
-  mockArticle,
-  mockArticleHalfPage1,
-  mockArticleHalfPage2,
-  mockArticleHalfPage3,
-  mockArticlePreviewWithBackground,
-  mockArticlePreviewWithBackgroundHorizontal,
-} from "@/mocks/articles/article";
-import { UiBox } from "@/shared/ui";
+import { MAIN_PAGE_ARTICLES_LIMIT } from "../../model/const/main-page";
 import cls from "../main-page/main-page.m.scss";
 
 export const MainPageArticles = () => {
+  const { data: articles } = useGetLatestArticles(MAIN_PAGE_ARTICLES_LIMIT);
+
   return (
     <UiBox className={cls.mainPageArticles}>
-      <ArticlePreviewCard article={mockArticle} cardType="large" withRedirect />
+      <ArticlePreviewCard
+        article={articles?.[0]}
+        cardType="large"
+        withRedirect
+      />
       <UiBox className={cls.mainPageArticlesGrid}>
         <ArticleWithBackgroundPreview
-          article={mockArticlePreviewWithBackground}
+          article={articles?.[1]}
           className={cls.mainPageArticlesGridItemLong}
           type="vertical"
         />
-        <ArticlePreviewCard article={mockArticleHalfPage1} cardType="medium" />
-        <ArticlePreviewCard article={mockArticleHalfPage2} cardType="medium" />
-        <ArticlePreviewCard article={mockArticleHalfPage3} cardType="medium" />
+        <ArticlePreviewCard article={articles?.[2]} cardType="medium" />
+        <ArticlePreviewCard article={articles?.[3]} cardType="medium" />
+        <ArticlePreviewCard article={articles?.[4]} cardType="medium" />
       </UiBox>
       <ArticleWithBackgroundPreview
-        article={mockArticlePreviewWithBackgroundHorizontal}
+        article={articles?.[5]}
         className={cls.mainPageArticlesGridItemLong}
         type="horizontal"
       />

@@ -1,3 +1,5 @@
+import { MAIN_PAGE_ARTICLES_LIMIT } from "@/pages/main";
+import { useGetLatestArticles } from "@/entities/article";
 import { useGetCart } from "@/entities/cart";
 import { useCategoriesQuery } from "@/entities/category";
 import { useGetUserProfile } from "@/features/auth";
@@ -20,4 +22,7 @@ export const useAppInit = () => {
 
   /** Fetch categories */
   useCategoriesQuery();
+
+  /** Fetch latest articles for the main page */
+  useGetLatestArticles(MAIN_PAGE_ARTICLES_LIMIT);
 };
