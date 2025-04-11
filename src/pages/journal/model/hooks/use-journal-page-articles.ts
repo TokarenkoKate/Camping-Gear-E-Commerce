@@ -16,6 +16,7 @@ export const useJournalPageArticles = () => {
   const {
     filterAttributes,
     initialFilterValues,
+    articlesFilterQuery,
     onSubmitFilters,
     categories,
     isCategoriesLoading,
@@ -33,6 +34,7 @@ export const useJournalPageArticles = () => {
     fetchNextPage,
   } = useGetArticlesInfiniteQuery({
     categories: selectedCategories?.join(COMMA),
+    ...articlesFilterQuery,
   });
 
   const articles = flatMapDataPages(data);

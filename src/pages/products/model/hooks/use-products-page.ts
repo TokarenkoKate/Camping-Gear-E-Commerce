@@ -26,6 +26,7 @@ export const useProductsPage = () => {
    */
   const {
     filterAttributes,
+    initialFilterValues,
     isCategoryAttributesLoading,
     productsFilterQuery,
     onSubmitFilters,
@@ -61,6 +62,7 @@ export const useProductsPage = () => {
     totalLength,
     isFetchingNextPage,
     filterAttributes,
+    initialFilterValues,
     fetchNextPage,
     onSubmitFilters,
   };

@@ -12,6 +12,7 @@ export const ProductsPage = () => {
     totalLength,
     isFetchingNextPage,
     filterAttributes,
+    initialFilterValues,
     fetchNextPage,
     onSubmitFilters,
   } = useProductsPage();
@@ -22,8 +23,8 @@ export const ProductsPage = () => {
         title={categoryName}
         subtitle="Shop collection"
         filterAttributes={filterAttributes}
+        initialFilterValues={initialFilterValues}
         onSubmitFilters={onSubmitFilters}
-        initialFilterValues={null}
       />
       <ProductsGallery
         products={products}

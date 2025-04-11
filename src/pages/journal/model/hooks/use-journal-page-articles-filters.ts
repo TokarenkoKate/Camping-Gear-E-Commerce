@@ -1,16 +1,14 @@
 import { useMemo, useState } from "react";
 import { useGetArticlesCategories } from "@/entities/article";
 import {
+  getFilterAttributesRequestQueryParams,
   ListHeaderFilterAttribute,
   ListHeaderFormValues,
 } from "@/features/list-header";
 import {
   initialSortingValue,
-  sortIdOptions,
-  SORTING_KEY,
+  sortIdFilterAttributes,
 } from "@/shared/const/sorting";
-import { getTypedObjectKeys } from "@/shared/lib/helpers/get-typed-object";
-import { getSortOptionByLabel } from "@/shared/lib/helpers/get-sort-option-by-label";
 
 export const useJournalPageArticlesFilters = () => {
   /**
@@ -30,16 +28,10 @@ export const useJournalPageArticlesFilters = () => {
     setSelectedCategories(categories);
   };
 
-  const filterAttributes = useMemo<Array<ListHeaderFilterAttribute>>(() => {
-    return [
-      {
-        id: 1,
-        key: SORTING_KEY,
-        values: sortIdOptions.map((sortOption) => sortOption.label),
-        isMulti: false,
-      },
-    ];
-  }, []);
+  const filterAttributes = useMemo<Array<ListHeaderFilterAttribute>>(
+    () => [sortIdFilterAttributes],
+    []
+  );
 
   const initialFilterValues = initialSortingValue;
 
@@ -47,7 +39,7 @@ export const useJournalPageArticlesFilters = () => {
    * State to store filter form values
    */
   const [filterFormValues, setFilterFormValues] =
-    useState<ListHeaderFormValues | null>(null);
+    useState<ListHeaderFormValues | null>(initialFilterValues);
 
   const onSubmitFilters = (filterValues: ListHeaderFormValues) => {
     setFilterFormValues(filterValues);
@@ -57,20 +49,7 @@ export const useJournalPageArticlesFilters = () => {
    * Form filter values modified to query params
    */
   const articlesFilterQuery = useMemo(() => {
-    if (!filterFormValues) {
-      return {};
-    }
-    return getTypedObjectKeys(filterFormValues).reduce(
-      (acc, filterKey) => {
-        const filterValue = filterFormValues[filterKey];
-        if (filterKey === SORTING_KEY && typeof filterValue === "string") {
-          const sortQuery = getSortOptionByLabel(filterValue);
-          acc = { ...acc, ...sortQuery };
-        }
-        return acc;
-      },
-      {} as Record<string, string>
-    );
+    return getFilterAttributesRequestQueryParams(filterFormValues);
   }, [filterFormValues]);
 
   return {

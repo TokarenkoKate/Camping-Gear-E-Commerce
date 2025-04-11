@@ -1,6 +1,6 @@
 import { UiHStack, UiButton } from "@/shared/ui";
 import { useForm, useFormState } from "react-final-form";
-import { isListHeaderFormEmpty } from "../../model/lib/is-list-header-filter-form-empty";
+import { isListHeaderFormEmpty } from "../../model/lib/helpers/is-list-header-filter-form-empty";
 import cls from "../header/list-header.m.scss";
 
 export const ListHeaderSubmitButtons = ({
