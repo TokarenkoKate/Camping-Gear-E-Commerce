@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { EMPTY_STRING } from "@/shared/const/common-string";
 import { ProductsPageParams } from "../../types/products-page";
 import { useGetCategoryByAlias } from "@/entities/category";
-import { useGetProductsInfiniteQuery } from "@/entities/product/model/api/use-get-products-infinite-query";
+import { useGetProductsInfiniteQuery } from "@/entities/product";
 import { useDelayedLoading } from "@/shared/lib/hooks/use-delayed-loading";
 import { useProductsPageFilters } from "./use-products-page-filters";
 import { flatMapDataPages } from "@/shared/lib/helpers/api/flat-map-data-pages";

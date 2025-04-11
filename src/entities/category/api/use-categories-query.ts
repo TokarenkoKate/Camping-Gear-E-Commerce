@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { queryClient } from "@/app/providers/query";
 import { CategoriesApi } from "./categories-api";
 import { useAppDispatch } from "@/shared/lib/hooks/use-app-dispatch";
-import { categoriesActions } from "../slice/categories-slice";
+import { categoriesActions } from "../model/slice/categories-slice";
 
 const CATEGORIES_QUERY_KEY = "categories";
 

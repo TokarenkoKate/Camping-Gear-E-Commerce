@@ -10,7 +10,7 @@ import classNames from "classnames";
 import { UiBox, UiBoxProps } from "../ui-box/ui-box";
 import cls from "./grid-with-inner-border.m.scss";
 import { useWindowResize } from "@/shared/lib/hooks/use-window-resize";
-import { removeBorderFromGrid } from "@/features/products-gallery/model/utils/remove-border-from-grid";
+import { removeBorderFromGrid } from "@/shared/lib/helpers/ui/grid-with-inner-border/remove-border-from-grid";
 
 /**
  * Responsive grid component, that adds inner borders between grid items;

@@ -1,5 +1,5 @@
 import { ApiEndpoint } from "@/shared/config/api/api-endpoints";
-import { Category, CategoryAttribute } from "../types/category";
+import { Category, CategoryAttribute } from "../model/types/category";
 import { ApiGet } from "@/shared/config/api/api-methods";
 
 export const CategoriesApi = {

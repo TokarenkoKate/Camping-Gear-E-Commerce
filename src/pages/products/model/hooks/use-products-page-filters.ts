@@ -3,7 +3,7 @@ import {
   initialSortingValue,
   sortFilterAttributes,
 } from "@/shared/const/sorting";
-import { getFilterAttributesRequestQueryParams } from "@/features/list-header/model/lib/helpers/get-filter-attributes-request-query-params";
+import { getFilterAttributesRequestQueryParams } from "@/features/list-header";
 import { ListHeaderFormValues } from "@/features/list-header";
 import { useCategoryAttributesQuery } from "@/entities/category";
 

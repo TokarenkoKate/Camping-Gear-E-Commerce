@@ -3,7 +3,7 @@ import { useDisclosure } from "@/shared/lib/hooks/use-disclosure";
 import Menu from "@/shared/assets/icons/menu-20-20.svg";
 import Close from "@/shared/assets/icons/close-20-20.svg";
 import { UiBox, UiButton } from "@/shared/ui";
-import { ShopNavigation } from "@/features/shop-navigation/ui/shop-navigation";
+import { ShopNavigation } from "@/features/shop-navigation";
 import cls from "./menu.m.scss";
 
 export const MenuMobile = () => {

@@ -6,8 +6,9 @@ export type {
   ProductDetails,
   ProductCart,
 } from "./model/types/product";
-export { useGetProductQuery } from "./model/api/use-get-product-query";
+export { useGetProductQuery } from "./api/use-get-product-query";
 export { getProductColorFromAttributes } from "./model/lib/get-product-color-from-attributes";
-export { useGetRelatedProducts } from "./model/api/use-get-related-products";
-export { useGetSimilarProducts } from "./model/api/use-get-similar-products";
-export { useGetLatestProducts } from "./model/api/use-get-latest-products";
+export { useGetRelatedProducts } from "./api/use-get-related-products";
+export { useGetSimilarProducts } from "./api/use-get-similar-products";
+export { useGetLatestProducts } from "./api/use-get-latest-products";
+export { useGetProductsInfiniteQuery } from "./api/use-get-products-infinite-query";
