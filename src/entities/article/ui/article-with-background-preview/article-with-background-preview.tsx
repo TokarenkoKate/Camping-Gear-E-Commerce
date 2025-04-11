@@ -38,10 +38,20 @@ export const ArticleWithBackgroundPreview = ({
     >
       <UiBox className={cls.overlay} />
       <UiVStack className={cls.content} justify="center">
-        <UiText variant="headingLg" tone="inverted" className={cls.title}>
+        <UiText
+          variant="headingLg"
+          tone="inverted"
+          className={cls.title}
+          lineClamp={5}
+        >
           {title}
         </UiText>
-        <UiText variant="bodyMd" tone="inverted" className={cls.description}>
+        <UiText
+          variant="bodyMd"
+          tone="inverted"
+          className={cls.description}
+          lineClamp={5}
+        >
           {description}
         </UiText>
         <UiButton variant="outlinedInverted">Read more</UiButton>
