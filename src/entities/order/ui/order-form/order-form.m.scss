@@ -1,3 +1,5 @@
+@use "/src/app/styles/mixins/responsive" as *;
+
 .order-form {
   &-sections {
     gap: var(--space-16);
@@ -9,8 +11,12 @@
 
   &-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: var(--space-4);
+
+    @include responsive("medium") {
+      flex-direction: row;
+    }
   }
 
   &-column {
@@ -19,5 +25,9 @@
 
   &-submit-button {
     align-self: center;
+  }
+
+  &-error {
+    margin-bottom: var(--space-5);
   }
 }

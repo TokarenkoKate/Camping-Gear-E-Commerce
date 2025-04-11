@@ -10,3 +10,4 @@ export { useGetProductQuery } from "./model/api/use-get-product-query";
 export { getProductColorFromAttributes } from "./model/lib/get-product-color-from-attributes";
 export { useGetRelatedProducts } from "./model/api/use-get-related-products";
 export { useGetSimilarProducts } from "./model/api/use-get-similar-products";
+export { useGetLatestProducts } from "./model/api/use-get-latest-products";

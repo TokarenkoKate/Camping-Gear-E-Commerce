@@ -14,6 +14,7 @@ import {
   getUiSelectPreviousOption,
 } from "../../helpers/ui/select/ui-select-options-helpers";
 import { getUiSelectListboxPosition } from "../../helpers/ui/select/get-ui-select-listbox-position";
+import { useWindowResize } from "../use-window-resize";
 
 // todo: пустые данные, закрытие при внешнем клике
 export const useSelectAutocomplete = ({
@@ -314,12 +315,23 @@ export const useSelectAutocomplete = ({
 
   const { top, left } = getUiSelectListboxPosition(parentRect, portalRect);
 
+  const [listboxPosition, setListboxPosition] = useState({
+    top,
+    left,
+    width: parentRect?.width,
+  });
+
   const listboxStyle = {
-    width: parentRect ? `${parentRect.width}px` : "auto",
-    left: `${left}px`,
-    top: `${top}px`,
+    width: parentRect ? `${listboxPosition.width}px` : "auto",
+    left: `${listboxPosition.left}px`,
+    top: `${listboxPosition.top}px`,
     visibility: isListboxOpen ? "visible" : "hidden",
   };
+
+  useWindowResize({
+    callback: () => setListboxPosition({ top, left, width: parentRect?.width }),
+    timeout: 10,
+  });
 
   return {
     containerNode,

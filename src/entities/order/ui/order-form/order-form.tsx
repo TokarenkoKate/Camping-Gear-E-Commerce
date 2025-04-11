@@ -3,11 +3,11 @@ import {
   UiInput,
   UiSelect,
   UiBox,
-  UiHStack,
   UiVStack,
   UiFormField,
   UiRadioButtonGroup,
   LoginLink,
+  UiText,
 } from "@/shared/ui";
 import { useForm } from "@/shared/lib/hooks/ui/use-form";
 import {
@@ -30,13 +30,16 @@ export const OrderForm = ({ className }: OrderFormProps) => {
 
   return (
     <UiBox className={classNames(cls.orderForm, className)} max>
+      <UiText tone="error" className={cls.orderFormError}>
+        Order placement currently unavailable
+      </UiText>
       <Form onSubmit={() => {}}>
         <UiVStack className={cls.orderFormSections} max align="normal">
           <OrderFormSection
             title={orderFormSectionTitle.customer}
             extraContent={<LoginLink />}
           >
-            <UiHStack max className={cls.orderFormRow}>
+            <UiBox max className={cls.orderFormRow}>
               <UiFormField
                 name={OrderFormInputName.fullName}
                 placeholder={orderFormFieldPlaceholder.fullName}
@@ -47,7 +50,7 @@ export const OrderForm = ({ className }: OrderFormProps) => {
                 placeholder={orderFormFieldPlaceholder.email}
                 component={UiInput}
               />
-            </UiHStack>
+            </UiBox>
           </OrderFormSection>
           <OrderFormSection title={orderFormSectionTitle.shipping}>
             <UiVStack className={cls.orderFormColumn} max align="normal">

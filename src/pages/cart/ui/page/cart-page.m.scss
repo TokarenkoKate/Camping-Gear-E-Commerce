@@ -11,6 +11,10 @@
   }
 
   &-order-form {
-    padding: 70px var(--space-20);
+    padding: var(--space-3-5);
+
+    @include responsive("medium") {
+      padding: 70px var(--space-20);
+    }
   }
 }

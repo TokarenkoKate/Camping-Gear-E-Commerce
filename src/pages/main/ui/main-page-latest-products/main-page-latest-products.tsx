@@ -1,9 +1,9 @@
-import { ProductsGallery } from "@/features/products-gallery";
-import cls from "../main-page/main-page.m.scss";
-import { useGetLatestProducts } from "@/entities/product/model/api/use-get-latest-products";
-import { newInGalleryIntroCard } from "../../model/const/main-page";
-import { UiBox } from "@/shared/ui";
 import { useInView } from "react-intersection-observer";
+import { UiBox } from "@/shared/ui";
+import { ProductsGallery } from "@/features/products-gallery";
+import { useGetLatestProducts } from "@/entities/product";
+import { newInGalleryIntroCard } from "../../model/const/main-page";
+import cls from "../main-page/main-page.m.scss";
 
 export const MainPageLatestProducts = () => {
   const { ref: inViewRef, inView } = useInView({

@@ -1,5 +1,7 @@
 import classNames from "classnames";
+import { To } from "react-router-dom";
 import { ClassnamesMods } from "@/shared/types/classnames";
+import { appRoutesPaths } from "@/shared/const/router";
 import { UiBox, UiVStack, UiText, UiButton } from "@/shared/ui";
 import {
   ArticlePreview,
@@ -23,13 +25,14 @@ export const ArticleWithBackgroundPreview = ({
     return null;
   }
 
-  const { title, description, image } = article;
+  const { id, title, description, image } = article;
 
   const mods: ClassnamesMods = {
     [cls[type]]: true,
   };
 
   const imagePath = getImageSrcPath(image);
+  const redirectPath: To = `${appRoutesPaths.journal}/${id}`;
 
   return (
     <UiBox
@@ -54,7 +57,9 @@ export const ArticleWithBackgroundPreview = ({
         >
           {description}
         </UiText>
-        <UiButton variant="outlinedInverted">Read more</UiButton>
+        <UiButton variant="outlinedInverted" asLink to={redirectPath}>
+          Read more
+        </UiButton>
       </UiVStack>
     </UiBox>
   );
