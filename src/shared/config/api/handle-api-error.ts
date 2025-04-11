@@ -5,9 +5,9 @@ import { isMultipleErrorsType } from "@/shared/lib/helpers/api/is-multiple-error
 import { COMMA_SPACE } from "@/shared/const/common-string";
 
 export const handleApiError = (error: ApiAxiosError) => {
-  const errorMessage: string[] | string = isMultipleErrorsType(error)
-    ? error.request.data.errors?.join(COMMA_SPACE)
-    : error.request.data;
+  const errorMessage = isMultipleErrorsType(error)
+    ? error.response?.data.errors?.join(COMMA_SPACE)
+    : error.response?.data?.message;
 
   switch (error?.response?.status) {
     case 400:

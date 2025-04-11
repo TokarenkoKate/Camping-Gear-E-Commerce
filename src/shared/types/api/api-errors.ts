@@ -3,7 +3,11 @@ import { AxiosError } from "axios";
 /**
  * Type for a single error from server
  */
-type ApiErrorType = string;
+type ApiErrorType = {
+  error: string;
+  message: string;
+  statusCode: number;
+};
 export type AxiosSingleError = AxiosError<ApiErrorType>;
 
 /**

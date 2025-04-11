@@ -58,7 +58,7 @@ export const GridWithInnerBorder = forwardRef<
     if (itemsLength) {
       removeBorderFromGrid({ grid: ref.current, itemsLength, borderColor });
     }
-  }, [itemsLength]);
+  }, [children]);
 
   if (!itemsLength) {
     return null;

@@ -6,5 +6,5 @@ import {
 export const isMultipleErrorsType = (
   error: ApiAxiosError
 ): error is AxiosMultipleErrors => {
-  return Boolean((error as AxiosMultipleErrors).request?.data.errors);
+  return (error as AxiosMultipleErrors).response?.data.errors !== undefined;
 };
