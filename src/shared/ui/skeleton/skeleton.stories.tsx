@@ -5,6 +5,7 @@ import { Skeleton as SkeletonComponent } from "./skeleton";
 
 export default {
   component: SkeletonComponent,
+  title: "shared/skeleton",
 } as Meta<typeof SkeletonComponent>;
 
 export const Skeleton = {
@@ -21,7 +22,7 @@ export const Skeleton = {
 const SkeletonNormal = {
   render() {
     return (
-      <StorybookExample title="Counter button">
+      <StorybookExample title="Skeleton full width">
         <SkeletonComponent width="100%" height={200} />
       </StorybookExample>
     );
@@ -31,7 +32,7 @@ const SkeletonNormal = {
 const SkeletonCircle = {
   render() {
     return (
-      <StorybookExample title="Counter button">
+      <StorybookExample title="Skeleton round">
         <SkeletonComponent width={100} height={100} border="50%" />
       </StorybookExample>
     );

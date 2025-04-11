@@ -6,7 +6,7 @@ import { GridWithInnerBorder as GridWithInnerBorderComponent } from "./grid-with
 
 export default {
   component: GridWithInnerBorderComponent,
-  title: "Shared/GridWithInnerBorder",
+  title: "shared/grid-with-inner-border",
 } as Meta<typeof GridWithInnerBorderComponent>;
 
 export const GridWithInnerBorderVariants = {
@@ -24,7 +24,7 @@ const mockItems = Array.from(Array(10).keys());
 const GridWithInnerBorder = {
   render() {
     return (
-      <StorybookExample title="Color tags default">
+      <StorybookExample title="Grid component with inner border">
         <UiHStack style={{ gap: "10px" }}>
           <GridWithInnerBorderComponent
             columnMinWidth="100px"

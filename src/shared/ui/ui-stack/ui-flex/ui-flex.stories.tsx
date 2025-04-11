@@ -6,6 +6,7 @@ import { UiVStack } from "../ui-vstack/ui-vstack";
 
 export default {
   component: UiFlex,
+  title: "Shared/ui/ui-flex",
 } as Meta<typeof UiFlex>;
 
 export const All = {

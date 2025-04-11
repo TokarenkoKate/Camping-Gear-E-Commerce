@@ -1,7 +1,9 @@
 import { PropsWithChildren } from "react";
+import { UiHStack } from "../ui-stack/ui-hstack/ui-hstack";
 import { useInfiniteLoading } from "@/shared/lib/hooks/use-infinite-loading";
 import { UiSpinner } from "../ui-spinner/ui-spinner";
 import { InfiniteScrollProps } from "@/shared/types/ui/infinite-scroll";
+import cls from "./infinite-scroll.m.scss";
 
 export const InfiniteScroll = ({
   children,
@@ -23,7 +25,9 @@ export const InfiniteScroll = ({
     <>
       {children}
       {isFetchingNextPage ? (
-        <UiSpinner />
+        <UiHStack className={cls.spinnerWrapper} justify="center">
+          <UiSpinner size="medium" mode="inverted" />
+        </UiHStack>
       ) : (
         <div ref={ref} style={{ height: "10px" }} />
       )}

@@ -7,14 +7,14 @@ import { UiCheckboxValue } from "@/shared/types/ui/ui-checkbox";
 
 export default {
   component: UiButtonCheckboxGroupComponent,
-  title: "Shared/ui/ui-button-checkbox-group",
+  title: "Shared/ui/form/ui-button-checkbox-group",
 } as Meta<typeof UiButtonCheckboxGroupComponent>;
 
-export const GridWithInnerBorderVariants = {
+export const UiButtonCheckboxGroup = {
   render() {
     return (
       <UiVStack style={{ gap: "16px", padding: "16px 0" }}>
-        <UiButtonCheckboxGroup />
+        <UiButtonCheckboxGroupStory />
       </UiVStack>
     );
   },
@@ -26,10 +26,10 @@ const options = [
   { value: "Mustard", label: "Mustard" },
 ];
 
-const UiButtonCheckboxGroup = () => {
+const UiButtonCheckboxGroupStory = () => {
   const [values, setValues] = useState<Array<UiCheckboxValue>>([]);
   return (
-    <StorybookExample title="default">
+    <StorybookExample title="Ui button checkbox group">
       <UiButtonCheckboxGroupComponent
         options={options}
         name="Fruits"

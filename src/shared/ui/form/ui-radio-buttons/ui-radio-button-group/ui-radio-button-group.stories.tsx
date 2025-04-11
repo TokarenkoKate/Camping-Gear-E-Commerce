@@ -5,10 +5,10 @@ import { UiRadioButtonGroup as UiRadioButtonGroupComponent } from "./ui-radio-bu
 
 export default {
   component: UiRadioButtonGroupComponent,
-  title: "Shared/ui/ui-radio-button-group",
+  title: "Shared/ui/form/ui-radio-button-group",
 } as Meta<typeof UiRadioButtonGroupComponent>;
 
-export const UiRadioButtonGroupVariants = {
+export const UiRadioButtonGroup = {
   render() {
     return (
       <UiVStack style={{ gap: "16px", padding: "16px 0" }}>

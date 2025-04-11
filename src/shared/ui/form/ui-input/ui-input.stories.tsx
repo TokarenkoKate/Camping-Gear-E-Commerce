@@ -5,10 +5,10 @@ import { UiInput as UiInputComponent } from "./ui-input";
 
 export default {
   component: UiInputComponent,
-  title: "Shared/ui/ui-input",
+  title: "Shared/ui/form/ui-input",
 } as Meta<typeof UiInputComponent>;
 
-export const UiInputVariants = {
+export const UiInput = {
   render() {
     return (
       <UiVStack style={{ gap: "16px", padding: "16px 0" }}>
@@ -21,7 +21,7 @@ export const UiInputVariants = {
 const Default = {
   render() {
     return (
-      <StorybookExample title="Default input" transparent>
+      <StorybookExample title="Input form field" transparent>
         <UiInputComponent placeholder="Full Name" />
       </StorybookExample>
     );

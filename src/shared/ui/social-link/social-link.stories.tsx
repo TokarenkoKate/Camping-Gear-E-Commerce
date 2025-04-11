@@ -7,6 +7,7 @@ import { socialLinks } from "@/widgets/footer/model/footer";
 
 export default {
   component: SocialLinkComponent,
+  title: "shared/social-link",
 } as Meta<typeof SocialLinkComponent>;
 
 export const SocialLink = {

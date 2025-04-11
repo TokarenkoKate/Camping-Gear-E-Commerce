@@ -8,7 +8,7 @@ export default {
   component: UiDividerComponent,
 } as Meta<typeof UiDividerComponent>;
 
-export const UiDividerVariants = {
+export const UiDivider = {
   render() {
     return (
       <UiVStack style={{ gap: "16px", padding: "16px 0" }}>
@@ -22,7 +22,7 @@ export const UiDividerVariants = {
 const Horizontal = {
   render() {
     return (
-      <StorybookExample title="Color tags default">
+      <StorybookExample title="Horizontal divider">
         <UiVStack style={{ gap: "10px" }}>
           <div
             style={{ width: "50px", height: "50px", background: "#5393C9" }}
@@ -40,7 +40,7 @@ const Horizontal = {
 const Vertical = {
   render() {
     return (
-      <StorybookExample title="Color tags with selected">
+      <StorybookExample title="Vertical divider (todo)">
         <UiHStack style={{ gap: "10px" }}>
           <div
             style={{ width: "50px", height: "50px", background: "#5393C9" }}

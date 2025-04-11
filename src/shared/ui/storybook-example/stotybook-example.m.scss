@@ -18,8 +18,10 @@
   }
 
   &.inverted {
+    .storybook-example-header,
     .storybook-example-content {
       background-color: var(--color-accent);
+      color: var(--color-primary);
     }
   }
 

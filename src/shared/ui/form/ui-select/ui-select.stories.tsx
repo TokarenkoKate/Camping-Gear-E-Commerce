@@ -5,10 +5,10 @@ import { UiSelect as UiSelectComponent } from "./ui-select";
 
 export default {
   component: UiSelectComponent,
-  title: "Shared/ui/ui-select",
+  title: "Shared/ui/form/ui-select",
 } as Meta<typeof UiSelectComponent>;
 
-export const UiSelectVariants = {
+export const UiSelect = {
   render() {
     return (
       <UiVStack style={{ gap: "16px", padding: "16px 0" }}>
@@ -38,7 +38,7 @@ const options = [
 const Default = {
   render() {
     return (
-      <StorybookExample title="Default Select" transparent>
+      <StorybookExample title="Ui Select form field" transparent>
         <UiSelectComponent options={options} ariaLabel="fruit" />
       </StorybookExample>
     );
